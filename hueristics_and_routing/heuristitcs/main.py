@@ -242,13 +242,13 @@ def run(method):
         # Switch statement for selecting the heuristic
         # Ok no switch statment thats in python 3.10 and im not updatitng and breaking everything again
         if method == "greedy":
-            greedy_online()
+            return greedy_online()
 
         elif method == "ant":
-            ant_colony_online()
+            return ant_colony_online()
 
         elif method == "consensus":
-            concensus_online()
+            return concensus_online()
         pass
 
     else:
@@ -258,13 +258,13 @@ def run(method):
 
         # Switch statement for selecting the heuristic
         if method == "greedy":
-            greedy_offline(list_of_active_stops, passenger_bookings)
+            return greedy_offline(list_of_active_stops, passenger_bookings)
 
         elif method == "ant":
-            ant_colony(list_of_active_stops)
+            return ant_colony(list_of_active_stops)
 
         elif method == "consensus":
-            consensus()
+            return consensus()
 
         pass
 
@@ -302,6 +302,7 @@ def ini_static():
     list_of_active_stops, passenger_bookings = user_stops()
 
     return list_of_active_stops, passenger_bookings
+
 
 def group_riders(passengers):
     pass
@@ -1029,17 +1030,16 @@ def cm_policy():
                     pass
 
 
-start_time = time.perf_counter()
-# routes = greedy_offline()
+###------------- Main run Start
+
 # calcProbablity(1, list_of_stops)
-list_of_active_stops, passenger_bookings = user_stops()
-routes = ant_colony(list_of_active_stops, passenger_bookings, list_of_passengers.copy())
-run_time = time.perf_counter() - start_time
-print(run_time)
+
+routes = run("greedy")
 
 explore_passenger_route(passenger_bookings)
 
 bus_routes = []
+
 for i in range(0, len(routes)):
     bus_routes.append(get_bus_order(routes[i]))
     print(explore_bus_route(routes[i], i))
