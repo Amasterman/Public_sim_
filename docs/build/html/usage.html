@@ -1,0 +1,645 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Welcome to Public_Python_Sim’s documentation!" href="index.html" />
+
+    <meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
+        <title>Usage - Public_Python_Sim 0.1 Alpha documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">Public_Python_Sim 0.1 Alpha documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  
+  <span class="sidebar-brand-text">Public_Python_Sim 0.1 Alpha documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Usage</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Permalink to this heading">#</a></h1>
+<p>This section probably has the most to change and develop, currently the sim is not user friendly and lacks any user
+interface. This will be added soonTM!</p>
+<section id="module-heuristitcs.Buses">
+<span id="classes"></span><h2>Classes<a class="headerlink" href="#module-heuristitcs.Buses" title="Permalink to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="heuristitcs.Buses.Buses">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">heuristitcs.Buses.</span></span><span class="sig-name descname"><span class="pre">Buses</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_stop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bus_capacity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">running_cost</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_stop</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Buses.Buses" title="Permalink to this definition">#</a></dt>
+<dd><p>Class containing the details of buses</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<em>int</em>) – ID of the bus</p></li>
+<li><p><strong>start_stop</strong> (<a class="reference internal" href="#heuristitcs.Stops.Stop" title="heuristitcs.Stops.Stop"><em>Stop</em></a>) – The stop the bus begins its journey at</p></li>
+<li><p><strong>bus_capacity</strong> (<em>int</em>) – Maximum passenger capacity</p></li>
+<li><p><strong>speed</strong> (<em>int</em>) – Speed the bus travels</p></li>
+<li><p><strong>running_cost</strong> (<em>int</em>) – The cost of moving the bus a single unit</p></li>
+<li><p><strong>current_stop</strong> (<a class="reference internal" href="#heuristitcs.Stops.Stop" title="heuristitcs.Stops.Stop"><em>Stop</em></a>) – The current stop the bus is at</p></li>
+</ul>
+</dd>
+</dl>
+<p>TODO Include ownership and accessibility</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="heuristitcs.Buses.Buses.getStartStopId">
+<span class="sig-name descname"><span class="pre">getStartStopId</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Buses.Buses.getStartStopId" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the id of the starting stop
+:return: Returns the stop ID of the buses starting stop
+:rtype: int</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-heuristitcs.Jobs"></span><dl class="py class">
+<dt class="sig sig-object py" id="heuristitcs.Jobs.Jobs">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">heuristitcs.Jobs.</span></span><span class="sig-name descname"><span class="pre">Jobs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">weight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arrival_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Jobs.Jobs" title="Permalink to this definition">#</a></dt>
+<dd><p>Jobs act as a dataset containing information on weight, arrival time and type</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>weight</strong> (<em>int</em>) – Current carry weight</p></li>
+<li><p><strong>arrival_date</strong> (<em>date</em>) – Date of arrival</p></li>
+<li><p><strong>type</strong> (<em>str</em>) – Type of job</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="module-heuristitcs.Passenger"></span><dl class="py class">
+<dt class="sig sig-object py" id="heuristitcs.Passenger.Passenger">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">heuristitcs.Passenger.</span></span><span class="sig-name descname"><span class="pre">Passenger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xcord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ycord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">capacity_cost</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">walk_cost</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pickup_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropoff_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">booked</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lateness</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Passenger.Passenger" title="Permalink to this definition">#</a></dt>
+<dd><p>Passenger class</p>
+<p>This class contains all the information regarding the passenger, it is currently a WIP as the data from the surveys
+have not been implemented. Currently the class contians the id, start coords, destination coords, capacity cost,
+walk_cost, speed, target pick up time, dropoff time, weather or not they are booked in advance and the maximum
+allowable lateness.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<em>int</em>) – Passenger Id</p></li>
+<li><p><strong>xcord</strong> (<em>int</em>) – Passenger Coordinate on the X axis</p></li>
+<li><p><strong>ycord</strong> (<em>int</em>) – Passenger Coordinate on the Y axis</p></li>
+<li><p><strong>destination_x</strong> (<em>int</em>) – Coordinates of the passenger destination on the X axis</p></li>
+<li><p><strong>destination_y</strong> (<em>int</em>) – Coordinates of the passenger destination on the Y axis</p></li>
+<li><p><strong>capacity_cost</strong> (<em>int</em>) – Passenger capacity cost, standard passenger is 1 wheelchair is 4 ect</p></li>
+<li><p><strong>walk_cost</strong> (<em>int</em>) – The cost to have the passenger move 1 unit [Note, currently an arbitrary value]</p></li>
+<li><p><strong>speed</strong> (<em>int</em>) – Rate at witch the passengers move</p></li>
+<li><p><strong>pickup_time</strong> (<em>int</em>) – Target pickup time</p></li>
+<li><p><strong>dropoff_time</strong> – Target time the passenger wants to get to their destination</p></li>
+<li><p><strong>booked</strong> (<em>bool</em>) – If the passenger has booked in advance</p></li>
+<li><p><strong>lateness</strong> (<em>int</em>) – How much overall time the passenger will allow for lateness</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="heuristitcs.Passenger.Passenger.calcDistance">
+<span class="sig-name descname"><span class="pre">calcDistance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Passenger.Passenger.calcDistance" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the distance between two points</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x1</strong> (<em>int</em>) – First X cord</p></li>
+<li><p><strong>y1</strong> (<em>int</em>) – First Y cord</p></li>
+<li><p><strong>x2</strong> (<em>int</em>) – Second X cord</p></li>
+<li><p><strong>y2</strong> (<em>int</em>) – Second Y cord</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Distance between two points</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="heuristitcs.Passenger.Passenger.calcTimeToTravel">
+<span class="sig-name descname"><span class="pre">calcTimeToTravel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Passenger.Passenger.calcTimeToTravel" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the time it will take the passenger to move between two points</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x1</strong> (<em>int</em>) – Passenger X cord</p></li>
+<li><p><strong>y1</strong> (<em>int</em>) – Passenger Y cord</p></li>
+<li><p><strong>x2</strong> (<em>int</em>) – Destination X cord</p></li>
+<li><p><strong>y2</strong> (<em>int</em>) – Destination Y cord</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Time to travel</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="heuristitcs.Passenger.Passenger.getNearestDrop">
+<span class="sig-name descname"><span class="pre">getNearestDrop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stop_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Passenger.Passenger.getNearestDrop" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the nearest stop to the passengers destination from the stops contained in the stop_list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>stop_list</strong> (<em>List</em><em> of </em><em>Stops</em>) – List of eligible stops</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The nearest stop to the passenger destination</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#heuristitcs.Stops.Stop" title="heuristitcs.Stops.Stop">Stop</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="heuristitcs.Passenger.Passenger.getNearestStop">
+<span class="sig-name descname"><span class="pre">getNearestStop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stop_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Passenger.Passenger.getNearestStop" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the nearest stop to the passenger from the stops contained in the stop_list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>stop_list</strong> (<em>List</em><em> of </em><em>&lt;Stops&gt;</em>) – List of eligible stops</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The nearest stop to the passenger</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#heuristitcs.Stops.Stop" title="heuristitcs.Stops.Stop">Stop</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="heuristitcs.Passenger.Passenger.get_booking_time">
+<span class="sig-name descname"><span class="pre">get_booking_time</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Passenger.Passenger.get_booking_time" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the time that the booking is made
+:return: The booking time
+:rtype: int</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="heuristitcs.Passenger.Passenger.set_booking_time">
+<span class="sig-name descname"><span class="pre">set_booking_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Passenger.Passenger.set_booking_time" title="Permalink to this definition">#</a></dt>
+<dd><p>Set the time that the booking is made</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> (<em>int</em>) – Time the booking is made</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-heuristitcs.Route"></span><dl class="py class">
+<dt class="sig sig-object py" id="heuristitcs.Route.Route">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">heuristitcs.Route.</span></span><span class="sig-name descname"><span class="pre">Route</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arrival_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wait_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">passenger_manifest</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Route.Route" title="Permalink to this definition">#</a></dt>
+<dd><p>Class contains information for a section of the route, contains the information about passengers and timing info</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>stop</strong> (<a class="reference internal" href="#heuristitcs.Stops.Stop" title="heuristitcs.Stops.Stop"><em>Stop</em></a>) – The stop that is relevant to the route section</p></li>
+<li><p><strong>arrival_time</strong> (<em>int</em>) – The time the vehicle arrives at the stop</p></li>
+<li><p><strong>wait_time</strong> (<em>int</em>) – The time the vehicle is waiting at the stop</p></li>
+<li><p><strong>passenger_manifest</strong> (<em>List</em><em> of </em><em>&lt;Passengers&gt;</em>) – List of passengers on vehicle at the stop</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="heuristitcs.Route.Route.getArrival">
+<span class="sig-name descname"><span class="pre">getArrival</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Route.Route.getArrival" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Get the arrival time of the vehicle</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="heuristitcs.Route.Route.getPassengers">
+<span class="sig-name descname"><span class="pre">getPassengers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Route.Route.getPassengers" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of passengers</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of &lt;passengers&gt;</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="heuristitcs.Route.Route.getStops">
+<span class="sig-name descname"><span class="pre">getStops</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Route.Route.getStops" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Get the Stop the vehicle is at</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#heuristitcs.Stops.Stop" title="heuristitcs.Stops.Stop">Stop</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="heuristitcs.Route.Route.getWait">
+<span class="sig-name descname"><span class="pre">getWait</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Route.Route.getWait" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Vehicle wait time</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-heuristitcs.Stops"></span><dl class="py class">
+<dt class="sig sig-object py" id="heuristitcs.Stops.Stop">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">heuristitcs.Stops.</span></span><span class="sig-name descname"><span class="pre">Stop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">long</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_ref</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">network</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shelter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bench</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tactile_paving</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wheelchair</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">departure_board</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bins</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">covered</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">passenger_information_display</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pole</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kerb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">traffic_sign</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">advertising</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">street</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crossing</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">look_up_index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Stops.Stop" title="Permalink to this definition">#</a></dt>
+<dd><p>A class that handles the parameters of the stops, generally all these parameters are taken from the parameters that
+are taken from the XML flags in the <a class="reference external" href="https://www.openstreetmap.org/">Open Street Map</a> data. These flags make this
+class very cumbersome. However, these details will be integral to integrating the accessibility into the system.
+Additionally many of these flags are null in the OSM data, this is an issue with the data source and future
+data collection will cover these flags.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<em>int</em>) – Stop id</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – The name of the bus stop or street</p></li>
+<li><p><strong>lat</strong> (<em>Float</em>) – Latitude coordinate</p></li>
+<li><p><strong>long</strong> (<em>Float</em>) – Longitude coordinate</p></li>
+<li><p><strong>local_ref</strong> (<em>str</em>) – Unofficial name</p></li>
+<li><p><strong>network</strong> (<em>str</em>) – Bus network stop belongs too</p></li>
+<li><p><strong>operator</strong> (<em>str</em>) – Who operates the stop</p></li>
+<li><p><strong>shelter</strong> (<em>bool</em>) – Is there a bus shelter present</p></li>
+<li><p><strong>bench</strong> (<em>bool</em>) – Is there a bench present</p></li>
+<li><p><strong>tactile_paving</strong> (<em>bool</em>) – Is tactile paving present</p></li>
+<li><p><strong>wheelchair</strong> (<em>bool</em>) – Is the stop wheelchair accessible</p></li>
+<li><p><strong>departure_board</strong> (<em>bool</em>) – Is there are live departure board at the stop</p></li>
+<li><p><strong>lit</strong> (<em>bool</em>) – Are there streetlights present</p></li>
+<li><p><strong>bins</strong> (<em>bool</em>) – Are there bins at the stop</p></li>
+<li><p><strong>covered</strong> (<em>bool</em>) – Is there a cover from rain at the stop</p></li>
+<li><p><strong>passenger_information_display</strong> (<em>bool</em>) – Is there a dynamic information board present</p></li>
+<li><p><strong>pole</strong> (<em>bool</em>) – Is there a pole with bus information</p></li>
+<li><p><strong>flag</strong> (<em>bool</em>) – Is there a stop flag present</p></li>
+<li><p><strong>kerb</strong> (<em>bool</em>) – Is there a dropped kerb at the stop</p></li>
+<li><p><strong>traffic_sign</strong> (<em>bool</em>) – Is there a traffic sign at the stop</p></li>
+<li><p><strong>advertising</strong> (<em>bool</em>) – Is there an advertisement at the stop</p></li>
+<li><p><strong>layer</strong> (<em>int</em>) – The height layer the stop is on</p></li>
+<li><p><strong>street</strong> (<em>str</em>) – The street name</p></li>
+<li><p><strong>crossing</strong> (<em>str</em>) – The name of the nearest crossing</p></li>
+<li><p><strong>look_up_index</strong> (<em>int</em>) – The stops position in the lookup table</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="heuristitcs.Stops.Stop.calcDistance">
+<span class="sig-name descname"><span class="pre">calcDistance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Stops.Stop.calcDistance" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the distance between two points</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x1</strong> (<em>int</em>) – First X cord</p></li>
+<li><p><strong>y1</strong> (<em>int</em>) – First Y cord</p></li>
+<li><p><strong>x2</strong> (<em>int</em>) – Second X cord</p></li>
+<li><p><strong>y2</strong> (<em>int</em>) – Second Y cord</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Distance between two points</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="heuristitcs.Stops.Stop.getNearStop">
+<span class="sig-name descname"><span class="pre">getNearStop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stop_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Stops.Stop.getNearStop" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>stop_list</strong> (<em>List</em><em> of </em><em>&lt;Stops&gt;</em>) – List of valid stops to check</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Nearest stop to the stop from the list of valid stops</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#heuristitcs.Stops.Stop" title="heuristitcs.Stops.Stop">Stop</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="heuristitcs.Stops.Stop.getRandStop">
+<span class="sig-name descname"><span class="pre">getRandStop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stop_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Stops.Stop.getRandStop" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>stop_list</strong> (<em>List</em><em> of </em><em>&lt;Stops&gt;</em>) – List of valid stops to check</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Random stop from list</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#heuristitcs.Stops.Stop" title="heuristitcs.Stops.Stop">Stop</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="heuristitcs.Stops.Stop.getStopId">
+<span class="sig-name descname"><span class="pre">getStopId</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Stops.Stop.getStopId" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The stop ID</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          <a class="prev-page" href="index.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Home</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022, Alexander Masterman
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Usage</a><ul>
+<li><a class="reference internal" href="#module-heuristitcs.Buses">Classes</a><ul>
+<li><a class="reference internal" href="#heuristitcs.Buses.Buses"><code class="docutils literal notranslate"><span class="pre">Buses</span></code></a><ul>
+<li><a class="reference internal" href="#heuristitcs.Buses.Buses.getStartStopId"><code class="docutils literal notranslate"><span class="pre">Buses.getStartStopId()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#heuristitcs.Jobs.Jobs"><code class="docutils literal notranslate"><span class="pre">Jobs</span></code></a></li>
+<li><a class="reference internal" href="#heuristitcs.Passenger.Passenger"><code class="docutils literal notranslate"><span class="pre">Passenger</span></code></a><ul>
+<li><a class="reference internal" href="#heuristitcs.Passenger.Passenger.calcDistance"><code class="docutils literal notranslate"><span class="pre">Passenger.calcDistance()</span></code></a></li>
+<li><a class="reference internal" href="#heuristitcs.Passenger.Passenger.calcTimeToTravel"><code class="docutils literal notranslate"><span class="pre">Passenger.calcTimeToTravel()</span></code></a></li>
+<li><a class="reference internal" href="#heuristitcs.Passenger.Passenger.getNearestDrop"><code class="docutils literal notranslate"><span class="pre">Passenger.getNearestDrop()</span></code></a></li>
+<li><a class="reference internal" href="#heuristitcs.Passenger.Passenger.getNearestStop"><code class="docutils literal notranslate"><span class="pre">Passenger.getNearestStop()</span></code></a></li>
+<li><a class="reference internal" href="#heuristitcs.Passenger.Passenger.get_booking_time"><code class="docutils literal notranslate"><span class="pre">Passenger.get_booking_time()</span></code></a></li>
+<li><a class="reference internal" href="#heuristitcs.Passenger.Passenger.set_booking_time"><code class="docutils literal notranslate"><span class="pre">Passenger.set_booking_time()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#heuristitcs.Route.Route"><code class="docutils literal notranslate"><span class="pre">Route</span></code></a><ul>
+<li><a class="reference internal" href="#heuristitcs.Route.Route.getArrival"><code class="docutils literal notranslate"><span class="pre">Route.getArrival()</span></code></a></li>
+<li><a class="reference internal" href="#heuristitcs.Route.Route.getPassengers"><code class="docutils literal notranslate"><span class="pre">Route.getPassengers()</span></code></a></li>
+<li><a class="reference internal" href="#heuristitcs.Route.Route.getStops"><code class="docutils literal notranslate"><span class="pre">Route.getStops()</span></code></a></li>
+<li><a class="reference internal" href="#heuristitcs.Route.Route.getWait"><code class="docutils literal notranslate"><span class="pre">Route.getWait()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#heuristitcs.Stops.Stop"><code class="docutils literal notranslate"><span class="pre">Stop</span></code></a><ul>
+<li><a class="reference internal" href="#heuristitcs.Stops.Stop.calcDistance"><code class="docutils literal notranslate"><span class="pre">Stop.calcDistance()</span></code></a></li>
+<li><a class="reference internal" href="#heuristitcs.Stops.Stop.getNearStop"><code class="docutils literal notranslate"><span class="pre">Stop.getNearStop()</span></code></a></li>
+<li><a class="reference internal" href="#heuristitcs.Stops.Stop.getRandStop"><code class="docutils literal notranslate"><span class="pre">Stop.getRandStop()</span></code></a></li>
+<li><a class="reference internal" href="#heuristitcs.Stops.Stop.getStopId"><code class="docutils literal notranslate"><span class="pre">Stop.getStopId()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/scripts/furo.js"></script>
+    </body>
+</html>
