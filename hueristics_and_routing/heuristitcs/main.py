@@ -18,13 +18,13 @@ rnd.seed(1)
 
 # -----------------------  World settings
 
-# Global toggle for dynamism
+# Global toggle for dynamism [UI setting?]
 dynamic = False
 
 # Passenger bookings in advance within a dynamic system
 passenger_bookings = []
 
-# Area of longitude and latitude of the greater Southampton area
+# Area of longitude and latitude of the greater Southampton area [Better way to define?]
 minlat = 50.8255000
 minlon = -1.6263000
 maxlat = 51.0142000
