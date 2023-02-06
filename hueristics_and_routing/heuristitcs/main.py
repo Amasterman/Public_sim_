@@ -18,13 +18,13 @@ rnd.seed(1)
 
 # -----------------------  World settings
 
-# Global toggle for dynamism
+# Global toggle for dynamism [UI setting?]
 dynamic = False
 
 # Passenger bookings in advance within a dynamic system
 passenger_bookings = []
 
-# Area of longitude and latitude of the greater Southampton area
+# Area of longitude and latitude of the greater Southampton area [Better way to define?]
 minlat = 50.8255000
 minlon = -1.6263000
 maxlat = 51.0142000
@@ -298,6 +298,11 @@ def serve_new_booking(current_time, active_passengers):
 
 
 def ini_static():
+
+    for i in range(0, no_passengers):
+        if list_of_passengers[i].booked:
+            passenger_booked.append(list_of_passengers[i])
+
     # Retrieve the stops that have a passenger waiting and add start and stops to the booking register
     list_of_active_stops, passenger_bookings = user_stops()
 
@@ -562,8 +567,9 @@ def route_generator(passengers, buses, stops, depo):
                 passengers_picked.remove(on_board_passenger)
 
             # Calculate arrival time
-            arrival_time = get_arrival(current_stop[bus][0], near_stop, setoff_time[bus], wait[bus])
-
+            #Worikng on changing to time stamp not calc
+            #arrival_time = get_arrival(current_stop[bus][0], near_stop, setoff_time[bus], wait[bus])
+            arrival_time = 1
             # TODO This needs some more real data, unilink?
             wait[bus] = wait_time()
 
@@ -571,7 +577,7 @@ def route_generator(passengers, buses, stops, depo):
             ind_bus[bus].append(Route.Route(near_stop, arrival_time, wait[bus], carried_passengers[bus]))
 
             # Set current stop to the near_stop
-            current_stop[bus][0] = near_sto
+            current_stop[bus][0] = near_stop
 
             # Set set off time to previous arrival time
             setoff_time[bus] = arrival_time
@@ -598,7 +604,7 @@ def calc_distance(x1, y1, x2, y2):
 
 # Lookup the time between stops
 def get_arrival(stop1, stop2, arrival, wait):
-    return arrival + wait + stop_relations[stop1.id][stop2.id]
+    return arrival + wait + stop_relations[int(stop1.id)][int(stop2.id)]
 
 
 # Describe the routes of a bus in the console
