@@ -495,6 +495,7 @@ def route_generator(passengers, buses, stops, depo):
     # For each of the buses append a second dimension to the arrays
     for bus in range(0, len(buses)):
         current_stop.append([])
+        #  current_stop[0] the current stop of the bus(id), it ahs only one stop even tho its an array
         ind_bus.append([])
         carried_passengers.append([])
         wait.append([])
@@ -505,7 +506,7 @@ def route_generator(passengers, buses, stops, depo):
     # Append a third dimention
     for bus in range(0, len(buses)):
         current_stop[bus].append(depo)
-        ind_bus[bus] = [Route.Route(depo, 0, 0, [])]
+        ind_bus[bus] = [Route.Route(depo, 0, 0, [])] # ind_bus[0][5][1] the 1st bus, the6th stop, time
         carried_passengers[bus] = set()
         wait[bus] = 0
         setoff_time[bus] = 0
@@ -519,10 +520,13 @@ def route_generator(passengers, buses, stops, depo):
     # Loop until the conditions are satisfied
     while not until:
         for bus in range(0, len(buses)):
-            extra_drop = False
+            extra_drop = False # might not be useful anymore
             # If there exist any non-visited stops
             if bool(non_visited_stops[bus]):
                 # print(non_visited_stops)
+
+                # start here with the nearest stop allocation!!!!!
+
 
                 # Get the nearest stop
                 # near_stop = current_stop[bus][0].getNearStop(non_visited_stops[bus].copy())
@@ -537,7 +541,7 @@ def route_generator(passengers, buses, stops, depo):
                     if near_stop in non_visited_stops[bus2]:
                         non_visited_stops[bus2].remove(near_stop)
 
-            temp_list = []
+            temp_list = [] #if theres multiple passengers at the same stop, check all
 
             # Generate the list of carried passengers
             for passenger in carried_passengers[bus]:
