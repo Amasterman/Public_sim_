@@ -31,9 +31,10 @@ maxlat = 51.0142000
 maxlon = -1.0873000
 
 # Amount of Buses
-no_buses = 2
+no_buses = 5
 # Amount of passengers
-no_passengers = 5
+no_passengers = 30
+
 
 # Bus max capacity
 max_bus_cap = 15
@@ -58,7 +59,7 @@ with open("XML_to_CSV_OUT.CSV", newline='') as csvfile:
     next(csvfile)
 
     # Break count will limit the amount of stops imported. << means all included
-    break_count = 50000
+    break_count = 5000
     count = 0
 
     # Begin reading the CSV using the "," as a separator (Note the XML scraper sanitizes the inputs)
@@ -357,8 +358,8 @@ def user_stops():
         one, two = elements
         if one not in list_of_active_stops:
             list_of_active_stops.add(one)
-        if two not in list_of_active_stops:
-            list_of_active_stops.add(two)
+       # if two not in list_of_active_stops:
+       #     list_of_active_stops.add(two)
 
     # Convert set to list
     list_of_active_stops = list(list_of_active_stops)
@@ -532,8 +533,9 @@ def route_generator(passengers, buses, stops, depo):
 
                 # Add the stop to the visited stop list and remove it from the non_visited stop list
                 visited_stops[bus].add(near_stop)
-                if near_stop in non_visited_stops[bus]:
-                    non_visited_stops[bus].remove(near_stop)
+                for bus2 in range(0, len(buses)):
+                    if near_stop in non_visited_stops[bus2]:
+                        non_visited_stops[bus2].remove(near_stop)
 
             temp_list = []
 
@@ -555,6 +557,8 @@ def route_generator(passengers, buses, stops, depo):
                     carried_passengers[bus].add(passenger)
                     passengers_picked.add(passenger)
                     passengers_not_picked.remove(passenger)
+                    stops.append(passenger.getNearestDrop(list_of_stops))
+                    non_visited_stops[bus].add(passenger.getNearestDrop(list_of_stops))
 
             if not bool(non_visited_stops[bus]) and bool(passengers_picked):
                 for on_board_passenger in passengers_picked:
@@ -832,10 +836,8 @@ def calc_probablity(stop_candidates):
 def plot(list_of_stops, list_of_passengers, list_of_buses, passengers_route, bus_routes):
     # ----------------------  Plot figure
 
-    plt.figure(figsize=(10, 10))
-
     for i in range(0, len(list_of_stops)):
-        plt.plot(list_of_stops[i].lat, list_of_stops[i].long, 'bo')
+        plt.plot(list_of_stops[i].lat, list_of_stops[i].long, 'bo', markersize=0.5)
         plt.annotate('%d' % i, (list_of_stops[i].lat + 2, list_of_stops[i].long))
 
     for i in range(0, len(list_of_passengers)):
@@ -857,12 +859,13 @@ def plot(list_of_stops, list_of_passengers, list_of_buses, passengers_route, bus
                  [list_of_passengers[i].destination_y, passengers_route[i][1].long], ':g')
 
     for i in range(0, len(bus_routes)):
+        col = (np.random.random(), np.random.random(), np.random.random())
         for j in range(1, len(bus_routes[i])):
+
             plt.plot([bus_routes[i][j - 1].lat, bus_routes[i][j].lat],
-                     [bus_routes[i][j - 1].long, bus_routes[i][j].long], 'b')
+                     [bus_routes[i][j - 1].long, bus_routes[i][j].long], c=col, linewidth=0.60)
 
     plt.show()
-
 
 def get_nearest_stop(stop, stop_candidates):
     current_nearest = 100000000000
