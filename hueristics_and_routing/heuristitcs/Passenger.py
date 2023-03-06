@@ -90,8 +90,32 @@ class Passenger:
                     self.calcDistance(self.lat, self.long, current_nearest.lat, current_nearest.long):
                 current_nearest = s
         
-        # if(self.should_walk == False):
+        print (self.id, " from ",current_nearest.id[0: 3])
         return current_nearest
+    
+    def getAnotherNearestStop(self,stop_list,exclude_stops):
+        """
+        Get the nearest stop to the passenger from the stops contained in the stop_list that are different from the ones in the excluded_stops list
+
+        :param stop_list: List of eligible stops
+        :type stop_list: List of <Stops>
+        
+        :param exlude_stops: List of stops to exclude
+        :type exlude_stops: List of <Stops>
+
+        :return: The nearest stop to the passenger
+        :rtype: Stop
+        """
+        print ("excluded stops are ", exclude_stops.id[0: 3])
+        current_nearest = stop_list[0]
+        for s in stop_list:
+            if s.id != exclude_stops.id :
+                if self.calcDistance(self.lat, self.long, s.lat, s.long) < \
+                        self.calcDistance(self.lat, self.long, current_nearest.lat, current_nearest.long):
+                    current_nearest = s
+        print("new nearest stop is ", current_nearest.id[0: 3],"!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        return current_nearest
+        
     
     def shouldWalkToDestination(self, stop_list):
         current_nearest = self.getNearestStop(stop_list)
@@ -136,6 +160,7 @@ class Passenger:
                     self.calcDistance(self.destination_x, self.destination_y, current_nearest.lat,
                                       current_nearest.long):
                 current_nearest = s
+        print (self.id, " to ",current_nearest.id[0: 3])
         return current_nearest
 
     def calcTimeToTravel(self, x1, y1, x2, y2):
@@ -179,6 +204,9 @@ class Passenger:
             :rtype: int
         """
         return math.sqrt(abs(x1 - x2) ** 2 + abs(y1 - y2) ** 2)
+    
+    def calcDistanceToStop(self, stop):
+        return self.calcDistance(self.lat, self.long, stop.lat, stop.long)
 
     def set_booking_time(self, value):
         """

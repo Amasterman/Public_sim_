@@ -31,9 +31,9 @@ maxlat = 51.0142000
 maxlon = -1.0873000
 
 # Amount of Buses
-no_buses = 3
+no_buses = 2
 # Amount of passengers
-no_passengers = 5
+no_passengers = 6
 
 
 # Bus max capacity
@@ -84,6 +84,7 @@ csvfile.close()
 
 # count list entries
 no_stops = len(list_of_stops)
+ok=False
 
 # -----------------------  Stop relations
 
@@ -348,14 +349,14 @@ def user_stops():
     # Get the Greedy nearest pick and drop stops
     # TODO improve this away from a greedy method
     for p in passenger_booked:
-        if p.shouldWalkToDestination(list_of_stops) == False:
+        # if p.shouldWalkToDestination(list_of_stops) == False:
             passenger_bookings.append([p.getNearestStop(list_of_stops), p.getNearestDrop(list_of_stops)])
-        else:
-            passenger_bookings.append(
-                [
-                    Stop.Stop(rnd.randint(0, len(list_of_stops) - 1),"name",p.lat,p.long,"","","",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,"","",2),
-                    Stop.Stop(rnd.randint(0, len(list_of_stops) - 1),"name",p.destination_x,p.destination_y,"","","",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,"","",2)
-                 ])
+        # else:
+        #     passenger_bookings.append(
+        #         [
+        #             Stop.Stop(rnd.randint(0, len(list_of_stops) - 1),"name",p.lat,p.long,"","","",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,"","",2),
+        #             Stop.Stop(rnd.randint(0, len(list_of_stops) - 1),"name",p.destination_x,p.destination_y,"","","",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,"","",2)
+        #          ])
     
 
     # Initialize an empty set
@@ -485,6 +486,8 @@ def validate_route(passenger_route, bus_route):
 
     return True
 
+
+
 # Generate a route that satisfies the passenger pick up and drop off requirements
 def route_generator2(passengers, buses, stops, depo):
     # Initialize the necessary lists
@@ -492,6 +495,7 @@ def route_generator2(passengers, buses, stops, depo):
     visited_stops = []
     passengers_picked = set()
     passengers_dropped = set()
+    passengers_who_transfer = set()
     # for p in passengers: 
     #     if p.should_walk==False :
     #         passengers.remove(p)
@@ -528,6 +532,7 @@ def route_generator2(passengers, buses, stops, depo):
         # visited_stops.add(near_stop)
         # non_visited_stops.remove(near_stop)
 
+    ok=False
     # Loop until the conditions are satisfied
     while not until:
         for bus in range(0, len(buses)):
@@ -539,7 +544,29 @@ def route_generator2(passengers, buses, stops, depo):
                 # Get the nearest stop
                 near_stop = get_nearest_stop2(current_stop[bus][0], non_visited_stops[bus].copy())
                 # second_nearest_stop = get_nearest_stop2(near_stop, non_visited_stops[bus].copy())
-
+                # next_nearest_of_passenger = near_stop
+        
+                if(ok==False):
+                    for b in range (0,len(passengers_not_picked)):
+                        passenger = passengers_not_picked[b]
+                        if(passenger.getNearestStop(stops.copy()).id == near_stop.id):
+                        
+                            print(stops)
+                    #         # print(passenger.getNearestStop(stops).id)
+                    #         # print(passenger.getAnotherNearestStop(stops,near_stop).id)
+                        
+                            next_nearest_of_passenger = passenger.getAnotherNearestStop(stops.copy(),near_stop)
+                            b=90
+                            if(calc_distance(current_stop[bus][0].lat, current_stop[bus][0].long, near_stop.lat, near_stop.long) + passenger.calcDistanceToStop(near_stop) > calc_distance(current_stop[bus][0].lat, current_stop[bus][0].long, next_nearest_of_passenger.lat, next_nearest_of_passenger.long) + passenger.calcDistanceToStop(next_nearest_of_passenger)):
+                                print("A change should be happening")
+                                for i in range(0, len(list_of_passengers.copy())):
+                                #     print(list_of_passengers[i].id)
+                                    if(list_of_passengers[i] == passenger):
+                                        passenger_bookings[i][0] = next_nearest_of_passenger
+    
+                                ok=True
+                                near_stop = next_nearest_of_passenger
+                
                 # Add the stop to the visited stop list and remove it from the non_visited stop list
                 visited_stops[bus].add(near_stop)
                 for bus2 in range(0, len(buses)):
@@ -552,14 +579,6 @@ def route_generator2(passengers, buses, stops, depo):
             for passenger in carried_passengers[bus]:
                 if passenger.getNearestDrop(stops.copy()) == near_stop:
                     temp_list.append(passenger)
-                    
-            # for passenger in temp_list:
-            #     if(passenger.shouldDropOff(near_stop)):
-            #         print("passenger should drop off")
-            #         carried_passengers[bus].remove(passenger)
-            #         if passenger in passengers_picked:
-            #             passengers_picked.remove(passenger)
-            #             passengers_dropped.add(passenger)
 
             # If the stop is the destination of any passenger on the bus, drop them off
             for passenger in temp_list:
@@ -569,7 +588,13 @@ def route_generator2(passengers, buses, stops, depo):
                     passengers_dropped.add(passenger)
                     print ("Dropped off passenger", passenger.id, "at stop", near_stop.getStopId())
                     
-            
+            for passenger in temp_list:
+                if(passenger.shouldDropOff(near_stop)):
+                    print("........................passenger should drop off")
+                    carried_passengers[bus].remove(passenger)
+                    if passenger in passengers_picked:
+                        passengers_picked.remove(passenger)
+                        passengers_dropped.add(passenger)
 
             # If the stop is the nearest stop of any passenger pick them up
             for passenger in passengers:
@@ -992,11 +1017,11 @@ def plot(list_of_stops, list_of_passengers, list_of_buses, passengers_route, bus
     #           'r>')
     
     for i in range(0, len(passengers_route)):
-        if(list_of_passengers[i].should_walk == True):
-            print("true")
-            plt.plot([list_of_passengers[i].lat, passengers_route[i][0].lat],
-                     [list_of_passengers[i].long, passengers_route[i][0].long], ':r')
-        else:
+        # if(list_of_passengers[i].should_walk == True):
+        #     print("true")
+        #     plt.plot([list_of_passengers[i].lat, passengers_route[i][0].lat],
+        #              [list_of_passengers[i].long, passengers_route[i][0].long], ':r')
+        # else:
             plt.plot([list_of_passengers[i].lat, passengers_route[i][0].lat],
                      [list_of_passengers[i].long, passengers_route[i][0].long], ':b')
 
