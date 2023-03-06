@@ -68,6 +68,9 @@ class Passenger:
         self.booked = booked
         self.lateness = lateness
         self.journey_start_time = rnd.randint(1, self.pickup_time)
+        self.first_stop = 0,
+        self.should_walk = False
+
         if self.booked:
             self.booking_time = 0
 
@@ -86,8 +89,35 @@ class Passenger:
             if self.calcDistance(self.lat, self.long, s.lat, s.long) < \
                     self.calcDistance(self.lat, self.long, current_nearest.lat, current_nearest.long):
                 current_nearest = s
-
+        
+        # if(self.should_walk == False):
         return current_nearest
+    
+    def shouldWalkToDestination(self, stop_list):
+        current_nearest = self.getNearestStop(stop_list)
+        if(self.calcDistance(self.lat, self.long, self.destination_x, self.destination_y) < \
+                self.calcDistance(self.lat, self.long, current_nearest.lat, current_nearest.long)):
+            print (self.id, "walking to destination")
+            self.should_walk = True
+            return True
+        return False
+        
+    
+    def shouldDropOff(self, stop):
+        """
+        Check if the passenger should drop off at the stop
+
+        :param stop: The stop to check
+        :type stop: Stop
+
+        :return: If the passenger should drop off at the stop
+        :rtype: bool
+        """
+        
+        if(self.calcDistance(self.destination_x, self.destination_y, self.lat, self.long) < self.calcDistance(self.destination_x, self.destination_y, stop.lat, stop.long) ):   
+         return True
+        
+        return False
 
     def getNearestDrop(self, stop_list):
         """
@@ -106,7 +136,6 @@ class Passenger:
                     self.calcDistance(self.destination_x, self.destination_y, current_nearest.lat,
                                       current_nearest.long):
                 current_nearest = s
-
         return current_nearest
 
     def calcTimeToTravel(self, x1, y1, x2, y2):
