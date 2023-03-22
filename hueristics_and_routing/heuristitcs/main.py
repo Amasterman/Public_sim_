@@ -999,7 +999,8 @@ def plot(list_of_stops, list_of_passengers, list_of_buses, passengers_route, bus
         plt.annotate('%d' % i, (list_of_stops[i].lat + 2, list_of_stops[i].long))
 
     for i in range(0, len(list_of_passengers)):
-        plt.plot(list_of_passengers[i].lat, list_of_passengers[i].long, 'r+')
+
+        plt.text(list_of_passengers[i].lat, list_of_passengers[i].long, list_of_passengers[i].id, ha="center", va="center")
         plt.plot(list_of_passengers[i].destination_x, list_of_passengers[i].destination_y, 'gx')
         plt.annotate('p_%d' % i, (list_of_passengers[i].lat + 2, list_of_passengers[i].long))
         plt.annotate('p_%d' % i, (list_of_passengers[i].destination_x + 2, list_of_passengers[i].destination_y))
