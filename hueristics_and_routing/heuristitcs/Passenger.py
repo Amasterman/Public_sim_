@@ -89,11 +89,11 @@ class Passenger:
             if self.calcDistance(self.lat, self.long, s.lat, s.long) < \
                     self.calcDistance(self.lat, self.long, current_nearest.lat, current_nearest.long):
                 current_nearest = s
-        
-        print (self.id, " from ",current_nearest.id[0: 3])
+    
         return current_nearest
     
-    def getAnotherNearestStop(self,stop_list,exclude_stops):
+    # when the nearest stop has a big impact on the total bus travel time or distance
+    def getOptimalNearest(self,stop_list,exclude_stops):
         """
         Get the nearest stop to the passenger from the stops contained in the stop_list that are different from the ones in the excluded_stops list
 
@@ -106,14 +106,14 @@ class Passenger:
         :return: The nearest stop to the passenger
         :rtype: Stop
         """
-        print ("excluded stops are ", exclude_stops.id[0: 3])
+        
         current_nearest = stop_list[0]
         for s in stop_list:
-            if s.id != exclude_stops.id :
+            if s not in exclude_stops:
                 if self.calcDistance(self.lat, self.long, s.lat, s.long) < \
                         self.calcDistance(self.lat, self.long, current_nearest.lat, current_nearest.long):
                     current_nearest = s
-        print("new nearest stop is ", current_nearest.id[0: 3],"!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+      
         return current_nearest
         
     
@@ -160,7 +160,6 @@ class Passenger:
                     self.calcDistance(self.destination_x, self.destination_y, current_nearest.lat,
                                       current_nearest.long):
                 current_nearest = s
-        print (self.id, " to ",current_nearest.id[0: 3])
         return current_nearest
 
     def calcTimeToTravel(self, x1, y1, x2, y2):
