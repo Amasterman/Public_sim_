@@ -12,6 +12,8 @@ import Passenger as Pass
 import Route as Route
 import Stops as Stop
 
+from test import *
+
 # -----------------------  Random settings
 rnd = np.random
 rnd.seed(1)
@@ -30,10 +32,6 @@ minlon = -1.6263000
 maxlat = 51.0142000
 maxlon = -1.0873000
 
-# Amount of Buses
-no_buses = 2
-# Amount of passengers
-no_passengers = 4
 
 
 # Bus max capacity
@@ -59,7 +57,7 @@ with open("XML_to_CSV_OUT.CSV", newline='') as csvfile:
     next(csvfile)
 
     # Break count will limit the amount of stops imported. << means all included
-    break_count = 300
+    
     count = 0
 
     # Begin reading the CSV using the "," as a separator (Note the XML scraper sanitizes the inputs)

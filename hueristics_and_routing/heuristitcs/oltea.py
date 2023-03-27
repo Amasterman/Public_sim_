@@ -14,44 +14,8 @@ import Stops as Stop
 
 from test import *
 
-# -----------------------  Random settings
-rnd = np.random
-rnd.seed(1)
-
-# -----------------------  World settings
-
-# Global toggle for dynamism [UI setting?]
-dynamic = False
-
 # Passenger bookings in advance within a dynamic system
 passenger_bookings = []
-
-# Area of longitude and latitude of the greater Southampton area [Better way to define?]
-minlat = 50.8255000
-minlon = -1.6263000
-maxlat = 51.0142000
-maxlon = -1.0873000
-
-# # Amount of Buses
-# no_buses = bb
-# # Amount of passengers
-# no_passengers = pp
-
-# print ("Number of buses: ", bb)
-# print ("Number of passengers: ", pp)
-
-# Bus max capacity
-max_bus_cap = 15
-
-# Set of stops
-# = [i for i in range(0, no_stops)]
-# Set of busses
-# B = [i for i in range(0, no_buses)]
-
-# Dont know why this is still here
-# maxPad = 1000
-
-# -----------------------  Stop settings
 
 # List of stop locations
 list_of_stops = []
@@ -63,7 +27,7 @@ with open("XML_to_CSV_OUT.CSV", newline='') as csvfile:
     next(csvfile)
 
     # Break count will limit the amount of stops imported. << means all included
-    break_count = 300
+    
     count = 0
 
     # Begin reading the CSV using the "," as a separator (Note the XML scraper sanitizes the inputs)
@@ -148,8 +112,7 @@ list_of_passengers = []
 
 # TODO All of this is subject to change, this data is kinda unknowable until the surveys are complete
 
-# Max tolerable time difference between targeted arrival and actual arrival
-max_lateness = 1000
+
 
 # Two versions for static and dynamic versions. Decided by the preivously declared global variable.
 if dynamic:
@@ -540,21 +503,32 @@ def route_generator(passengers, buses, stops, depo):
                 x=near_stop
                 for step in range (0,len(passengers_not_picked)):
                     exclude=[x]
+                    ok=True
                     passenger = passengers_not_picked[step]
+                  
                     if(passenger.getNearestStop(stops.copy()).id == near_stop.id):
-                        next_nearest_of_passenger = passenger.getOptimalNearest(stops.copy(),exclude)
-                        # print(calc_distance(current_stop[bus][0].lat, current_stop[bus][0].long, near_stop.lat, near_stop.long) + passenger.calcDistanceToStop(near_stop) > calc_distance(current_stop[bus][0].lat, current_stop[bus][0].long, next_nearest_of_passenger.lat, next_nearest_of_passenger.long) + passenger.calcDistanceToStop(next_nearest_of_passenger))
-                        while (calc_distance(current_stop[bus][0].lat, current_stop[bus][0].long, near_stop.lat, near_stop.long) + passenger.calcDistanceToStop(near_stop) < calc_distance(current_stop[bus][0].lat, current_stop[bus][0].long, next_nearest_of_passenger.lat, next_nearest_of_passenger.long) + passenger.calcDistanceToStop(next_nearest_of_passenger)):
-                            print(passenger.id,"oooooooo")
+                        next_nearest_of_passenger = passenger.getOptimalNearest(list_of_stops,exclude)
+                        while (
+                            calc_distance(current_stop[bus][0].lat, current_stop[bus][0].long, near_stop.lat, near_stop.long) + 
+                            passenger.calcDistanceToStop(near_stop) >
+                            calc_distance(current_stop[bus][0].lat, current_stop[bus][0].long, next_nearest_of_passenger.lat, next_nearest_of_passenger.long) + 
+                            passenger.calcDistanceToStop(next_nearest_of_passenger)):
+            
+                            ok=False
                             near_stop = next_nearest_of_passenger
                             exclude.append(near_stop)
-                            next_nearest_of_passenger = passenger.getOptimalNearest(stops.copy(),exclude)
+                            next_nearest_of_passenger = passenger.getOptimalNearest(list_of_stops,exclude)
                         passenger_bookings[passenger.id][0] = near_stop
+                        if(ok==False):
+                            for bus2 in range(0,len(buses)):
+                                non_visited_stops[bus2].remove(x)
+                                non_visited_stops[bus2].add(near_stop)
+
                 if(near_stop.id!=x.id):
-                    print("near stop changed")
                     stops.remove(x)
-                    non_visited_stops[bus].remove(x)
-                    non_visited_stops[bus].add(near_stop)
+                    stops.append(near_stop)
+                    
+                near_stop = get_nearest_stop(current_stop[bus][0], non_visited_stops[bus])
                     
                 # Add the stop to the visited stop list and remove it from the non_visited stop list
                 visited_stops[bus].add(near_stop)
@@ -580,14 +554,14 @@ def route_generator(passengers, buses, stops, depo):
             for passenger in temp_list:
                 if(passenger.shouldDropOff(near_stop)):
                     print("........................passenger should drop off")
-                    carried_passengers[bus].remove(passenger)
-                    if passenger in passengers_picked:
-                        passengers_picked.remove(passenger)
-                        passengers_dropped.add(passenger)
+                    # carried_passengers[bus].remove(passenger)
+                    # if passenger in passengers_picked:
+                    #     passengers_picked.remove(passenger)
+                    #     passengers_dropped.add(passenger)
 
             # If the stop is the nearest stop of any passenger pick them up
             for passenger in passengers:
-                    if passenger.getNearestStop(stops) == near_stop and passenger not in carried_passengers:
+                    if passenger.getNearestStop(stops.copy()) == near_stop and passenger not in carried_passengers:
                         carried_passengers[bus].add(passenger)
                         passengers_picked.add(passenger)
                         passengers_not_picked.remove(passenger)
