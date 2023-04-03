@@ -23,7 +23,7 @@ maxlon = -1.0873000
 MAX_CLUSTER_DISTANCE = 4000
 
 no_buses=2
-no_passengers=5
+no_passengers=4
 
 # Bus max capacity
 max_bus_cap = 15
