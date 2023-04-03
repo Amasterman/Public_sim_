@@ -5,6 +5,7 @@ import time
 import csv
 
 import matplotlib.pyplot as plt
+from math import radians, sin, cos, sqrt, atan2
 import numpy as np
 
 import Buses as Bus
@@ -622,7 +623,7 @@ def route_generator2(passengers, buses, stops, depo):
                     passengers_not_picked) == 0:
                 until = True
 
-    # print(ind_bus)
+    print(ind_bus,"Asfddf")
     return ind_bus
 
 # Generate a route that satisfies the passenger pick up and drop off requirements
@@ -755,8 +756,25 @@ def calc_arrival(stop1, stop2, speed, arrival, wait):
     return arrival + wait + (calc_distance(stop1.lat, stop1.long, stop2.lat, stop2.long) / speed)
 
 
-def calc_distance(x1, y1, x2, y2):
-    return math.sqrt(abs(x1 - x2) ** 2 + abs(y1 - y2) ** 2)
+# def calc_distance(x1, y1, x2, y2):
+#     return math.sqrt(abs(x1 - x2) ** 2 + abs(y1 - y2) ** 2)
+
+def calc_distance(lat1, lon1, lat2, lon2):
+    R = 6371  # Radius of the Earth in kilometers
+
+    # Convert latitude and longitude to radians
+    lat1, lon1, lat2, lon2 = map(radians, [lat1, lon1, lat2, lon2])
+
+    # Calculate the differences in latitude and longitude
+    dlat = lat2 - lat1
+    dlon = lon2 - lon1
+
+    # Calculate the Haversine formula
+    a = sin(dlat / 2) ** 2 + cos(lat1) * cos(lat2) * sin(dlon / 2) ** 2
+    c = 2 * atan2(sqrt(a), sqrt(1 - a))
+    d = R * c * 1000  # Distance in meters
+
+    return d
 
 
 # ----------------------------------------------------------------------------------------------------------------------

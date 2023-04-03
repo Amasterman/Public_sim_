@@ -19,14 +19,17 @@ minlon = -1.6263000
 maxlat = 51.0142000
 maxlon = -1.0873000
 
+#  meters
+MAX_CLUSTER_DISTANCE = 4000
+
 no_buses=2
-no_passengers=4
+no_passengers=5
 
 # Bus max capacity
 max_bus_cap = 15
 
 # How many stops from total 5000
-break_count = 300
+break_count = 700
 
 # Max tolerable time difference between targeted arrival and actual arrival
 max_lateness = 1000
