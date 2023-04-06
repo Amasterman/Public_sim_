@@ -1,6 +1,7 @@
 # Initial setup
 import math
 import time
+import argparse
 
 import csv
 
@@ -21,6 +22,12 @@ import pdb
 logging.basicConfig(filename='oltea.log', level=logging.INFO)
 
 from test import *
+
+# Area of longitude and latitude of the greater Southampton area [Better way to define?]
+minlat = 50.8255000
+minlon = -1.6263000
+maxlat = 51.0142000
+maxlon = -1.0873000
 
 # Passenger bookings in advance within a dynamic system
 passenger_bookings = []
@@ -316,6 +323,7 @@ def generate_booking_times(passengers):
 # TODO Improve implementation of the heuristic
 def greedy_offline(list_of_active_stops, passenger_bookings):
     logging.info("Greedy Offline")
+    print(list_of_buses)
     return route_generator(list_of_passengers.copy(), list_of_buses.copy(), list_of_active_stops, depo)
 
 
@@ -551,6 +559,9 @@ def route_generator(passengers, buses, stops, depo):
     wait = []
     setoff_time = []
     carried_passengers = []
+    
+    temp_route = []
+    
     until = False
 
     # For each of the buses append a second dimension to the arrays
@@ -563,10 +574,13 @@ def route_generator(passengers, buses, stops, depo):
         setoff_time.append([])
         non_visited_stops.append(set())
         visited_stops.append(set())
+        
+        temp_route.append([])
 
     # Append a third dimention
     for bus in range(0, len(buses)):
         current_stop[bus].append(depo)
+        temp_route
         ind_bus[bus] = [Route.Route(depo, 0, 0, [])] # ind_bus[0][5][1] the 1st bus, the6th stop, time
         carried_passengers[bus] = set()
         wait[bus] = 0
@@ -581,6 +595,7 @@ def route_generator(passengers, buses, stops, depo):
             if bool(non_visited_stops[bus]):
                 # Get the nearest stop
                 near_stop = get_nearest_stop(current_stop[bus][0], non_visited_stops[bus].copy())
+           
                          
                 # x=near_stop
                 # for step in range (0,len(passengers_not_picked)):
@@ -618,8 +633,6 @@ def route_generator(passengers, buses, stops, depo):
                         non_visited_stops[bus2].remove(near_stop)
 
             temp_list = [] #if theres multiple passengers at the same stop, check all
-
-            print("Current stop is", near_stop.getStopId()[:3], "for bus", bus)
             
             # Generate the list of carried passengers
             for passenger in carried_passengers[bus]:
@@ -629,7 +642,7 @@ def route_generator(passengers, buses, stops, depo):
             # If the stop is the destination of any passenger on the bus, drop them off
             for passenger in temp_list:
                 carried_passengers[bus].remove(passenger)
-                if passenger in passengers_picked:
+                if passenger in passengers_picked :
                     passengers_picked.remove(passenger)
                     passengers_dropped.add(passenger)
                     print("\n")
@@ -637,7 +650,7 @@ def route_generator(passengers, buses, stops, depo):
 
             # If the stop is the nearest stop of any passenger pick them up
             for passenger in passengers:
-                    if passenger.getNearestStop(stops.copy()) == near_stop and passenger not in carried_passengers:
+                    if passenger.getNearestStop(stops.copy()) == near_stop and passenger not in carried_passengers and len(carried_passengers[bus]) <=15:
                         carried_passengers[bus].add(passenger)
                         passengers_picked.add(passenger)
                         passengers_not_picked.remove(passenger)
@@ -663,24 +676,13 @@ def route_generator(passengers, buses, stops, depo):
                             transfer_rate=utility(passenger,current_stop[bus][0], ind_bus[bus2][-1].getStops())
                             print(int(transfer_rate),"..........................utility")
                             if transfer_rate>40000:
-                                
+                                passenger_transfers.append(passenger)
                                 passengers_not_picked.append(passenger)
                                 passengers_picked.remove(passenger)
                                 carried_passengers[bus].remove(passenger)
                                 non_visited_stops[bus2].add(passenger.getNearestStop(stops.copy()))
                                 non_visited_stops[bus].add(passenger.getNearestDrop(stops.copy()))
-                                break
-                    
-            # 
-            # for passenger in remove_passengers:
-            #     carried_passengers[bus].remove(passenger)
-
-            print("A:asd")
-            print(len(passengers_picked),"passengers picked:")
-            print(len(passengers_not_picked),"passengers not picked")
-            
-            for passenger in passengers_not_picked :
-                print(passenger.getNearestStop(stops.copy()).getStopId()[:3],"nearest stop for passenger",passenger.id)
+                                print("passenger",passenger.id,"from bus",bus,"transferred to bus",bus2)
 
             # Calculate arrival time
             #Worikng on changing to time stamp not calc
@@ -862,7 +864,7 @@ def plot(list_of_stops, list_of_passengers, list_of_buses, passenger_bookings, b
 
             plt.plot([bus_routes[i][j - 1].lat, bus_routes[i][j].lat],
                      [bus_routes[i][j - 1].long, bus_routes[i][j].long], c=col, linewidth=0.90, marker='D')
-
+    plt.title('Oltea')
     plt.show()
 
 def get_nearest_stop(stop, stop_candidates):
@@ -1030,7 +1032,15 @@ def cm_policy():
 
 ###------------- Main run Start
 
-# calcProbablity(1, list_of_stops)
+# -----------------------  Random settings
+rnd = np.random
+
+parser=argparse.ArgumentParser()
+parser.add_argument('--seed', type=int, default=None, help='random seed')
+args=parser.parse_args()
+
+if args.seed is not None:
+    rnd.seed(args.seed)
 
 routes = run("greedy")
 

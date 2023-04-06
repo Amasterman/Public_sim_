@@ -1,6 +1,7 @@
 import math
 
 import numpy as np
+from math import radians, sin, cos, sqrt, atan2
 
 rnd = np.random
 rnd.seed(0)
@@ -206,6 +207,28 @@ class Passenger:
             :rtype: int
         """
         return math.sqrt(abs(x1 - x2) ** 2 + abs(y1 - y2) ** 2)
+    
+    def calculate_time_to_walk(lat1, lon1, lat2, lon2):
+        distance = calculate_distance(lat1, lon1, lat2, lon2)
+        time_taken = distance / self.speed
+        return time_taken
+    
+    def calc_distance(lat1, lon1, lat2, lon2):
+        R = 6371  # Radius of the Earth in kilometers
+
+        # Convert latitude and longitude to radians
+        lat1, lon1, lat2, lon2 = map(radians, [lat1, lon1, lat2, lon2])
+
+        # Calculate the differences in latitude and longitude
+        dlat = lat2 - lat1
+        dlon = lon2 - lon1
+
+        # Calculate the Haversine formula
+        a = sin(dlat / 2) ** 2 + cos(lat1) * cos(lat2) * sin(dlon / 2) ** 2
+        c = 2 * atan2(sqrt(a), sqrt(1 - a))
+        d = R * c * 1000  # Distance in meters
+
+        return d
     
     def calcDistanceToStop(self, stop):
         return self.calcDistance(self.lat, self.long, stop.lat, stop.long)
