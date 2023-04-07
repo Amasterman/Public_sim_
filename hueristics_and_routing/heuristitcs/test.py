@@ -8,7 +8,7 @@ import numpy as np
 import subprocess
 # -----------------------  Random settings
 rnd = np.random
-rnd.seed(5)
+rnd.seed(1)
 
 # Global toggle for dynamism [UI setting?]
 dynamic = False
@@ -19,7 +19,7 @@ dynamic = False
 MAX_CLUSTER_DISTANCE = 4000
 
 no_buses=2
-no_passengers=5
+no_passengers=6
 
 # Bus max capacity
 max_bus_cap = 15

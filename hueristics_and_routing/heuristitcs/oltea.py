@@ -563,6 +563,10 @@ def route_generator(passengers, buses, stops, depo):
     temp_route = []
     
     until = False
+    
+    total_wait = 0
+    total_distance = 0
+    total_time = 0
 
     # For each of the buses append a second dimension to the arrays
     for bus in range(0, len(buses)):
@@ -581,7 +585,7 @@ def route_generator(passengers, buses, stops, depo):
     for bus in range(0, len(buses)):
         current_stop[bus].append(depo)
         temp_route
-        ind_bus[bus] = [Route.Route(depo, 0, 0, [])] # ind_bus[0][5][1] the 1st bus, the6th stop, time
+        ind_bus[bus] = [Route.Route(depo, 0,0, 0, [])] # ind_bus[0][5][1] the 1st bus, the6th stop, time
         carried_passengers[bus] = set()
         wait[bus] = 0
         setoff_time[bus] = 0
@@ -671,11 +675,13 @@ def route_generator(passengers, buses, stops, depo):
             list=passengers_picked.copy()
             for passenger in list:
                 if passenger in carried_passengers[bus]:
+         
                     for bus2 in range(len(buses)):
                         if bus2!=bus:
                             transfer_rate=utility(passenger,current_stop[bus][0], ind_bus[bus2][-1].getStops())
                             print(int(transfer_rate),"..........................utility")
                             if transfer_rate>40000:
+                                ok=False
                                 passenger_transfers.append(passenger)
                                 passengers_not_picked.append(passenger)
                                 passengers_picked.remove(passenger)
@@ -683,34 +689,49 @@ def route_generator(passengers, buses, stops, depo):
                                 non_visited_stops[bus2].add(passenger.getNearestStop(stops.copy()))
                                 non_visited_stops[bus].add(passenger.getNearestDrop(stops.copy()))
                                 print("passenger",passenger.id,"from bus",bus,"transferred to bus",bus2)
-
+                       
             # Calculate arrival time
-            #Worikng on changing to time stamp not calc
-            #arrival_time = get_arrival(current_stop[bus][0], near_stop, setoff_time[bus], wait[bus])
-            arrival_time = 1
-            # TODO This needs some more real data, unilink?
-            wait[bus] = wait_time()
+            
+            print(len(passengers_picked),"passengers picked")
 
+            wait[bus] = wait_time()
+            arrival_time = calc_arrival(current_stop[bus][0], near_stop, wait[bus])
+            distance=calc_distance(current_stop[bus][0].lat, current_stop[bus][0].long, near_stop.lat, near_stop.long)
+        
             # Append the part of the route to the buses route
-            ind_bus[bus].append(Route.Route(near_stop, arrival_time, wait[bus], carried_passengers[bus]))
+            ind_bus[bus].append(Route.Route(near_stop, arrival_time,distance, wait[bus], carried_passengers[bus]))
 
             # Set current stop to the near_stop
             current_stop[bus][0] = near_stop
-
-            # Set set off time to previous arrival time
-            setoff_time[bus] = arrival_time
 
             # Check all passengers were picked up and dropped off
             if len(passengers_dropped) == len(list_of_passengers) and len(passengers_picked) == 0 and len(
                     passengers_not_picked) == 0:
                 until = True
+    
+    wait[bus] = 0
+    arrival_time = calc_arrival(current_stop[bus][0], depo, wait[bus])
+    distance=calc_distance(current_stop[bus][0].lat, current_stop[bus][0].long, depo.lat, depo.long)
+    for bus in range(0, len(buses)):
+        ind_bus[bus].append(Route.Route(depo, arrival_time,distance, wait[bus], carried_passengers[bus]))
+        
+    for bus in range(0, len(buses)):
+        for route in ind_bus[bus]:
+            total_wait += route.getWait()
+            total_distance += route.getDistance()
+            total_time += route.getArrival()
 
-    # print(ind_bus)
+    print("\nTotal wait time:", total_wait, "minutes")
+    print("Total distance:", total_distance%1000,"km")
+    print("Total time:", total_time%60,"hours\n")
+    
     return ind_bus
 
-# These are depreciated in favor of stop relations ---------------------------------------------------------------------
-def calc_arrival(stop1, stop2, speed, arrival, wait):
-    return arrival + wait + (calc_distance(stop1.lat, stop1.long, stop2.lat, stop2.long) / speed)
+# Calcute the time it takes the bus to travel from stop1 to stop2
+def calc_arrival(stop1, stop2, wait):
+    # Average speed of a bus in m/min inside city
+    speed=417
+    return wait + (calc_distance(stop1.lat, stop1.long, stop2.lat, stop2.long) / speed)
 
 
 # def calc_distance(x1, y1, x2, y2):
@@ -738,8 +759,8 @@ def calc_distance(lat1, lon1, lat2, lon2):
 # ----------------------------------------------------------------------------------------------------------------------
 
 # Lookup the time between stops
-def get_arrival(stop1, stop2, arrival, wait):
-    return arrival + wait + stop_relations[int(stop1.id)][int(stop2.id)]
+# def get_arrival(stop1, stop2, arrival, wait):
+#     return arrival + wait + stop_relations[int(stop1.id)][int(stop2.id)]
 
 
 # Describe the routes of a bus in the console
@@ -772,8 +793,9 @@ def get_bus_order(route):
 
     return order
 
+# Return random wait time between 0 and 10 minutes
 def wait_time():
-    return rnd.randint(0, 10000)
+    return rnd.randint(0, 10)
 
 def evaluate_soloution(passenger_route, bus_route):
     current_passenger = None
@@ -1033,14 +1055,14 @@ def cm_policy():
 ###------------- Main run Start
 
 # -----------------------  Random settings
-rnd = np.random
+# rnd = np.random
 
-parser=argparse.ArgumentParser()
-parser.add_argument('--seed', type=int, default=None, help='random seed')
-args=parser.parse_args()
+# parser=argparse.ArgumentParser()
+# parser.add_argument('--seed', type=int, default=None, help='random seed')
+# args=parser.parse_args()
 
-if args.seed is not None:
-    rnd.seed(args.seed)
+# if args.seed is not None:
+#     rnd.seed(args.seed)
 
 routes = run("greedy")
 

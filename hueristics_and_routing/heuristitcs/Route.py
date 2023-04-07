@@ -16,10 +16,11 @@ class Route:
 
     """
 
-    def __init__(self, stop, arrival_time, wait_time, passenger_manifest):
+    def __init__(self, stop, arrival_time,distance, wait_time, passenger_manifest):
         """Constructor method"""
         self.stop = stop
         self.arrival_time = arrival_time
+        self.distance = distance
         self.wait_time = wait_time
         self.passenger_manifest = passenger_manifest
 
@@ -50,3 +51,10 @@ class Route:
         :rtype: int
         """
         return self.wait_time
+    
+    def getDistance(self):
+        """
+        :return: Distance travelled
+        :rtype: int
+        """
+        return self.distance
