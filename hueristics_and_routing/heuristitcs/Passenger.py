@@ -57,10 +57,14 @@ class Passenger:
                  pickup_time, dropoff_time, booked, lateness):
         """Constructor method"""
         self.id = id
+        
         self.lat = xcord
         self.long = ycord
+        self.origin_x = xcord
+        self.origin_y = ycord
         self.destination_x = destination_x
         self.destination_y = destination_y
+        
         self.capacity_cost = capacity_cost
         self.walk_cost = walk_cost
         self.speed = speed
@@ -90,8 +94,8 @@ class Passenger:
         """
         current_nearest = stop_list[0]
         for s in stop_list:
-            if self.calcDistance(self.lat, self.long, s.lat, s.long) < \
-                    self.calcDistance(self.lat, self.long, current_nearest.lat, current_nearest.long):
+            if self.calc_distance(self.lat, self.long, s.lat, s.long) < \
+                    self.calc_distance(self.lat, self.long, current_nearest.lat, current_nearest.long):
                 current_nearest = s
     
         return current_nearest
@@ -114,8 +118,8 @@ class Passenger:
         current_nearest = stop_list[0]
         for s in stop_list:
             if s not in exclude_stops:
-                if self.calcDistance(self.lat, self.long, s.lat, s.long) < \
-                        self.calcDistance(self.lat, self.long, current_nearest.lat, current_nearest.long):
+                if self.calc_distance(self.lat, self.long, s.lat, s.long) < \
+                        self.calc_distance(self.lat, self.long, current_nearest.lat, current_nearest.long):
                     current_nearest = s
       
         return current_nearest
@@ -123,28 +127,11 @@ class Passenger:
     
     def shouldWalkToDestination(self, stop_list):
         current_nearest = self.getNearestStop(stop_list)
-        if(self.calcDistance(self.lat, self.long, self.destination_x, self.destination_y) < \
-                self.calcDistance(self.lat, self.long, current_nearest.lat, current_nearest.long)):
+        if(self.calc_distance(self.lat, self.long, self.destination_x, self.destination_y) < \
+                self.calc_distance(self.lat, self.long, current_nearest.lat, current_nearest.long)):
             print (self.id, "walking to destination")
             self.should_walk = True
             return True
-        return False
-        
-    
-    def shouldDropOff(self, stop):
-        """
-        Check if the passenger should drop off at the stop
-
-        :param stop: The stop to check
-        :type stop: Stop
-
-        :return: If the passenger should drop off at the stop
-        :rtype: bool
-        """
-        
-        if(self.calcDistance(self.destination_x, self.destination_y, self.lat, self.long) < self.calcDistance(self.destination_x, self.destination_y, stop.lat, stop.long) ):   
-         return True
-        
         return False
 
     def getNearestDrop(self, stop_list):
@@ -160,78 +147,11 @@ class Passenger:
 
         current_nearest = stop_list[0]
         for s in stop_list:
-            if self.calcDistance(self.destination_x, self.destination_y, s.lat, s.long) < \
-                    self.calcDistance(self.destination_x, self.destination_y, current_nearest.lat,
+            if self.calc_distance(self.destination_x, self.destination_y, s.lat, s.long) < \
+                    self.calc_distance(self.destination_x, self.destination_y, current_nearest.lat,
                                       current_nearest.long):
                 current_nearest = s
         return current_nearest
-
-    def calcTimeToTravel(self, x1, y1, x2, y2):
-        """
-        Return the time it will take the passenger to move between two points
-
-        :param x1: Passenger X cord
-        :type x1: int
-
-        :param y1: Passenger Y cord
-        :type y1: int
-
-        :param x2: Destination X cord
-        :type x2: int
-
-        :param y2: Destination Y cord
-        :type y2: int
-
-        :return: Time to travel
-        :rtype: int
-        """
-        return self.calcDistance(x1, y1, x2, y2) / self.speed
-
-    def calcDistance(self, x1, y1, x2, y2):
-        """
-            Return the distance between two points
-
-            :param x1: First X cord
-            :type x1: int
-
-            :param y1: First Y cord
-            :type y1: int
-
-            :param x2: Second X cord
-            :type x2: int
-
-            :param y2: Second Y cord
-            :type y2: int
-
-            :return: Distance between two points
-            :rtype: int
-        """
-        return math.sqrt(abs(x1 - x2) ** 2 + abs(y1 - y2) ** 2)
-    
-    def calculate_time_to_walk(lat1, lon1, lat2, lon2):
-        distance = calculate_distance(lat1, lon1, lat2, lon2)
-        time_taken = distance / self.speed
-        return time_taken
-    
-    def calc_distance(lat1, lon1, lat2, lon2):
-        R = 6371  # Radius of the Earth in kilometers
-
-        # Convert latitude and longitude to radians
-        lat1, lon1, lat2, lon2 = map(radians, [lat1, lon1, lat2, lon2])
-
-        # Calculate the differences in latitude and longitude
-        dlat = lat2 - lat1
-        dlon = lon2 - lon1
-
-        # Calculate the Haversine formula
-        a = sin(dlat / 2) ** 2 + cos(lat1) * cos(lat2) * sin(dlon / 2) ** 2
-        c = 2 * atan2(sqrt(a), sqrt(1 - a))
-        d = R * c * 1000  # Distance in meters
-
-        return d
-    
-    def calcDistanceToStop(self, stop):
-        return self.calcDistance(self.lat, self.long, stop.lat, stop.long)
 
     def set_booking_time(self, value):
         """
@@ -273,6 +193,28 @@ class Passenger:
 
         self.total_distance += value
         
+    # Set the passengers current position lat and long
+    def set_current_pos(self, lat, long):
+        """
+        Set the passengers latitude
+
+        :param value: Latitude
+        :type value: int
+        """
+
+        self.lat = lat
+        self.long = long
+        
+    def get_current_pos(self):
+        """
+        Get the passengers current position
+
+        :return: The passengers current position
+        :rtype: int
+        """
+
+        return self.lat, self.long
+        
     def get_total_time(self):
         """
         Get the total time the passenger has been on the bus
@@ -290,3 +232,20 @@ class Passenger:
         """
 
         return self.total_distance  
+    
+    def calc_distance(self,lat1, lon1, lat2, lon2):
+        R = 6371  # Radius of the Earth in kilometers
+
+         # Convert latitude and longitude to radians
+        lat1, lon1, lat2, lon2 = map(radians, [lat1, lon1, lat2, lon2])
+    
+        # Calculate the differences in latitude and longitude
+        dlat = lat2 - lat1
+        dlon = lon2 - lon1
+    
+        # Calculate the Haversine formula
+        a = sin(dlat / 2) ** 2 + cos(lat1) * cos(lat2) * sin(dlon / 2) ** 2
+        c = 2 * atan2(sqrt(a), sqrt(1 - a))
+        d = R * c * 1000  # Distance in meters
+
+        return d

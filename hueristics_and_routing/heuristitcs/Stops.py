@@ -155,25 +155,3 @@ class Stop:
         """
         return np.random.choice(list(stop_list))
 
-    def calcDistance(self, x1, y1, x2, y2):
-        """
-            Return the distance between two points
-
-            :param x1: First X cord
-            :type x1: int
-
-            :param y1: First Y cord
-            :type y1: int
-
-            :param x2: Second X cord
-            :type x2: int
-
-            :param y2: Second Y cord
-            :type y2: int
-
-            :return: Distance between two points
-            :rtype: int
-        """
-        return math.sqrt(abs(x1 - x2) ** 2 + abs(y1 - y2) ** 2)
-
-
