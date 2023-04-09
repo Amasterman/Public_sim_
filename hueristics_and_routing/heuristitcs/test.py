@@ -18,14 +18,14 @@ dynamic = False
 #  meters
 MAX_CLUSTER_DISTANCE = 4000
 
-no_buses=2
-no_passengers=4
+no_buses=3
+no_passengers=10
 
 # Bus max capacity
 max_bus_cap = 15
 
 # How many stops from total 5000
-break_count = 500
+break_count = 5000
 
 # Max tolerable time difference between targeted arrival and actual arrival
 max_lateness = 1000

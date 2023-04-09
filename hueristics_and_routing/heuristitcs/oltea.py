@@ -492,6 +492,8 @@ def route_generator(passengers, buses, stops, depo):
     carried_passengers = []
     until = False
     
+    transfer_relations = []
+    
     total_wait = 0
     total_distance = 0
     total_time = 0
@@ -506,6 +508,7 @@ def route_generator(passengers, buses, stops, depo):
         non_visited_stops.append(set())
         visited_stops.append(set())
         next_stops.append([])
+        transfer_relations.append([])
 
     # Append a third dimention
     for bus in range(0, len(buses)):
@@ -517,6 +520,7 @@ def route_generator(passengers, buses, stops, depo):
         non_visited_stops[bus] = set(stops)
         visited_stops[bus] = set()
         next_stops[bus] = None
+    
 
     # Loop until the conditions are satisfied
     while not until:
@@ -524,9 +528,13 @@ def route_generator(passengers, buses, stops, depo):
             # If there exist any non-visited stops
             if bool(non_visited_stops[bus]):
                 # Get the nearest stop
-                near_stop = get_nearest_stop(current_stop[bus][0], non_visited_stops[bus].copy())
+                print("stuck")
+                
+                near_stop = get_nearest_stop(current_stop[bus][0], non_visited_stops[bus])
                 second_nearest_stop = get_second_nearest_stop(current_stop[bus][0], non_visited_stops[bus].copy(), near_stop)
-               
+                
+                if near_stop==None:
+                    break
                 # x=near_stop
                 # for step in range (0,len(passengers_not_picked)):
                 #     exclude=[x]
@@ -572,6 +580,7 @@ def route_generator(passengers, buses, stops, depo):
                 
                 ind_bus[bus].append(Route.Route(near_stop, arrival_time,distance, wait[bus], carried_passengers[bus]))
                 
+                
                 # Add the time to all passengers carried by this bus
                 for passenger in carried_passengers[bus]:
                     passenger.increase_total_time(arrival_time)
@@ -594,9 +603,15 @@ def route_generator(passengers, buses, stops, depo):
                     passenger.increase_total_distance(distance_to_dest)
                     passenger.set_current_pos(near_stop.lat,near_stop.long)
                     print ("\n<<<<<<<<<<<<<<<<<<< Dropped off passenger", passenger.id, "at stop", str(near_stop.getStopId())[:3],"by bus", bus,"\n")
-    
+
+                if len(transfer_relations[bus]) > 0:
+                    for passenger in transfer_relations[bus]:
+                        # print(passenger)
+                        # non_visited_stops[bus].add(passenger.getNearestStop(stops.copy()))
+                        non_visited_stops[bus].add(passenger.getNearestDrop(stops.copy()))
+                
                 # If the stop is the nearest stop of any passenger pick them up
-                for passenger in passengers_not_picked.copy():
+                for passenger in passengers:
                         if passenger.getNearestStop(stops.copy()) == near_stop and len(carried_passengers[bus]) <=15:
                                     
                             carried_passengers[bus].add(passenger)
@@ -619,34 +634,40 @@ def route_generator(passengers, buses, stops, depo):
                 #             near_stop = on_board_passenger.getNearestDrop(stops)
                 
                 for passenger in passengers_picked.copy():
-                    if passenger in carried_passengers[bus]:
+                    if passenger in carried_passengers[bus].copy():
                         for bus2 in range(len(buses)):
                             if bus2!=bus:
                                 transfer_rate=naive_utility(passenger,near_stop,ind_bus[bus2][-1].getStops())
                                 print("Utility: ",transfer_rate)
-                                if transfer_rate>40000:
+                                if transfer_rate>70000:
                                     passenger_transfers.append(passenger)
                                     passengers_not_picked.append(passenger)
                                     passengers_picked.remove(passenger)
                                     carried_passengers[bus].remove(passenger)
                                     
-                                    non_visited_stops[bus2].add(near_stop)
-                                    non_visited_stops[bus].remove(passenger.getNearestDrop(stops.copy()))
+                                    non_visited_stops[bus2].add(passenger.getNearestStop(list_of_stops))
                                     
-                                    passenger.set_current_pos(near_stop.lat,near_stop.long)
+                                    transfer_relations[bus2].append(passenger)
+                                    
+                                    passenger.set_current_pos(passenger.getNearestStop(list_of_stops).lat,passenger.getNearestStop(list_of_stops).long)
                                     print("Transfer passenger: ",passenger.id,"from",bus," to bus ",bus2)
+                                    break
+                print("Transfer passengers: ",str(len(passenger_transfers)))
                  
-            
-                print("Transfers",str(len(passenger_transfers)))
+                listss=list(passengers_picked)
+                # print("Picked",listss[0].id)
+                print("Dropped",str(len(passengers_dropped)))
+                print("Not picked",str(len(passengers_not_picked)))
                 # Set current stop to the near_stop
                 current_stop[bus][0] = near_stop
+                print("Current stop: ",current_stop[bus][0].getStopId())
     
                 # Check all passengers were picked up and dropped off
-                if len(passengers_dropped) == len(list_of_passengers) and len(passengers_picked) == 0 and len(
-                        passengers_not_picked) == 0:
-                    until = True
+            if len(passengers_dropped) == len(list_of_passengers) and len(passengers_picked) == 0 and len(
+                    passengers_not_picked) == 0:
+                until = True
         
-    wait[bus    ] = 0
+    wait[bus] = 0
     arrival_time = calc_arrival(current_stop[bus][0], depo, wait[bus])
     distance=calc_distance(current_stop[bus][0].lat, current_stop[bus][0].long, depo.lat, depo.long)
     for bus in range(0, len(buses)):
@@ -705,6 +726,11 @@ def calc_distance(lat1, lon1, lat2, lon2):
 
     return d
 
+def unique_dropoff(list_of_passengers, stop):
+    for passenger in list_of_passengers:
+        if passenger.getNearestDrop(list_of_stops) == stop:
+            return False
+    return True
 
 # Get the order of stops the take buses within the route
 def get_bus_order(route):

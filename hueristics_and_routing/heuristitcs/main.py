@@ -678,7 +678,7 @@ def route_generator(passengers, buses, stops, depo):
             # if bool(non_visited_stops[bus]):
             if bool(non_visited_stops[bus]): 
                 near_stop = get_nearest_stop(current_stop[bus][0], non_visited_stops[bus])
-        
+
                 # Add the stop to the visited stop list and remove it from the non_visited stop list
                 visited_stops[bus].add(near_stop)
                 for bus2 in range(0, len(buses)):
@@ -686,64 +686,64 @@ def route_generator(passengers, buses, stops, depo):
                         non_visited_stops[bus2].remove(near_stop)
                 # if near_stop == None or bool(non_visited_stops[bus]) == False:
                     # break
-                
+
                 temp_carried_passengers = [] #if theres multiple passengers at the same stop, check all
-    
+
                 # Calculate arrival time
                 wait[bus] = wait_time()
                 arrival_time = calc_arrival(current_stop[bus][0], near_stop, wait[bus])
                 distance=calc_distance(current_stop[bus][0].lat, current_stop[bus][0].long, near_stop.lat, near_stop.long)
-                
+
                 # Append the part of the route to the buses route
                 ind_bus[bus].append(Route.Route(near_stop, arrival_time,distance, wait[bus], carried_passengers[bus]))
-    
+
                 # Add the time to all passengers carried by this bus
                 for passenger in carried_passengers[bus]:
                     passenger.increase_total_time(arrival_time)
-    
+
                 # Generate the list of carried passengers
                 for passenger in carried_passengers[bus]:
                     if passenger.getNearestDrop(stops.copy()) == near_stop:
                         temp_carried_passengers.append(passenger)
-    
+
                 # If the stop is the destination of any passenger on the bus, drop them off
                 for passenger in temp_carried_passengers:
                     carried_passengers[bus].remove(passenger)
-                    
+
                     distance_to_dest = calc_distance(near_stop.lat,near_stop.long, passenger.destination_x, passenger.destination_y)
                     time_to_dest = calc_walk_time(near_stop.lat,near_stop.long, passenger.destination_x, passenger.destination_y)
-                   
+
                     passengers_picked.remove(passenger)
                     passengers_dropped.add(passenger)
                     passenger.increase_total_time(time_to_dest)
                     passenger.increase_total_distance(distance_to_dest)
                     passenger.set_current_pos(near_stop.lat,near_stop.long)
                     print("Dropped off passenger", passenger.id)
-    
+
                 # If the stop is the nearest stop of any passenger pick them up
                 for passenger in passengers:
                     if passenger.getNearestStop(stops) == near_stop and passenger not in carried_passengers:
                         carried_passengers[bus].add(passenger)
                         passengers_picked.add(passenger)
                         passengers_not_picked.remove(passenger)
-                        
+
                         stops.append(passenger.getNearestDrop(list_of_stops))
                         non_visited_stops[bus].add(passenger.getNearestDrop(list_of_stops))
-                        
+
                         distance_to_stop = calc_distance(near_stop.lat,near_stop.long, passenger.lat, passenger.long)
                         time_to_stop = calc_walk_time(near_stop.lat,near_stop.long, passenger.lat, passenger.long)
                         passenger.increase_total_time(time_to_stop)
                         passenger.increase_total_distance(distance_to_stop)
                         passenger.set_current_pos(near_stop.lat,near_stop.long)
                         print ("Picked up passengers", len(passengers_picked))
-                            
+
                 current_stop[bus][0] = near_stop
-    
-                # Check all passengers were picked up and dropped off
-                if len(passengers_dropped) == len(list_of_passengers) and len(passengers_picked) == 0 and len(
-                        passengers_not_picked) == 0 :
-                    until = True
-    
+
+            # Check all passengers were picked up and dropped off
+            if len(passengers_dropped) == len(list_of_passengers) and len(passengers_picked) == 0 and len(
+                    passengers_not_picked) == 0 :
+                until = True
+
     wait[bus] = 0
     arrival_time = calc_arrival(current_stop[bus][0], depo, wait[bus])
     distance=calc_distance(current_stop[bus][0].lat, current_stop[bus][0].long, depo.lat, depo.long)
