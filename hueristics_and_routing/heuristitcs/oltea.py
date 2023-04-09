@@ -624,7 +624,7 @@ def route_generator(passengers, buses, stops, depo):
                             if bus2!=bus:
                                 transfer_rate=naive_utility(passenger,near_stop,ind_bus[bus2][-1].getStops())
                                 print("Utility: ",transfer_rate)
-                                if transfer_rate>90000:
+                                if transfer_rate>40000:
                                     passenger_transfers.append(passenger)
                                     passengers_not_picked.append(passenger)
                                     passengers_picked.remove(passenger)
