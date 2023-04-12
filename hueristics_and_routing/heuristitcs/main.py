@@ -707,6 +707,7 @@ def route_generator(passengers, buses, stops, depo):
                 # Add the time to all passengers carried by this bus
                 for passenger in carried_passengers[bus]:
                     passenger.increase_total_time(arrival_time)
+                    passenger.set_current_pos(near_stop.lat,near_stop.long)
 
                 # Generate the list of carried passengers
                 for passenger in carried_passengers[bus]:
@@ -772,9 +773,13 @@ def route_generator(passengers, buses, stops, depo):
             total_distance += route.getDistance()
             total_time += route.getArrival()
 
-    logging.info("Total wait time: %d minutes", total_wait)
-    logging.info("Total distance: %d km", total_distance%1000)
-    logging.info("Total time: %d hours", total_time%60)
+    # logging.info("Total wait time: %d minutes", total_wait)
+    # logging.info("Total distance: %d km", total_distance%1000)
+    # logging.info("Total time: %d hours", total_time%60)
+    
+    print("\nTotal wait time: ", total_wait)
+    print("Total distance: ", total_distance%1000)
+    print("Total time: ", total_time%60)
     
     average_passenger_distance = 0
     average_passenger_time = 0
@@ -785,7 +790,8 @@ def route_generator(passengers, buses, stops, depo):
     average_passenger_distance = average_passenger_distance/len(list_of_passengers)
     average_passenger_time = average_passenger_time/len(list_of_passengers)
     
-    logging.info("Average passenger time: %d hours", average_passenger_time%60)
+    # logging.info("Average passenger time: %d hours", average_passenger_time%60)
+    print("Average passenger distance: ", average_passenger_distance%1000)
     
     return ind_bus
 

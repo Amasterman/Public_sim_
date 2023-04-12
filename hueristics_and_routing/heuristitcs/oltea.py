@@ -442,35 +442,34 @@ def validate_route(passenger_route, bus_route):
 
 # The utility function is calculated for each passenger and each pair of buses that the passenger can transfer between.
 # make the funciton to calculate the utility
-def naive_utility(passenger, bus1, bus2):
+def naive_utility(passenger, bus1, bus2,destination,stay_convenience, transfer_convenience):
     # make the weights
     w1 = 1
     w2 = 1
-    w3 = 1
-    w4 = 1
-    w5 = 1
-    w6 = 1
-    w7 = 1
+    
+    w3 = 1 + stay_convenience
+    w4 = 1 + stay_convenience
+    
+    w5 = 1 + transfer_convenience
+    w6 = 1 + transfer_convenience
+
+    print(passenger.lat, passenger.long, bus1.lat, bus1.long)
 
     # make the variables
-    d_p_b1 = calc_distance(passenger.lat, passenger.long, bus1.lat, bus1.long)
     d_b1_b2 = calc_distance(bus1.lat, bus1.long, bus2.lat, bus2.long)
-    t_p_b1 = calc_distance(passenger.lat, passenger.long, bus1.lat, bus1.long)
-    t_b1_b2 = calc_distance(bus1.lat, bus1.long, bus2.lat, bus2.long)
-    # c_b1 = bus1.bus_capacity
-    # c_b2 = bus2.bus_capacity
-
-    # # make the binary variable
-    # if bus1.bus_capacity > bus2.bus_capacity:
-    #     conv = 1
-    # else:
-    #     conv = 0
-
+    t_b1_b2 = calc_arrival(bus1, bus2,0)
+    
+    d_b1_d = calc_distance(bus1.lat, bus1.long, destination.lat, destination.long)
+    t_b1_d = calc_arrival(bus1, destination,0)
+    
+    d_b2_d = calc_distance(bus2.lat, bus2.long, destination.lat, destination.long)
+    t_b2_d = calc_arrival(bus2, destination,0)
+    
     # calculate the utility
-    utility = w1 * d_p_b1 + w2 * d_b1_b2 + w3 * t_p_b1 + w4 * t_b1_b2 
+    utility = w1*d_b1_b2 + w2*t_b1_b2 + w3*d_b1_d + w4*t_b1_d + w5*d_b2_d + w6*t_b2_d
     # + w5 * c_b1 + w6 * c_b2 + w7 * conv
     
-    return utility
+    return utility/1000
  
     
 
@@ -584,10 +583,11 @@ def route_generator(passengers, buses, stops, depo):
                 # Add the time to all passengers carried by this bus
                 for passenger in carried_passengers[bus]:
                     passenger.increase_total_time(arrival_time)
+                    passenger.set_current_pos(near_stop.lat,near_stop.long)
                 
                 # Generate the list of carried passengers
                 for passenger in carried_passengers[bus]:
-                    if passenger.getNearestDrop(stops.copy()) == near_stop:
+                    if passenger.getNearestDrop(list_of_stops) == near_stop:
                         temp_carried_passengers.append(passenger)
     
                 # If the stop is the destination of any passenger on the bus, drop them off
@@ -608,7 +608,7 @@ def route_generator(passengers, buses, stops, depo):
                     for passenger in transfer_relations[bus]:
                         # print(passenger)
                         # non_visited_stops[bus].add(passenger.getNearestStop(stops.copy()))
-                        non_visited_stops[bus].add(passenger.getNearestDrop(stops.copy()))
+                        non_visited_stops[bus].add(passenger.getNearestDrop(list_of_stops))
                 
                 # If the stop is the nearest stop of any passenger pick them up
                 for passenger in passengers:
@@ -628,24 +628,33 @@ def route_generator(passengers, buses, stops, depo):
                             passenger.set_current_pos(near_stop.lat,near_stop.long)
                             print ("\n>>>>>>>>>>>>>>>>> Picked up passenger", passenger.id, "at stop", str(near_stop.getStopId())[:3],"by bus", bus,"\n")
     
-                # if not bool(non_visited_stops[bus]) and bool(passengers_picked):
-                #     for on_board_passenger in passengers_picked:
-                #         if on_board_passenger in carried_passengers[bus]:
-                #             near_stop = on_board_passenger.getNearestDrop(stops)
+                if not bool(non_visited_stops[bus]) and bool(passengers_picked):
+                    for on_board_passenger in passengers_picked:
+                        if on_board_passenger in carried_passengers[bus]:
+                            near_stop = on_board_passenger.getNearestDrop(stops)
                 
                 for passenger in passengers_picked.copy():
                     if passenger in carried_passengers[bus].copy():
                         for bus2 in range(len(buses)):
                             if bus2!=bus:
-                                transfer_rate=naive_utility(passenger,near_stop,ind_bus[bus2][-1].getStops())
+                                stay_convenience=1
+                                transfer_convenience=1
+                                destination=passenger.getNearestDrop(list_of_stops)
+                                if destination in non_visited_stops[bus]:
+                                    stay_convenience=2
+                                if destination in non_visited_stops[bus2]:
+                                    transfer_convenience=2
+                                transfer_rate=naive_utility(passenger,near_stop,ind_bus[bus2][-1].getStops(),destination, stay_convenience, transfer_convenience)
                                 print("Utility: ",transfer_rate)
-                                if transfer_rate>60000 and passenger.prev_bus!=bus2:
+                                if transfer_rate>149 and passenger.prev_bus!=bus2:
                                     passenger_transfers.append(passenger)
                                     passengers_not_picked.append(passenger)
                                     passengers_picked.remove(passenger)
                                     carried_passengers[bus].remove(passenger)
                                     
                                     non_visited_stops[bus2].add(passenger.getNearestStop(list_of_stops))
+                                    non_visited_stops[bus2].add(passenger.getNearestDrop(list_of_stops))
+                                    non_visited_stops[bus].remove(passenger.getNearestDrop(list_of_stops))
                                     
                                     transfer_relations[bus2].append(passenger)
                                     
@@ -657,12 +666,21 @@ def route_generator(passengers, buses, stops, depo):
                 print("Transfer passengers: ",str(len(passenger_transfers)))
                  
                 listss=list(passengers_picked)
-                # print("Picked",listss[0].id)
+                if len(listss)>0 :
+                    print("Picked",listss[0].id)
                 print("Dropped",str(len(passengers_dropped)))
                 print("Not picked",str(len(passengers_not_picked)))
                 # Set current stop to the near_stop
+                
+                for passenger in passengers_picked:
+                    print(passenger in carried_passengers[bus])
+                    print(passenger.getNearestDrop(list_of_stops).getStopId()==near_stop.getStopId())
+                
                 current_stop[bus][0] = near_stop
                 print("Current stop: ",current_stop[bus][0].getStopId())
+                
+                for stop in non_visited_stops[bus]:
+                    print(stop.getStopId())
     
                 # Check all passengers were picked up and dropped off
             if len(passengers_dropped) == len(list_of_passengers) and len(passengers_picked) == 0 and len(
@@ -681,9 +699,13 @@ def route_generator(passengers, buses, stops, depo):
             total_distance += route.getDistance()
             total_time += route.getArrival()
 
-    logging.info("Total wait time: %d minutes", total_wait)
-    logging.info("Total distance: %d km", total_distance%1000)
-    logging.info("Total time: %d hours", total_time%60)
+    # logging.info("Total wait time: %d minutes", total_wait)
+    # logging.info("Total distance: %d km", total_distance%1000)
+    # logging.info("Total time: %d hours", total_time%60)
+    
+    print("\nTotal wait time: ", total_wait)
+    print("Total distance: ", total_distance%1000)
+    print("Total time: ", total_time%60)
     
     average_passenger_distance = 0
     average_passenger_time = 0
@@ -694,7 +716,8 @@ def route_generator(passengers, buses, stops, depo):
     average_passenger_distance = average_passenger_distance/len(list_of_passengers)
     average_passenger_time = average_passenger_time/len(list_of_passengers)
     
-    logging.info("Average passenger time: %d hours", average_passenger_time%60)
+    # logging.info("Average passenger time: %d hours", average_passenger_time%60)
+    print("Average passenger distance: ", average_passenger_distance%1000)
     
     return ind_bus
 

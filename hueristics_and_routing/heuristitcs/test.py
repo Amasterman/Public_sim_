@@ -18,8 +18,8 @@ dynamic = False
 #  meters
 MAX_CLUSTER_DISTANCE = 4000
 
-no_buses=5
-no_passengers=20
+no_buses=3
+no_passengers=10
 
 # Bus max capacity
 max_bus_cap = 15
