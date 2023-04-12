@@ -77,6 +77,9 @@ class Passenger:
         self.total_time = 0
         self.total_distance=0
         
+        # The bus the passenger is just transfered from
+        self.prev_bus = None
+        
         self.should_walk = False
 
         if self.booked:

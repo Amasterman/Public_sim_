@@ -269,7 +269,7 @@ def generate_booking_times(passengers):
 # The offline (ie non dynamic) version of the greedy heuristic
 # TODO Improve implementation of the heuristic
 def greedy_offline(list_of_active_stops, passenger_bookings):
-    logging.info("Greedy Offline")
+    logging.info("===== NEW RUN =====")
     return route_generator(list_of_passengers.copy(), list_of_buses.copy(), list_of_active_stops, depo)
 
 
@@ -639,7 +639,7 @@ def route_generator(passengers, buses, stops, depo):
                             if bus2!=bus:
                                 transfer_rate=naive_utility(passenger,near_stop,ind_bus[bus2][-1].getStops())
                                 print("Utility: ",transfer_rate)
-                                if transfer_rate>70000:
+                                if transfer_rate>60000 and passenger.prev_bus!=bus2:
                                     passenger_transfers.append(passenger)
                                     passengers_not_picked.append(passenger)
                                     passengers_picked.remove(passenger)
@@ -648,6 +648,8 @@ def route_generator(passengers, buses, stops, depo):
                                     non_visited_stops[bus2].add(passenger.getNearestStop(list_of_stops))
                                     
                                     transfer_relations[bus2].append(passenger)
+                                    
+                                    passenger.prev_bus=bus
                                     
                                     passenger.set_current_pos(passenger.getNearestStop(list_of_stops).lat,passenger.getNearestStop(list_of_stops).long)
                                     print("Transfer passenger: ",passenger.id,"from",bus," to bus ",bus2)
@@ -679,9 +681,9 @@ def route_generator(passengers, buses, stops, depo):
             total_distance += route.getDistance()
             total_time += route.getArrival()
 
-    print("\nTotal wait time:", total_wait, "minutes")
-    print("Total distance:", total_distance%1000,"km")
-    print("Total time:", total_time%60,"hours\n")
+    logging.info("Total wait time: %d minutes", total_wait)
+    logging.info("Total distance: %d km", total_distance%1000)
+    logging.info("Total time: %d hours", total_time%60)
     
     average_passenger_distance = 0
     average_passenger_time = 0
@@ -692,8 +694,7 @@ def route_generator(passengers, buses, stops, depo):
     average_passenger_distance = average_passenger_distance/len(list_of_passengers)
     average_passenger_time = average_passenger_time/len(list_of_passengers)
     
-    print("Average passenger distance:", average_passenger_distance%1000, "km")
-    print("Average passenger time:", average_passenger_time%60, "hours\n")
+    logging.info("Average passenger time: %d hours", average_passenger_time%60)
     
     return ind_bus
 
