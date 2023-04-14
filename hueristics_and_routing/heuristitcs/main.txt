@@ -1,0 +1,86 @@
+0
+1
+2
+3
+Picked up passengers 1
+Picked 1
+Dropped 0
+Not picked 3
+Picked up passengers 2
+Picked 2
+Dropped 0
+Not picked 2
+Picked up passengers 3
+Picked 3
+Dropped 0
+Not picked 1
+Picked up passengers 4
+Picked 4
+Dropped 0
+Not picked 0
+Dropped off passenger 0
+Picked 3
+Dropped 1
+Not picked 0
+Dropped off passenger 3
+Picked 2
+Dropped 2
+Not picked 0
+Dropped off passenger 2
+Picked 1
+Dropped 3
+Not picked 0
+Dropped off passenger 1
+Picked 0
+Dropped 4
+Not picked 0
+
+Total wait time:  35
+Total distance:  536.5993262346601
+Total time:  17.706473204399686
+Average passenger distance:  461.6790046212427
+None
+None
+0
+1
+2
+3
+Picked up passengers 1
+Picked 1
+Dropped 0
+Not picked 3
+Picked up passengers 2
+Picked 2
+Dropped 0
+Not picked 2
+Picked up passengers 3
+Picked 3
+Dropped 0
+Not picked 1
+Picked up passengers 4
+Picked 4
+Dropped 0
+Not picked 0
+Dropped off passenger 0
+Picked 3
+Dropped 1
+Not picked 0
+Dropped off passenger 3
+Picked 2
+Dropped 2
+Not picked 0
+Dropped off passenger 2
+Picked 1
+Dropped 3
+Not picked 0
+Dropped off passenger 1
+Picked 0
+Dropped 4
+Not picked 0
+
+Total wait time:  35
+Total distance:  536.5993262346601
+Total time:  17.706473204399686
+Average passenger distance:  461.6790046212427
+None
+None

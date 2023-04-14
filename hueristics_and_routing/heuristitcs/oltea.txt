@@ -1,0 +1,334 @@
+stuck
+
+>>>>>>>>>>>>>>>>> Picked up passenger 2 at stop 503 by bus 0 
+
+50.975367 -1.577576 50.975367 -1.577576
+Utility:  145.5448316353346
+Transfer passenger:  2 from 0  to bus  1
+Transfer passengers:  1
+Dropped 0
+Not picked 4
+Current stop:  503413827
+503397509
+503420615
+503404158
+stuck
+
+>>>>>>>>>>>>>>>>> Picked up passenger 2 at stop 503 by bus 1 
+
+50.975367 -1.577576 50.975367 -1.577576
+Utility:  155.9631272304188
+Transfer passengers:  1
+Picked 2
+Dropped 0
+Not picked 3
+True
+False
+Current stop:  503413827
+503397509
+503419560
+503420615
+503404158
+stuck
+
+>>>>>>>>>>>>>>>>> Picked up passenger 0 at stop 503 by bus 0 
+
+50.8628452 -1.4321228 50.8628452 -1.4321228
+Utility:  77.87052529105362
+Transfer passengers:  1
+Picked 2
+Dropped 0
+Not picked 2
+False
+False
+True
+False
+Current stop:  503420615
+503397509
+1859066166
+503404158
+stuck
+
+>>>>>>>>>>>>>>>>> Picked up passenger 1 at stop 503 by bus 1 
+
+50.8744958 -1.3438889 50.8744958 -1.3438889
+Utility:  79.15024217944702
+50.8744958 -1.3438889 50.8744958 -1.3438889
+Utility:  96.57752147497904
+Transfer passengers:  1
+Picked 2
+Dropped 0
+Not picked 1
+True
+False
+False
+False
+True
+False
+Current stop:  503404158
+503397509
+503419560
+503396895
+stuck
+
+<<<<<<<<<<<<<<<<<<< Dropped off passenger 0 at stop 185 by bus 0 
+
+Transfer passengers:  1
+Picked 2
+Dropped 1
+Not picked 1
+False
+False
+False
+False
+Current stop:  1859066166
+503397509
+stuck
+
+>>>>>>>>>>>>>>>>> Picked up passenger 3 at stop 503 by bus 1 
+
+50.8492764 -1.2563255 50.8492764 -1.2563255
+Utility:  54.942950714427624
+50.8492764 -1.2563255 50.8492764 -1.2563255
+Utility:  86.77028879016467
+Transfer passenger:  1 from 1  to bus  0
+50.8492764 -1.2563255 50.8492764 -1.2563255
+Utility:  72.26460573888747
+Transfer passengers:  2
+Picked 3
+Dropped 1
+Not picked 1
+True
+False
+True
+False
+Current stop:  503397509
+503419560
+503418120
+stuck
+
+>>>>>>>>>>>>>>>>> Picked up passenger 1 at stop 503 by bus 0 
+
+50.8492764 -1.2563255 50.8492764 -1.2563255
+Utility:  93.58041409937279
+Transfer passengers:  2
+Picked 3
+Dropped 1
+Not picked 0
+False
+False
+True
+False
+False
+False
+Current stop:  503397509
+503396895
+stuck
+
+<<<<<<<<<<<<<<<<<<< Dropped off passenger 3 at stop 503 by bus 1 
+
+50.9471579 -1.2683167 50.9471579 -1.2683167
+Utility:  62.80528735351111
+Transfer passengers:  2
+Picked 1
+Dropped 2
+Not picked 0
+False
+False
+True
+False
+Current stop:  503418120
+503419560
+stuck
+
+<<<<<<<<<<<<<<<<<<< Dropped off passenger 1 at stop 503 by bus 0 
+
+Transfer passengers:  2
+Picked 2
+Dropped 3
+Not picked 0
+False
+False
+Current stop:  503396895
+503396895
+stuck
+
+<<<<<<<<<<<<<<<<<<< Dropped off passenger 2 at stop 503 by bus 1 
+
+Transfer passengers:  2
+Dropped 4
+Not picked 0
+Current stop:  503419560
+503419560
+
+Total wait time:  42
+Total distance:  98.94754769376596
+Total time:  8.963777207164355
+Average passenger distance:  461.6790046212427
+stuck
+
+>>>>>>>>>>>>>>>>> Picked up passenger 2 at stop 503 by bus 0 
+
+50.975367 -1.577576 50.975367 -1.577576
+Utility:  145.5448316353346
+Transfer passenger:  2 from 0  to bus  1
+Transfer passengers:  1
+Dropped 0
+Not picked 4
+Current stop:  503413827
+503397509
+503420615
+503404158
+stuck
+
+>>>>>>>>>>>>>>>>> Picked up passenger 2 at stop 503 by bus 1 
+
+50.975367 -1.577576 50.975367 -1.577576
+Utility:  155.9631272304188
+Transfer passengers:  1
+Picked 2
+Dropped 0
+Not picked 3
+True
+False
+Current stop:  503413827
+503397509
+503419560
+503420615
+503404158
+stuck
+
+>>>>>>>>>>>>>>>>> Picked up passenger 0 at stop 503 by bus 0 
+
+50.8628452 -1.4321228 50.8628452 -1.4321228
+Utility:  77.87052529105362
+Transfer passengers:  1
+Picked 2
+Dropped 0
+Not picked 2
+False
+False
+True
+False
+Current stop:  503420615
+503397509
+1859066166
+503404158
+stuck
+
+>>>>>>>>>>>>>>>>> Picked up passenger 1 at stop 503 by bus 1 
+
+50.8744958 -1.3438889 50.8744958 -1.3438889
+Utility:  79.15024217944702
+50.8744958 -1.3438889 50.8744958 -1.3438889
+Utility:  96.57752147497904
+Transfer passengers:  1
+Picked 2
+Dropped 0
+Not picked 1
+True
+False
+False
+False
+True
+False
+Current stop:  503404158
+503397509
+503419560
+503396895
+stuck
+
+<<<<<<<<<<<<<<<<<<< Dropped off passenger 0 at stop 185 by bus 0 
+
+Transfer passengers:  1
+Picked 2
+Dropped 1
+Not picked 1
+False
+False
+False
+False
+Current stop:  1859066166
+503397509
+stuck
+
+>>>>>>>>>>>>>>>>> Picked up passenger 3 at stop 503 by bus 1 
+
+50.8492764 -1.2563255 50.8492764 -1.2563255
+Utility:  54.942950714427624
+50.8492764 -1.2563255 50.8492764 -1.2563255
+Utility:  86.77028879016467
+Transfer passenger:  1 from 1  to bus  0
+50.8492764 -1.2563255 50.8492764 -1.2563255
+Utility:  72.26460573888747
+Transfer passengers:  2
+Picked 3
+Dropped 1
+Not picked 1
+True
+False
+True
+False
+Current stop:  503397509
+503419560
+503418120
+stuck
+
+>>>>>>>>>>>>>>>>> Picked up passenger 1 at stop 503 by bus 0 
+
+50.8492764 -1.2563255 50.8492764 -1.2563255
+Utility:  93.58041409937279
+Transfer passengers:  2
+Picked 3
+Dropped 1
+Not picked 0
+False
+False
+True
+False
+False
+False
+Current stop:  503397509
+503396895
+stuck
+
+<<<<<<<<<<<<<<<<<<< Dropped off passenger 3 at stop 503 by bus 1 
+
+50.9471579 -1.2683167 50.9471579 -1.2683167
+Utility:  62.80528735351111
+Transfer passengers:  2
+Picked 1
+Dropped 2
+Not picked 0
+False
+False
+True
+False
+Current stop:  503418120
+503419560
+stuck
+
+<<<<<<<<<<<<<<<<<<< Dropped off passenger 1 at stop 503 by bus 0 
+
+Transfer passengers:  2
+Picked 2
+Dropped 3
+Not picked 0
+False
+False
+Current stop:  503396895
+503396895
+stuck
+
+<<<<<<<<<<<<<<<<<<< Dropped off passenger 2 at stop 503 by bus 1 
+
+Transfer passengers:  2
+Dropped 4
+Not picked 0
+Current stop:  503419560
+503419560
+
+Total wait time:  42
+Total distance:  98.94754769376596
+Total time:  8.963777207164355
+Average passenger distance:  461.6790046212427

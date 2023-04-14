@@ -2,14 +2,21 @@
 
 # Set the seed for both programs based on $RANDOM
 SEED=$RANDOM
-echo $SEED
-for i in {1..2}
-do
-    # echo "s"
-    python oltea.py --seed $SEED
-    python main.py --seed $SEED
+BUSES=3
+PASSENGERS=4
+run=1
 
-# 
-    # ((SEED++))
+for j in {1..5}
+do
+PASSENGERS=4
+for i in {1..20}
+do
+    echo "Run $run"
+    python oltea.py --seed $SEED --buses $BUSES --passengers $PASSENGERS --index $run
+    python main.py --seed $SEED --buses $BUSES --passengers $PASSENGERS --index $run
+    PASSENGERS=$((PASSENGERS+1))
+    run=$((run+1))
 done
-# echo $?
+BUSES=$((BUSES+1))
+SEED=$RANDOM
+done

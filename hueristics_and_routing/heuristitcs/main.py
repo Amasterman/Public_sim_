@@ -27,6 +27,21 @@ minlon = -1.6263000
 maxlat = 51.0142000
 maxlon = -1.0873000
 
+parser=argparse.ArgumentParser()
+parser.add_argument('--seed', type=int, default=None, help='random seed')
+parser.add_argument('--buses', type=int, default=None, help='number of buses')
+parser.add_argument('--passengers', type=int, default=None, help='number of passengers')
+parser.add_argument('--index', type=int, default=None, help='run index')
+args=parser.parse_args()
+
+if args.seed is not None:
+    rnd.seed(args.seed)
+
+seed=args.seed
+index=args.index
+no_buses=args.buses
+no_passengers=args.passengers  
+
 
 
 # -----------------------  World settings
@@ -345,7 +360,10 @@ def generate_booking_times(passengers):
 # The offline (ie non dynamic) version of the greedy heuristic
 # TODO Improve implementation of the heuristic
 def greedy_offline(list_of_active_stops, passenger_bookings):
-    logging.info("===== Greedy Offline =====")
+    logging.info("===== Greedy Offline %d =====", index)
+    logging.info("Seed: %d", seed)
+    logging.info("Buses: %d", no_buses )
+    logging.info("Passengers: %d", no_passengers)
     return route_generator(list_of_passengers.copy(), list_of_buses.copy(), list_of_active_stops, depo)
 
 
@@ -683,16 +701,28 @@ def route_generator(passengers, buses, stops, depo):
         for bus in range(0, len(buses)) :
             # If there exist any non-visited stops
             # if bool(non_visited_stops[bus]):
+            # if not bool(non_visited_stops[0]) and not bool(non_visited_stops[1]) and not bool(non_visited_stops[2]) :
+            #     return ind_bus
+            
+            print("bus", bus)
+            print("non_visited_stops", non_visited_stops[bus])
             if bool(non_visited_stops[bus]): 
+                print("stuck")
                 near_stop = get_nearest_stop(current_stop[bus][0], non_visited_stops[bus])
 
                 # Add the stop to the visited stop list and remove it from the non_visited stop list
                 visited_stops[bus].add(near_stop)
                 for bus2 in range(0, len(buses)):
                     if near_stop in non_visited_stops[bus2]:
-                        non_visited_stops[bus2].remove(near_stop)
-                # if near_stop == None or bool(non_visited_stops[bus]) == False:
-                    # break
+                        ok=True
+                        for passenger in carried_passengers[bus2]:
+                            if passenger.getNearestDrop(stops) == near_stop:
+                                ok=False
+                        if ok==True:        
+                            non_visited_stops[bus2].remove(near_stop)
+                        
+                # if near_stop == None :
+                #     break
 
                 temp_carried_passengers = [] #if theres multiple passengers at the same stop, check all
 
@@ -711,26 +741,30 @@ def route_generator(passengers, buses, stops, depo):
 
                 # Generate the list of carried passengers
                 for passenger in carried_passengers[bus]:
-                    if passenger.getNearestDrop(stops.copy()) == near_stop:
+                    if passenger.getNearestDrop(stops) == near_stop:
                         temp_carried_passengers.append(passenger)
-
+                        print(passenger.getNearestDrop(list_of_stops).id)
+                        
+                print("temp_carried_passengers", temp_carried_passengers)
                 # If the stop is the destination of any passenger on the bus, drop them off
+                
+               
                 for passenger in temp_carried_passengers:
-                    carried_passengers[bus].remove(passenger)
+                        carried_passengers[bus].remove(passenger)
 
-                    distance_to_dest = calc_distance(near_stop.lat,near_stop.long, passenger.destination_x, passenger.destination_y)
-                    time_to_dest = calc_walk_time(near_stop.lat,near_stop.long, passenger.destination_x, passenger.destination_y)
+                        distance_to_dest = calc_distance(near_stop.lat,near_stop.long, passenger.destination_x, passenger.destination_y)
+                        time_to_dest = calc_walk_time(near_stop.lat,near_stop.long, passenger.destination_x, passenger.destination_y)
 
-                    passengers_picked.remove(passenger)
-                    passengers_dropped.add(passenger)
-                    passenger.increase_total_time(time_to_dest)
-                    passenger.increase_total_distance(distance_to_dest)
-                    passenger.set_current_pos(near_stop.lat,near_stop.long)
-                    print("Dropped off passenger", passenger.id)
+                        passengers_picked.remove(passenger)
+                        passengers_dropped.add(passenger)
+                        passenger.increase_total_time(time_to_dest)
+                        passenger.increase_total_distance(distance_to_dest)
+                        passenger.set_current_pos(near_stop.lat,near_stop.long)
+                        print ("\n<<<<<<<<<<<<<<<<<<< Dropped off passenger", passenger.id, "at stop", str(near_stop.getStopId()),"by bus", bus,"\n")
 
                 # If the stop is the nearest stop of any passenger pick them up
                 for passenger in passengers:
-                    if passenger.getNearestStop(stops) == near_stop and passenger not in carried_passengers:
+                    if passenger.getNearestStop(stops.copy()) == near_stop and len(carried_passengers[bus]) <=15 and passenger not in passengers_picked:
                         carried_passengers[bus].add(passenger)
                         passengers_picked.add(passenger)
                         passengers_not_picked.remove(passenger)
@@ -743,7 +777,7 @@ def route_generator(passengers, buses, stops, depo):
                         passenger.increase_total_time(time_to_stop)
                         passenger.increase_total_distance(distance_to_stop)
                         passenger.set_current_pos(near_stop.lat,near_stop.long)
-                        print ("Picked up passengers", len(passengers_picked))
+                        print ("\n>>>>>>>>>>>>>>>>> Picked up passenger", passenger.id, "at stop", str(near_stop.getStopId()),"by bus", bus,"\n")
                         
                 if not bool(non_visited_stops[bus]) and bool(passengers_picked):
                     for on_board_passenger in passengers_picked:
@@ -752,9 +786,17 @@ def route_generator(passengers, buses, stops, depo):
 
                 current_stop[bus][0] = near_stop
                 
-                print("Picked",str(len(passengers_picked)))
+                for all_stops in non_visited_stops[bus]:
+                    print("\nNon visited stops bus ", bus, all_stops.id)
+                
+                
+                if len(passengers_picked) > 0:
+                    print("Picked",str(list(passengers_picked)[0].id))
+                    print(list(passengers_picked)[0] in carried_passengers[bus])
                 print("Dropped",str(len(passengers_dropped)))
                 print("Not picked",str(len(passengers_not_picked)))
+                print("current stop", current_stop[bus][0].id, "bus", bus)
+                
 
             # Check all passengers were picked up and dropped off
             if len(passengers_dropped) == len(list_of_passengers) and len(passengers_picked) == 0 and len(
@@ -773,13 +815,13 @@ def route_generator(passengers, buses, stops, depo):
             total_distance += route.getDistance()
             total_time += route.getArrival()
 
-    # logging.info("Total wait time: %d minutes", total_wait)
-    # logging.info("Total distance: %d km", total_distance%1000)
-    # logging.info("Total time: %d hours", total_time%60)
+    logging.info("Total wait time: %d minutes", total_wait)
+    logging.info("Total distance: %d km", total_distance%1000)
+    logging.info("Total time: %d hours", total_time%60)
     
-    print("\nTotal wait time: ", total_wait)
-    print("Total distance: ", total_distance%1000)
-    print("Total time: ", total_time%60)
+    # print("\nTotal wait time: ", total_wait)
+    # print("Total distance: ", total_distance%1000)
+    # print("Total time: ", total_time%60)
     
     average_passenger_distance = 0
     average_passenger_time = 0
@@ -790,8 +832,8 @@ def route_generator(passengers, buses, stops, depo):
     average_passenger_distance = average_passenger_distance/len(list_of_passengers)
     average_passenger_time = average_passenger_time/len(list_of_passengers)
     
-    # logging.info("Average passenger time: %d hours", average_passenger_time%60)
-    print("Average passenger distance: ", average_passenger_distance%1000)
+    logging.info("Average passenger time: %d hours", average_passenger_time%60)
+    # print("Average passenger distance: ", average_passenger_distance%1000)
     
     return ind_bus
 
@@ -1105,6 +1147,10 @@ def plot(list_of_stops, list_of_passengers, list_of_buses, passenger_bookings, b
     plt.show()
 
 def get_nearest_stop(stop, stop_candidates):
+    
+    if len(stop_candidates) == 1:
+        return list(stop_candidates)[0]
+    
     current_nearest = 100000000000
     near_stop = None
     to_list = list(stop_candidates)
@@ -1294,25 +1340,20 @@ def cm_policy():
 # -----------------------  Random settings
 # rnd = np.random
 
-# parser=argparse.ArgumentParser()
-# parser.add_argument('--seed', type=int, default=None, help='random seed')
-# args=parser.parse_args()
 
-# if args.seed is not None:
-#     rnd.seed(args.seed)
 
 routes = run("greedy")
 
-explore_passenger_route(passenger_bookings)
+# explore_passenger_route(passenger_bookings)
 
 
 bus_routes = []
 
-for i in range(0, len(routes)):
-    bus_routes.append(get_bus_order(routes[i]))
-    print(explore_bus_route(routes[i], i))
+# for i in range(0, len(routes)):
+#     bus_routes.append(get_bus_order(routes[i]))
+#     print(explore_bus_route(routes[i], i))
 # bus_routes = [getBusOrder(routes[0]), getBusOrder(routes[1]), getBusOrder(routes)]
 
-plot(list_of_stops, list_of_passengers, list_of_buses, passenger_bookings, bus_routes)
+# plot(list_of_stops, list_of_passengers, list_of_buses, passenger_bookings, bus_routes)
 
 # run(None)
