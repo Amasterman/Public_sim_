@@ -134,3 +134,7 @@ INFO:root:===== NEW RUN 4 =====
 INFO:root:Seed: 8718
 INFO:root:Buses: 3
 INFO:root:Passengers: 7
+INFO:root:===== NEW RUN 3 =====
+INFO:root:Seed: 1
+INFO:root:Buses: 10
+INFO:root:Passengers: 100

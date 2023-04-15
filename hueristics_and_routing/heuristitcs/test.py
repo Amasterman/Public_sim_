@@ -25,7 +25,7 @@ MAX_CLUSTER_DISTANCE = 4000
 max_bus_cap = 15
 
 # How many stops from total 5000
-break_count = 1000
+break_count = 5000
 
 # Max tolerable time difference between targeted arrival and actual arrival
 max_lateness = 1000
