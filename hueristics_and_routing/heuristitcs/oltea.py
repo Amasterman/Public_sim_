@@ -18,6 +18,12 @@ import Stops as Stop
 import logging
 import pdb
 
+import openpyxl
+
+# Create a new Excel workbook and select the worksheet
+workbook = openpyxl.load_workbook("result.xlsx")
+worksheet = workbook.active
+
 # Configure logging
 logging.basicConfig(filename='oltea.log', level=logging.INFO)
 
@@ -740,6 +746,13 @@ def route_generator(passengers, buses, stops, depo):
     
     logging.info("Average passenger time: %d hours", average_passenger_time%60)
     # print("Average passenger distance: ", average_passenger_distance%1000)
+    
+    data = [["new_heuristic",no_buses,no_passengers,total_distance%1000, total_time%60, total_wait]]
+    
+    for row in data:
+        worksheet.append(row)
+        
+    workbook.save("result.xlsx")
     
     return ind_bus
 

@@ -1,184 +1,96 @@
 INFO:root:===== Greedy Offline 1 =====
-INFO:root:Seed: 32641
+INFO:root:Seed: 2263
 INFO:root:Buses: 2
-INFO:root:Passengers: 4
-INFO:root:Total wait time: 31 minutes
-INFO:root:Total distance: 422 km
-INFO:root:Total time: 41 hours
-INFO:root:Average passenger time: 4 hours
+INFO:root:Passengers: 2
+INFO:root:Total wait time: 10 minutes
+INFO:root:Total distance: 285 km
+INFO:root:Total time: 47 hours
+INFO:root:Average passenger time: 42 hours
 INFO:root:===== Greedy Offline 2 =====
-INFO:root:Seed: 32641
-INFO:root:Buses: 2
-INFO:root:Passengers: 5
-INFO:root:Total wait time: 54 minutes
-INFO:root:Total distance: 850 km
-INFO:root:Total time: 14 hours
-INFO:root:Average passenger time: 18 hours
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 32641
+INFO:root:Seed: 2263
 INFO:root:Buses: 2
 INFO:root:Passengers: 6
-INFO:root:Total wait time: 62 minutes
-INFO:root:Total distance: 523 km
-INFO:root:Total time: 2 hours
-INFO:root:Average passenger time: 2 hours
-INFO:root:===== Greedy Offline 4 =====
-INFO:root:Seed: 32641
-INFO:root:Buses: 2
-INFO:root:Passengers: 7
-INFO:root:Total wait time: 68 minutes
-INFO:root:Total distance: 646 km
-INFO:root:Total time: 7 hours
-INFO:root:Average passenger time: 58 hours
-INFO:root:===== Greedy Offline 5 =====
-INFO:root:Seed: 32641
-INFO:root:Buses: 2
-INFO:root:Passengers: 8
-INFO:root:Total wait time: 81 minutes
-INFO:root:Total distance: 552 km
-INFO:root:Total time: 27 hours
-INFO:root:Average passenger time: 15 hours
-INFO:root:===== Greedy Offline 6 =====
-INFO:root:Seed: 32641
-INFO:root:Buses: 2
-INFO:root:Passengers: 9
-INFO:root:Total wait time: 104 minutes
-INFO:root:Total distance: 410 km
-INFO:root:Total time: 36 hours
-INFO:root:Average passenger time: 51 hours
-INFO:root:===== Greedy Offline 7 =====
-INFO:root:Seed: 32641
-INFO:root:Buses: 2
-INFO:root:Passengers: 10
-INFO:root:Total wait time: 119 minutes
-INFO:root:Total distance: 25 km
-INFO:root:Total time: 13 hours
-INFO:root:Average passenger time: 44 hours
-INFO:root:===== Greedy Offline 8 =====
-INFO:root:Seed: 32641
-INFO:root:Buses: 2
-INFO:root:Passengers: 11
-INFO:root:Total wait time: 155 minutes
-INFO:root:Total distance: 930 km
-INFO:root:Total time: 45 hours
-INFO:root:Average passenger time: 0 hours
-INFO:root:===== Greedy Offline 9 =====
-INFO:root:Seed: 32641
-INFO:root:Buses: 2
-INFO:root:Passengers: 12
-INFO:root:Total wait time: 158 minutes
-INFO:root:Total distance: 689 km
-INFO:root:Total time: 24 hours
-INFO:root:Average passenger time: 16 hours
-INFO:root:===== Greedy Offline 10 =====
-INFO:root:Seed: 32641
-INFO:root:Buses: 2
-INFO:root:Passengers: 13
-INFO:root:Total wait time: 162 minutes
-INFO:root:Total distance: 557 km
-INFO:root:Total time: 10 hours
-INFO:root:Average passenger time: 19 hours
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 2
-INFO:root:Passengers: 14
-INFO:root:Total wait time: 153 minutes
-INFO:root:Total distance: 702 km
-INFO:root:Total time: 14 hours
-INFO:root:Average passenger time: 38 hours
+INFO:root:Total wait time: 60 minutes
+INFO:root:Total distance: 100 km
+INFO:root:Total time: 17 hours
+INFO:root:Average passenger time: 22 hours
 INFO:root:===== Greedy Offline 1 =====
-INFO:root:Seed: 29830
+INFO:root:Seed: 27036
 INFO:root:Buses: 3
-INFO:root:Passengers: 4
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 4
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 4
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 4
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 4
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 4
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 4
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 4
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 4
-INFO:root:Total wait time: 79 minutes
-INFO:root:Total distance: 49 km
-INFO:root:Total time: 0 hours
-INFO:root:Average passenger time: 21 hours
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 4
-INFO:root:Total wait time: 70 minutes
-INFO:root:Total distance: 49 km
-INFO:root:Total time: 51 hours
-INFO:root:Average passenger time: 19 hours
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 4
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 4
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 4
-INFO:root:Total wait time: 70 minutes
-INFO:root:Total distance: 49 km
-INFO:root:Total time: 51 hours
-INFO:root:Average passenger time: 19 hours
-INFO:root:===== Greedy Offline 1 =====
-INFO:root:Seed: 8718
-INFO:root:Buses: 3
-INFO:root:Passengers: 4
-INFO:root:Total wait time: 54 minutes
-INFO:root:Total distance: 560 km
-INFO:root:Total time: 35 hours
+INFO:root:Passengers: 3
+INFO:root:Total wait time: 31 minutes
+INFO:root:Total distance: 820 km
+INFO:root:Total time: 38 hours
 INFO:root:Average passenger time: 32 hours
 INFO:root:===== Greedy Offline 2 =====
-INFO:root:Seed: 8718
-INFO:root:Buses: 3
-INFO:root:Passengers: 5
-INFO:root:Total wait time: 62 minutes
-INFO:root:Total distance: 585 km
-INFO:root:Total time: 17 hours
-INFO:root:Average passenger time: 16 hours
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 8718
+INFO:root:Seed: 27036
 INFO:root:Buses: 3
 INFO:root:Passengers: 6
-INFO:root:Total wait time: 50 minutes
-INFO:root:Total distance: 341 km
-INFO:root:Total time: 54 hours
-INFO:root:Average passenger time: 17 hours
-INFO:root:===== Greedy Offline 4 =====
-INFO:root:Seed: 8718
+INFO:root:Total wait time: 68 minutes
+INFO:root:Total distance: 991 km
+INFO:root:Total time: 46 hours
+INFO:root:Average passenger time: 58 hours
+INFO:root:===== Greedy Offline 3 =====
+INFO:root:Seed: 27036
 INFO:root:Buses: 3
+INFO:root:Passengers: 9
+INFO:root:Total wait time: 77 minutes
+INFO:root:Total distance: 903 km
+INFO:root:Total time: 49 hours
+INFO:root:Average passenger time: 4 hours
+INFO:root:===== Greedy Offline 4 =====
+INFO:root:Seed: 27036
+INFO:root:Buses: 3
+INFO:root:Passengers: 12
+INFO:root:Total wait time: 151 minutes
+INFO:root:Total distance: 955 km
+INFO:root:Total time: 46 hours
+INFO:root:Average passenger time: 47 hours
+INFO:root:===== Greedy Offline 5 =====
+INFO:root:Seed: 27036
+INFO:root:Buses: 3
+INFO:root:Passengers: 15
+INFO:root:Total wait time: 191 minutes
+INFO:root:Total distance: 765 km
+INFO:root:Total time: 35 hours
+INFO:root:Average passenger time: 40 hours
+INFO:root:===== Greedy Offline 6 =====
+INFO:root:Seed: 24852
+INFO:root:Buses: 4
+INFO:root:Passengers: 4
+INFO:root:Total wait time: 41 minutes
+INFO:root:Total distance: 780 km
+INFO:root:Total time: 25 hours
+INFO:root:Average passenger time: 31 hours
+INFO:root:===== Greedy Offline 7 =====
+INFO:root:Seed: 24852
+INFO:root:Buses: 4
 INFO:root:Passengers: 7
-INFO:root:Total wait time: 57 minutes
-INFO:root:Total distance: 340 km
-INFO:root:Total time: 50 hours
+INFO:root:Total wait time: 77 minutes
+INFO:root:Total distance: 416 km
+INFO:root:Total time: 12 hours
+INFO:root:Average passenger time: 44 hours
+INFO:root:===== Greedy Offline 8 =====
+INFO:root:Seed: 24852
+INFO:root:Buses: 4
+INFO:root:Passengers: 10
+INFO:root:Total wait time: 99 minutes
+INFO:root:Total distance: 93 km
+INFO:root:Total time: 31 hours
 INFO:root:Average passenger time: 8 hours
+INFO:root:===== Greedy Offline 9 =====
+INFO:root:Seed: 24852
+INFO:root:Buses: 4
+INFO:root:Passengers: 13
+INFO:root:Total wait time: 153 minutes
+INFO:root:Total distance: 4 km
+INFO:root:Total time: 50 hours
+INFO:root:Average passenger time: 7 hours
+INFO:root:===== Greedy Offline 10 =====
+INFO:root:Seed: 24852
+INFO:root:Buses: 4
+INFO:root:Passengers: 16
+INFO:root:Total wait time: 221 minutes
+INFO:root:Total distance: 405 km
+INFO:root:Total time: 1 hours
+INFO:root:Average passenger time: 30 hours
