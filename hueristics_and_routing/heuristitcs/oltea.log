@@ -1,96 +1,213 @@
 INFO:root:===== NEW RUN 1 =====
-INFO:root:Seed: 2263
-INFO:root:Buses: 2
-INFO:root:Passengers: 2
-INFO:root:Total wait time: 31 minutes
-INFO:root:Total distance: 848 km
-INFO:root:Total time: 56 hours
+INFO:root:Seed: 19565
+INFO:root:Buses: 5
+INFO:root:Passengers: 5
+INFO:root:Total wait time: 102 minutes
+INFO:root:Total distance: 584 km
+INFO:root:Total time: 5 hours
+INFO:root:Average passenger time: 24 hours
+INFO:root:===== NEW RUN 2 =====
+INFO:root:Seed: 19565
+INFO:root:Buses: 5
+INFO:root:Passengers: 8
+INFO:root:Total wait time: 165 minutes
+INFO:root:Total distance: 959 km
+INFO:root:Total time: 46 hours
+INFO:root:Average passenger time: 52 hours
+INFO:root:===== NEW RUN 1 =====
+INFO:root:Seed: 5616
+INFO:root:Buses: 6
+INFO:root:Passengers: 6
+INFO:root:Total wait time: 121 minutes
+INFO:root:Total distance: 749 km
+INFO:root:Total time: 48 hours
 INFO:root:Average passenger time: 45 hours
 INFO:root:===== NEW RUN 2 =====
-INFO:root:Seed: 2263
-INFO:root:Buses: 2
-INFO:root:Passengers: 6
-INFO:root:Total wait time: 90 minutes
-INFO:root:Total distance: 431 km
-INFO:root:Total time: 18 hours
-INFO:root:Average passenger time: 36 hours
-INFO:root:===== NEW RUN 1 =====
-INFO:root:Seed: 27036
-INFO:root:Buses: 3
-INFO:root:Passengers: 3
-INFO:root:Total wait time: 31 minutes
-INFO:root:Total distance: 470 km
-INFO:root:Total time: 42 hours
-INFO:root:Average passenger time: 51 hours
-INFO:root:===== NEW RUN 2 =====
-INFO:root:Seed: 27036
-INFO:root:Buses: 3
-INFO:root:Passengers: 6
-INFO:root:Total wait time: 95 minutes
-INFO:root:Total distance: 883 km
-INFO:root:Total time: 15 hours
-INFO:root:Average passenger time: 7 hours
-INFO:root:===== NEW RUN 3 =====
-INFO:root:Seed: 27036
-INFO:root:Buses: 3
+INFO:root:Seed: 5616
+INFO:root:Buses: 6
 INFO:root:Passengers: 9
-INFO:root:Total wait time: 135 minutes
-INFO:root:Total distance: 304 km
-INFO:root:Total time: 13 hours
-INFO:root:Average passenger time: 13 hours
-INFO:root:===== NEW RUN 4 =====
-INFO:root:Seed: 27036
-INFO:root:Buses: 3
+INFO:root:Total wait time: 235 minutes
+INFO:root:Total distance: 857 km
+INFO:root:Total time: 22 hours
+INFO:root:Average passenger time: 50 hours
+INFO:root:===== NEW RUN 3 =====
+INFO:root:Seed: 5616
+INFO:root:Buses: 6
 INFO:root:Passengers: 12
-INFO:root:Total wait time: 224 minutes
-INFO:root:Total distance: 612 km
-INFO:root:Total time: 21 hours
-INFO:root:Average passenger time: 8 hours
-INFO:root:===== NEW RUN 5 =====
-INFO:root:Seed: 27036
-INFO:root:Buses: 3
+INFO:root:Total wait time: 259 minutes
+INFO:root:Total distance: 488 km
+INFO:root:Total time: 25 hours
+INFO:root:Average passenger time: 57 hours
+INFO:root:===== NEW RUN 4 =====
+INFO:root:Seed: 5616
+INFO:root:Buses: 6
 INFO:root:Passengers: 15
-INFO:root:Total wait time: 267 minutes
-INFO:root:Total distance: 636 km
-INFO:root:Total time: 31 hours
-INFO:root:Average passenger time: 30 hours
+INFO:root:Total wait time: 286 minutes
+INFO:root:Total distance: 794 km
+INFO:root:Total time: 49 hours
+INFO:root:Average passenger time: 17 hours
+INFO:root:===== NEW RUN 5 =====
+INFO:root:Seed: 5616
+INFO:root:Buses: 6
+INFO:root:Passengers: 18
+INFO:root:Total wait time: 348 minutes
+INFO:root:Total distance: 12 km
+INFO:root:Total time: 58 hours
+INFO:root:Average passenger time: 34 hours
 INFO:root:===== NEW RUN 6 =====
-INFO:root:Seed: 24852
-INFO:root:Buses: 4
-INFO:root:Passengers: 4
-INFO:root:Total wait time: 66 minutes
-INFO:root:Total distance: 929 km
-INFO:root:Total time: 5 hours
-INFO:root:Average passenger time: 59 hours
-INFO:root:===== NEW RUN 7 =====
-INFO:root:Seed: 24852
-INFO:root:Buses: 4
+INFO:root:Seed: 13363
+INFO:root:Buses: 7
 INFO:root:Passengers: 7
-INFO:root:Total wait time: 123 minutes
-INFO:root:Total distance: 61 km
-INFO:root:Total time: 3 hours
-INFO:root:Average passenger time: 5 hours
-INFO:root:===== NEW RUN 8 =====
-INFO:root:Seed: 24852
-INFO:root:Buses: 4
+INFO:root:Total wait time: 141 minutes
+INFO:root:Total distance: 79 km
+INFO:root:Total time: 7 hours
+INFO:root:Average passenger time: 25 hours
+INFO:root:===== NEW RUN 7 =====
+INFO:root:Seed: 13363
+INFO:root:Buses: 7
 INFO:root:Passengers: 10
-INFO:root:Total wait time: 137 minutes
-INFO:root:Total distance: 72 km
-INFO:root:Total time: 18 hours
-INFO:root:Average passenger time: 9 hours
-INFO:root:===== NEW RUN 9 =====
-INFO:root:Seed: 24852
-INFO:root:Buses: 4
+INFO:root:Total wait time: 207 minutes
+INFO:root:Total distance: 565 km
+INFO:root:Total time: 32 hours
+INFO:root:Average passenger time: 53 hours
+INFO:root:===== NEW RUN 8 =====
+INFO:root:Seed: 13363
+INFO:root:Buses: 7
 INFO:root:Passengers: 13
-INFO:root:Total wait time: 242 minutes
-INFO:root:Total distance: 827 km
-INFO:root:Total time: 4 hours
-INFO:root:Average passenger time: 13 hours
-INFO:root:===== NEW RUN 10 =====
-INFO:root:Seed: 24852
-INFO:root:Buses: 4
+INFO:root:Total wait time: 222 minutes
+INFO:root:Total distance: 163 km
+INFO:root:Total time: 21 hours
+INFO:root:Average passenger time: 33 hours
+INFO:root:===== NEW RUN 9 =====
+INFO:root:Seed: 13363
+INFO:root:Buses: 7
 INFO:root:Passengers: 16
-INFO:root:Total wait time: 323 minutes
-INFO:root:Total distance: 883 km
-INFO:root:Total time: 40 hours
+INFO:root:Total wait time: 327 minutes
+INFO:root:Total distance: 574 km
+INFO:root:Total time: 6 hours
+INFO:root:Average passenger time: 16 hours
+INFO:root:===== NEW RUN 10 =====
+INFO:root:Seed: 13363
+INFO:root:Buses: 7
+INFO:root:Passengers: 19
+INFO:root:Total wait time: 332 minutes
+INFO:root:Total distance: 951 km
+INFO:root:Total time: 3 hours
+INFO:root:Average passenger time: 29 hours
+
+INFO:root:===== NEW RUN 1 =====
+INFO:root:Seed: 19957
+INFO:root:Buses: 9
+INFO:root:Passengers: 9
+INFO:root:Total wait time: 182 minutes
+INFO:root:Total distance: 252 km
+INFO:root:Total time: 46 hours
+INFO:root:Average passenger time: 46 hours
+INFO:root:===== NEW RUN 2 =====
+INFO:root:Seed: 19957
+INFO:root:Buses: 9
+INFO:root:Passengers: 12
+INFO:root:Total wait time: 228 minutes
+INFO:root:Total distance: 393 km
+INFO:root:Total time: 19 hours
+INFO:root:Average passenger time: 59 hours
+INFO:root:===== NEW RUN 3 =====
+INFO:root:Seed: 19957
+INFO:root:Buses: 9
+INFO:root:Passengers: 15
+INFO:root:Total wait time: 308 minutes
+INFO:root:Total distance: 75 km
+INFO:root:Total time: 36 hours
+INFO:root:Average passenger time: 39 hours
+INFO:root:===== NEW RUN 4 =====
+INFO:root:Seed: 19957
+INFO:root:Buses: 9
+INFO:root:Passengers: 18
+INFO:root:Total wait time: 360 minutes
+INFO:root:Total distance: 670 km
+INFO:root:Total time: 22 hours
+INFO:root:Average passenger time: 52 hours
+INFO:root:===== NEW RUN 5 =====
+INFO:root:Seed: 19957
+INFO:root:Buses: 9
+INFO:root:Passengers: 21
+INFO:root:Total wait time: 388 minutes
+INFO:root:Total distance: 21 km
+INFO:root:Total time: 49 hours
+INFO:root:Average passenger time: 17 hours
+INFO:root:===== NEW RUN 6 =====
+INFO:root:Seed: 3154
+INFO:root:Buses: 10
+INFO:root:Passengers: 10
+INFO:root:Total wait time: 169 minutes
+INFO:root:Total distance: 506 km
+INFO:root:Total time: 48 hours
 INFO:root:Average passenger time: 43 hours
+INFO:root:===== NEW RUN 7 =====
+INFO:root:Seed: 3154
+INFO:root:Buses: 10
+INFO:root:Passengers: 13
+INFO:root:Total wait time: 220 minutes
+INFO:root:Total distance: 866 km
+INFO:root:Total time: 42 hours
+INFO:root:Average passenger time: 11 hours
+INFO:root:===== NEW RUN 8 =====
+INFO:root:Seed: 3154
+INFO:root:Buses: 10
+INFO:root:Passengers: 16
+INFO:root:Total wait time: 294 minutes
+INFO:root:Total distance: 179 km
+INFO:root:Total time: 3 hours
+INFO:root:Average passenger time: 16 hours
+INFO:root:===== NEW RUN 9 =====
+INFO:root:Seed: 3154
+INFO:root:Buses: 10
+INFO:root:Passengers: 19
+INFO:root:Total wait time: 342 minutes
+INFO:root:Total distance: 822 km
+INFO:root:Total time: 52 hours
+INFO:root:Average passenger time: 5 hours
+INFO:root:===== NEW RUN 10 =====
+INFO:root:Seed: 3154
+INFO:root:Buses: 10
+INFO:root:Passengers: 22
+INFO:root:Total wait time: 415 minutes
+INFO:root:Total distance: 899 km
+INFO:root:Total time: 40 hours
+INFO:root:Average passenger time: 38 hours
+INFO:root:===== NEW RUN 11 =====
+INFO:root:Seed: 797
+INFO:root:Buses: 11
+INFO:root:Passengers: 11
+INFO:root:Total wait time: 248 minutes
+INFO:root:Total distance: 846 km
+INFO:root:Total time: 30 hours
+INFO:root:Average passenger time: 9 hours
+INFO:root:===== NEW RUN 12 =====
+INFO:root:Seed: 797
+INFO:root:Buses: 11
+INFO:root:Passengers: 14
+INFO:root:Total wait time: 289 minutes
+INFO:root:Total distance: 828 km
+INFO:root:Total time: 42 hours
+INFO:root:Average passenger time: 50 hours
+INFO:root:===== NEW RUN 1 =====
+INFO:root:Seed: 20965
+INFO:root:Buses: 15
+INFO:root:Passengers: 15
+INFO:root:Total wait time: 303 minutes
+INFO:root:Total distance: 309 km
+INFO:root:Total time: 13 hours
+INFO:root:Average passenger time: 0 hours
+INFO:root:===== NEW RUN 2 =====
+INFO:root:Seed: 20965
+INFO:root:Buses: 15
+INFO:root:Passengers: 20
+INFO:root:Total wait time: 407 minutes
+INFO:root:Total distance: 774 km
+INFO:root:Total time: 40 hours
+INFO:root:Average passenger time: 5 hours
+INFO:root:===== NEW RUN 3 =====
+INFO:root:Seed: 20965
+INFO:root:Buses: 15
+INFO:root:Passengers: 25
