@@ -31,6 +31,7 @@ class Buses:
         self.speed = speed
         self.running_cost = running_cost
         self.current_stop = start_stop
+        
         self.total_time = 0
         self.total_distance = 0
 

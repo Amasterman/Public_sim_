@@ -16,9 +16,10 @@ class Route:
 
     """
 
-    def __init__(self, stop, arrival_time,distance, wait_time, passenger_manifest):
+    def __init__(self, stop, set_off , arrival_time,distance, wait_time, passenger_manifest):
         """Constructor method"""
         self.stop = stop
+        self.set_off = set_off
         self.arrival_time = arrival_time
         self.distance = distance
         self.wait_time = wait_time
@@ -41,7 +42,7 @@ class Route:
     def getArrival(self):
         """
         :return: Get the arrival time of the vehicle
-        :rtype: int
+        :rtype: Datetime
         """
         return self.arrival_time
 
@@ -58,3 +59,10 @@ class Route:
         :rtype: int
         """
         return self.distance
+    
+    def getSetOff(self):
+        """
+        :return: Time the vehicle leaves the stop
+        :rtype: Datetime
+        """
+        return self.set_off

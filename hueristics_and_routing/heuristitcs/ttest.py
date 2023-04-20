@@ -5,13 +5,13 @@ from scipy.stats import ttest_ind
 df = pd.read_excel('result.xlsx')
 df['alg_name'] = df['alg_name'].astype(str)
 
-# Group the data by algorithm, number of buses, and number of passengers
-grouped = df.groupby(['alg_name', 'buses', 'passengers'])
+# Group the data by number of buses and number of passengers
+grouped = df.groupby(['buses', 'passengers'])
 
 for group, data in grouped:
-    alg_name, buses, passengers = group
+    buses, passengers = group
     # Filter rows for the current group
-    data_filtered = data.loc[(data['alg_name'] == alg_name) & (data['buses'] == buses) & (data['passengers'] == passengers)]
+    data_filtered = data.loc[(data['buses'] == buses) & (data['passengers'] == passengers)]
     
     if 'greedy' in data_filtered['alg_name'].values:
         mean1 = data_filtered.loc[data_filtered['alg_name'] == 'greedy', 'time'].mean()
@@ -51,4 +51,3 @@ for group, data in grouped:
         print(f"For group {group}: New heuristic is better in terms of distance.")
     else:
         print(f"For group {group}: No significant difference in distance between the two algorithms.")
-    

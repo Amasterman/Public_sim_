@@ -41,10 +41,10 @@ class Passenger:
     :type speed: int
 
     :param pickup_time: Target pickup time
-    :type pickup_time: int
+    :type pickup_time: DateTime
 
     :param dropoff_time: Target time the passenger wants to get to their destination
-    :type droproff_time: int
+    :type droproff_time: DateTime
 
     :param booked: If the passenger has booked in advance
     :type booked: bool
@@ -72,7 +72,7 @@ class Passenger:
         self.dropoff_time = dropoff_time
         self.booked = booked
         self.lateness = lateness
-        self.journey_start_time = rnd.randint(1, self.pickup_time)
+        # self.journey_start_time = rnd.randint(1, self.pickup_time)
         self.first_stop = 0,
         self.total_time = 0
         self.total_distance=0
@@ -84,6 +84,8 @@ class Passenger:
 
         if self.booked:
             self.booking_time = 0
+            
+        self.disatisfied = False
 
     def getNearestStop(self, stop_list):
         """
@@ -99,6 +101,24 @@ class Passenger:
         for s in stop_list:
             if self.calc_distance(self.lat, self.long, s.lat, s.long) < \
                     self.calc_distance(self.lat, self.long, current_nearest.lat, current_nearest.long):
+                current_nearest = s
+    
+        return current_nearest
+    
+    def getStartStop(self, stop_list):
+        """
+        Get the nearest stop to the passenger from the stops contained in the stop_list
+
+        :param stop_list: List of eligible stops
+        :type stop_list: List of <Stops>
+
+        :return: The nearest stop to the passenger
+        :rtype: Stop
+        """
+        current_nearest = stop_list[0]
+        for s in stop_list:
+            if self.calc_distance(self.origin_x, self.origin_y, s.lat, s.long) < \
+                    self.calc_distance(self.origin_x, self.origin_y, current_nearest.lat, current_nearest.long):
                 current_nearest = s
     
         return current_nearest
@@ -235,6 +255,56 @@ class Passenger:
         """
 
         return self.total_distance  
+    
+    def set_pickup_time(self, value):
+        """
+        Set the time that the passenger is picked up
+
+        :param value: Time the passenger is picked up
+        :type value: int
+
+        """
+
+        self.pickup_time = value
+        
+    def set_dropoff_time(self, value):
+        """
+        Set the time that the passenger is dropped off
+
+        :param value: Time the passenger is dropped off
+        :type value: int
+
+        """
+
+        self.dropoff_time = value
+        
+    def get_pickup_time(self):
+        """
+        Get the time that the passenger is picked up
+        :return: The pickup time
+        :rtype: int
+        """
+
+        return self.pickup_time
+    
+    def get_dropoff_time(self):
+        """
+        Get the time that the passenger is dropped off
+        :return: The dropoff time
+        :rtype: int
+        """
+
+        return self.dropoff_time
+    
+    def set_dissatisfaction(self, value):
+        """
+        Set the passengers dissatisfaction
+
+        :param value: Dissatisfaction
+        :type value: int
+        """
+
+        self.dissatisfaction = value
     
     def calc_distance(self,lat1, lon1, lat2, lon2):
         R = 6371  # Radius of the Earth in kilometers
