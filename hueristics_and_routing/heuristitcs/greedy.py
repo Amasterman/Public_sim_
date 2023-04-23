@@ -674,7 +674,7 @@ def save_results(ind_bus):
     logging.info("Average passenger time: %d hours", average_passenger_time)
     print("Average passenger time: ", average_passenger_time%1000)
     
-    data = [["new_heuristic",no_buses,no_passengers,total_distance%1000, total_time%60, total_wait]]
+    data = [["greedy",no_buses,no_passengers,total_distance%1000, total_time%60, total_wait]]
     
     for row in data:
         worksheet.append(row)
@@ -871,6 +871,6 @@ for i in range(0, len(routes)):
     bus_routes.append(get_bus_order(routes[i]))
 # bus_routes = [getBusOrder(routes[0]), getBusOrder(routes[1]), getBusOrder(routes)]
 
-plot(list_of_stops, list_of_passengers, list_of_buses, passenger_bookings, bus_routes)
+# plot(list_of_stops, list_of_passengers, list_of_buses, passenger_bookings, bus_routes)
 
 # run(None)

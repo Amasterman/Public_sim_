@@ -718,10 +718,9 @@ def route_generator(passengers, buses, stops, depo):
                             print ("\n>>>>>>>>>>>>>>>>> Picked up passenger", passenger.id, "at stop", str(near_stop.getStopId())[:5],"by bus", bus,"\n")
 
                 for passenger in passengers_picked.copy():
-                    max_utility=-1
-                    tranfer_to=-1
                     if passenger in carried_passengers[bus].copy() and passenger.getStartStop(list_of_stops) != near_stop:
                         for bus2 in range(len(buses)):
+                            transfer_rate=0
                             if bus2!=bus:
 
                                 stay_convenience=1
@@ -734,30 +733,30 @@ def route_generator(passengers, buses, stops, depo):
                                     transfer_convenience=2
                                 transfer_rate=naive_utility(passenger,near_stop,ind_bus[bus2][-1].getStops(),destination, stay_convenience, transfer_convenience)
                                 print("Utility: ",transfer_rate)
-                                if transfer_rate>max_utility:
-                                    max_utility=transfer_rate
-                                    tranfer_to=bus2
-                        if tranfer_to!=-1 and max_utility>80 and passenger.prev_bus!=tranfer_to and passenger not in passenger_transfers and passenger.getStartStop(list_of_stops) != near_stop:
-                            print("hooooia")
-                            passengers_not_picked.append(passenger)
-                            passengers_picked.remove(passenger)
-                            carried_passengers[bus].remove(passenger)
-                            # non_visited_stops[bus].remove(passenger.getNearestDrop(list_of_stops))
-                            dropoffs[bus].remove(passenger.getNearestDrop(list_of_stops))
+                                
+                            if transfer_rate>80 and passenger.prev_bus!=bus2 and passenger not in passenger_transfers:
+                                print("hooooia")
+                                passengers_not_picked.append(passenger)
+                                passengers_picked.remove(passenger)
+                                carried_passengers[bus].remove(passenger)
+                                # non_visited_stops[bus].remove(passenger.getNearestDrop(list_of_stops))
+                                if passenger.getNearestDrop(list_of_stops) in dropoffs[bus]:
+                                    dropoffs[bus].remove(passenger.getNearestDrop(list_of_stops))
 
-                            passenger_transfers.update({near_stop.id:passenger})
-                            transfer_stop.append(near_stop)
-                            # non_visited_stops[tranfer_to].add(near_stop)
-                            pickups[tranfer_to].add(near_stop)
+                                passenger_transfers.update({near_stop.id:passenger})
+                                transfer_stop.append(near_stop)
+                                # non_visited_stops[tranfer_to].add(near_stop)
+                                pickups[bus2].add(near_stop)
 
-                            transfer_relations[tranfer_to].append(passenger)
-                            passenger.set_current_pos(near_stop.lat,near_stop.long)
+                                transfer_relations[bus2].append(passenger)
+                                passenger.set_current_pos(near_stop.lat,near_stop.long)
 
-                            print (passenger.getNearestStop(list_of_stops.copy()).getStopId()==near_stop.getStopId(), "mai oltea")
+                                print (passenger.getNearestStop(list_of_stops.copy()).getStopId()==near_stop.getStopId(), "mai oltea")
 
-                            passenger.prev_bus=bus
-                            print("Transfer passenger: ",passenger.id,"from",bus," to bus ",bus2)
-                            break
+                                passenger.prev_bus=bus
+                                print("Transfer passenger: ",passenger.id,"from",bus," to bus ",bus2)
+                                bus2=len(buses)+1
+                                break
                 print("Transfer passengers: ",str(len(passenger_transfers)))
 
                 listss=list(passengers_not_picked)
@@ -977,5 +976,5 @@ for i in range(0, len(routes)):
 
 # bus_routes = [getBusOrder(routes[0]), getBusOrder(routes[1]), getBusOrder(routes)]
 
-plot(list_of_stops, list_of_passengers, list_of_buses, passenger_bookings, bus_routes)
+# plot(list_of_stops, list_of_passengers, list_of_buses, passenger_bookings, bus_routes)
 
