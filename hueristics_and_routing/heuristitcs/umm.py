@@ -5,9 +5,10 @@ from scipy.stats import normaltest
 df = pd.read_excel('result.xlsx')
 
 # Check for normality using the D'Agostino-Pearson normality test
-statistic, p_value = normaltest(df['distance'])
+statistic, p_value = normaltest(df['time'])
 
 # Interpret the test results
+print (p_value)
 alpha = 0.05
 if p_value < alpha:
     print("The data is not normally distributed.")

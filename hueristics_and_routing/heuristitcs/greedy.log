@@ -1,969 +1,980 @@
-
-INFO:root:===== Greedy Offline 1 =====
-INFO:root:Seed: 21941
-INFO:root:Buses: 2
-INFO:root:Passengers: 2
-INFO:root:Total wait time: 0 minutes
-INFO:root:Total distance: 769 km
-INFO:root:Total time: 44 hours
-INFO:root:Average passenger time: 3 hours
-INFO:root:===== Greedy Offline 2 =====
-INFO:root:Seed: 21941
-INFO:root:Buses: 2
-INFO:root:Passengers: 6
-INFO:root:Total wait time: 0 minutes
-INFO:root:Total distance: 25 km
-INFO:root:Total time: 32 hours
-INFO:root:Average passenger time: 32 hours
-INFO:root:===== Greedy Offline 1 =====
-INFO:root:Seed: 1415
-INFO:root:Buses: 2
-INFO:root:Passengers: 2
-INFO:root:Total wait time: 0 minutes
-INFO:root:Total distance: 787 km
-INFO:root:Total time: 29 hours
-INFO:root:Average passenger time: 17 hours
-INFO:root:===== Greedy Offline 2 =====
-INFO:root:Seed: 1415
-INFO:root:Buses: 2
-INFO:root:Passengers: 6
-INFO:root:Total wait time: 0 minutes
-INFO:root:Total distance: 525 km
-INFO:root:Total time: 28 hours
-INFO:root:Average passenger time: 2 hours
 INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1415
-INFO:root:Buses: 2
-INFO:root:Passengers: 10
+INFO:root:Seed: 16241
+INFO:root:Buses: 15
+INFO:root:Passengers: 25
 INFO:root:Total wait time: 0 minutes
-INFO:root:Total distance: 148 km
-INFO:root:Total time: 2 hours
-INFO:root:Average passenger time: 39 hours
-INFO:root:===== Greedy Offline 4 =====
-INFO:root:Seed: 1415
-INFO:root:Buses: 2
-INFO:root:Passengers: 14
-INFO:root:Total wait time: 0 minutes
-INFO:root:Total distance: 289 km
-INFO:root:Total time: 13 hours
-INFO:root:Average passenger time: 44 hours
+INFO:root:Avegera distance per bus: 59827 km
+INFO:root:Average bus time: 185 hours
+INFO:root:Average passenger time: 67 hours
 INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1415
-INFO:root:Buses: 2
-INFO:root:Passengers: 18
+INFO:root:Seed: 1624
+INFO:root:Buses: 15
+INFO:root:Passengers: 31
 INFO:root:Total wait time: 0 minutes
-INFO:root:Total distance: 208 km
-INFO:root:Total time: 29 hours
-INFO:root:Average passenger time: 2 hours
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1415
-INFO:root:Buses: 2
-INFO:root:Passengers: 18
-INFO:root:Total wait time: 0 minutes
-INFO:root:Total distance: 208 km
-INFO:root:Total time: 29 hours
-INFO:root:Average passenger time: 2 hours
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1415
-INFO:root:Buses: 3
-INFO:root:Passengers: 9
-INFO:root:Total wait time: 0 minutes
-INFO:root:Total distance: 174 km
-INFO:root:Total time: 21 hours
-INFO:root:Average passenger time: 15 hours
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 141
-INFO:root:Buses: 3
-INFO:root:Passengers: 9
-INFO:root:Total wait time: 0 minutes
-INFO:root:Total distance: 798 km
-INFO:root:Total time: 8 hours
-INFO:root:Average passenger time: 43 hours
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 141
-INFO:root:Buses: 2
-INFO:root:Passengers: 6
-INFO:root:Total wait time: 0 minutes
-INFO:root:Total distance: 140 km
-INFO:root:Total time: 8 hours
-INFO:root:Average passenger time: 12 hours
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 141
-INFO:root:Buses: 2
-INFO:root:Passengers: 6
-INFO:root:Total wait time: 0 minutes
-INFO:root:Total distance: 140 km
-INFO:root:Total time: 8 hours
-INFO:root:Average passenger time: 12 hours
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 141
-INFO:root:Buses: 2
-INFO:root:Passengers: 6
-INFO:root:Total wait time: 0 minutes
-INFO:root:Total distance: 140 km
-INFO:root:Total time: 8 hours
-INFO:root:Average passenger time: 12 hours
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 141
-INFO:root:Buses: 3
-INFO:root:Passengers: 15
-INFO:root:Total wait time: 0 minutes
-INFO:root:Total distance: 242 km
-INFO:root:Total time: 36 hours
+INFO:root:Avegera distance per bus: 54346 km
+INFO:root:Average bus time: 161 hours
 INFO:root:Average passenger time: 40 hours
 INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 2
-INFO:root:Passengers: 4
+INFO:root:Seed: 1624
+INFO:root:Buses: 15
+INFO:root:Passengers: 31
 INFO:root:Total wait time: 0 minutes
-INFO:root:Total distance: 784 km
-INFO:root:Total time: 20 hours
-INFO:root:Average passenger time: 9 hours
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 4
-INFO:root:Passengers: 10
-INFO:root:Total wait time: 0 minutes
-INFO:root:Total distance: 608 km
-INFO:root:Total time: 43 hours
-INFO:root:Average passenger time: 41 hours
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 4
-INFO:root:Passengers: 10
-INFO:root:Total wait time: 0 minutes
-INFO:root:Total distance: 485 km
-INFO:root:Total time: 45 hours
-INFO:root:Average passenger time: 28 hours
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 8
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 8
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 8
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 8
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 8
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 8
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 8
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 8
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 8
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 8
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 8
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 8
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 8
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 8
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 8
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 8
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 8
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 8
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 8
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 8
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 8
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 8
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 8
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 8
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 8
-INFO:root:Total wait time: 0 minutes
-INFO:root:Total distance: 251 km
-INFO:root:Total time: 32 hours
-INFO:root:Average passenger time: 43 hours
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 8
-INFO:root:Total wait time: 0 minutes
-INFO:root:Total distance: 32 km
-INFO:root:Total time: 31 hours
-INFO:root:Average passenger time: 5 hours
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 8
-INFO:root:Total wait time: 0 minutes
-INFO:root:Total distance: 32 km
-INFO:root:Total time: 31 hours
-INFO:root:Average passenger time: 5 hours
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 8
-INFO:root:Total wait time: 0 minutes
-INFO:root:Total distance: 247 km
-INFO:root:Total time: 6 hours
-INFO:root:Average passenger time: 37 hours
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 8
-INFO:root:Total wait time: 0 minutes
-INFO:root:Total distance: 247 km
-INFO:root:Total time: 6 hours
-INFO:root:Average passenger time: 37 hours
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 8
-INFO:root:Total wait time: 0 minutes
-INFO:root:Total distance: 247 km
-INFO:root:Total time: 6 hours
-INFO:root:Average passenger time: 37 hours
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 8
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 8
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 110677 km
-INFO:root:Average bus time: 290 hours
-INFO:root:Average passenger time: 65 hours
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 1
-INFO:root:Buses: 3
-INFO:root:Passengers: 8
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 80683 km
-INFO:root:Average bus time: 179 hours
-INFO:root:Average passenger time: 65 hours
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 6
-INFO:root:Buses: 2
-INFO:root:Passengers: 6
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 60322 km
-INFO:root:Average bus time: 113 hours
-INFO:root:Average passenger time: 48 hours
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 6
-INFO:root:Buses: 3
-INFO:root:Passengers: 8
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 55145 km
-INFO:root:Average bus time: 152 hours
-INFO:root:Average passenger time: 78 hours
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 6
-INFO:root:Buses: 5
-INFO:root:Passengers: 20
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 94664 km
-INFO:root:Average bus time: 217 hours
-INFO:root:Average passenger time: 80 hours
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 6
-INFO:root:Buses: 5
-INFO:root:Passengers: 20
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 94664 km
-INFO:root:Average bus time: 217 hours
-INFO:root:Average passenger time: 80 hours
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 6
-INFO:root:Buses: 5
-INFO:root:Passengers: 20
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 63842 km
-INFO:root:Average bus time: 129 hours
-INFO:root:Average passenger time: 98 hours
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 6
-INFO:root:Buses: 5
-INFO:root:Passengers: 20
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 68775 km
-INFO:root:Average bus time: 137 hours
-INFO:root:Average passenger time: 118 hours
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 6
-INFO:root:Buses: 5
-INFO:root:Passengers: 20
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 94664 km
-INFO:root:Average bus time: 217 hours
-INFO:root:Average passenger time: 80 hours
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 6
-INFO:root:Buses: 2
-INFO:root:Passengers: 10
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 98691 km
-INFO:root:Average bus time: 240 hours
-INFO:root:Average passenger time: 70 hours
+INFO:root:Avegera distance per bus: 54346 km
+INFO:root:Average bus time: 161 hours
+INFO:root:Average passenger time: 40 hours
 INFO:root:===== Greedy Offline 1 =====
-INFO:root:Seed: 10736
+INFO:root:Seed: 28946
 INFO:root:Buses: 2
 INFO:root:Passengers: 2
 INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 61133 km
-INFO:root:Average bus time: 135 hours
-INFO:root:Average passenger time: 62 hours
-INFO:root:===== Greedy Offline 1 =====
-INFO:root:Seed: 4342
-INFO:root:Buses: 2
-INFO:root:Passengers: 2
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 51533 km
-INFO:root:Average bus time: 93 hours
-INFO:root:Average passenger time: 27 hours
+INFO:root:Avegera distance per bus: 40559 km
+INFO:root:Average bus time: 159 hours
+INFO:root:Average passenger time: 59 hours
 INFO:root:===== Greedy Offline 2 =====
-INFO:root:Seed: 4342
+INFO:root:Seed: 28946
 INFO:root:Buses: 2
-INFO:root:Passengers: 6
+INFO:root:Passengers: 7
 INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 67431 km
-INFO:root:Average bus time: 164 hours
-INFO:root:Average passenger time: 39 hours
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 4342
-INFO:root:Buses: 2
-INFO:root:Passengers: 10
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 102004 km
-INFO:root:Average bus time: 258 hours
-INFO:root:Average passenger time: 91 hours
-INFO:root:===== Greedy Offline 4 =====
-INFO:root:Seed: 4342
-INFO:root:Buses: 2
-INFO:root:Passengers: 14
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 128497 km
-INFO:root:Average bus time: 353 hours
-INFO:root:Average passenger time: 100 hours
-INFO:root:===== Greedy Offline 5 =====
-INFO:root:Seed: 4342
-INFO:root:Buses: 2
-INFO:root:Passengers: 18
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 127528 km
-INFO:root:Average bus time: 297 hours
-INFO:root:Average passenger time: 99 hours
-INFO:root:===== Greedy Offline 6 =====
-INFO:root:Seed: 4029
-INFO:root:Buses: 5
-INFO:root:Passengers: 5
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 34900 km
-INFO:root:Average bus time: 170 hours
-INFO:root:Average passenger time: 53 hours
-INFO:root:===== Greedy Offline 7 =====
-INFO:root:Seed: 4029
-INFO:root:Buses: 5
-INFO:root:Passengers: 9
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 51430 km
-INFO:root:Average bus time: 211 hours
-INFO:root:Average passenger time: 72 hours
-INFO:root:===== Greedy Offline 8 =====
-INFO:root:Seed: 4029
-INFO:root:Buses: 5
-INFO:root:Passengers: 13
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 76432 km
-INFO:root:Average bus time: 276 hours
-INFO:root:Average passenger time: 70 hours
-INFO:root:===== Greedy Offline 9 =====
-INFO:root:Seed: 4029
-INFO:root:Buses: 5
-INFO:root:Passengers: 17
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 81436 km
-INFO:root:Average bus time: 190 hours
-INFO:root:Average passenger time: 74 hours
-INFO:root:===== Greedy Offline 10 =====
-INFO:root:Seed: 4029
-INFO:root:Buses: 5
-INFO:root:Passengers: 21
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 91582 km
+INFO:root:Avegera distance per bus: 91435 km
 INFO:root:Average bus time: 280 hours
-INFO:root:Average passenger time: 72 hours
-INFO:root:===== Greedy Offline 11 =====
-INFO:root:Seed: 9861
-INFO:root:Buses: 8
-INFO:root:Passengers: 8
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 42034 km
-INFO:root:Average bus time: 99 hours
-INFO:root:Average passenger time: 51 hours
-INFO:root:===== Greedy Offline 12 =====
-INFO:root:Seed: 9861
-INFO:root:Buses: 8
+INFO:root:Average passenger time: 105 hours
+INFO:root:===== Greedy Offline 3 =====
+INFO:root:Seed: 28946
+INFO:root:Buses: 2
 INFO:root:Passengers: 12
 INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 42441 km
-INFO:root:Average bus time: 158 hours
-INFO:root:Average passenger time: 65 hours
-INFO:root:===== Greedy Offline 13 =====
-INFO:root:Seed: 9861
-INFO:root:Buses: 8
-INFO:root:Passengers: 16
+INFO:root:Avegera distance per bus: 112100 km
+INFO:root:Average bus time: 267 hours
+INFO:root:Average passenger time: 117 hours
+INFO:root:===== Greedy Offline 4 =====
+INFO:root:Seed: 28946
+INFO:root:Buses: 2
+INFO:root:Passengers: 17
 INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 52243 km
-INFO:root:Average bus time: 67 hours
-INFO:root:Average passenger time: 72 hours
-INFO:root:===== Greedy Offline 14 =====
-INFO:root:Seed: 9861
-INFO:root:Buses: 8
+INFO:root:Avegera distance per bus: 125888 km
+INFO:root:Average bus time: 324 hours
+INFO:root:Average passenger time: 107 hours
+INFO:root:===== Greedy Offline 5 =====
+INFO:root:Seed: 17116
+INFO:root:Buses: 5
+INFO:root:Passengers: 5
+INFO:root:===== Greedy Offline 6 =====
+INFO:root:Seed: 17116
+INFO:root:Buses: 5
+INFO:root:Passengers: 10
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 60507 km
+INFO:root:Average bus time: 61 hours
+INFO:root:Average passenger time: 80 hours
+INFO:root:===== Greedy Offline 7 =====
+INFO:root:Seed: 17116
+INFO:root:Buses: 5
+INFO:root:Passengers: 15
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 79789 km
+INFO:root:Average bus time: 157 hours
+INFO:root:Average passenger time: 80 hours
+INFO:root:===== Greedy Offline 8 =====
+INFO:root:Seed: 17116
+INFO:root:Buses: 5
 INFO:root:Passengers: 20
 INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 60407 km
-INFO:root:Average bus time: 183 hours
-INFO:root:Average passenger time: 66 hours
-INFO:root:===== Greedy Offline 15 =====
-INFO:root:Seed: 9861
+INFO:root:Avegera distance per bus: 98504 km
+INFO:root:Average bus time: 230 hours
+INFO:root:Average passenger time: 81 hours
+INFO:root:===== Greedy Offline 9 =====
+INFO:root:Seed: 20331
 INFO:root:Buses: 8
-INFO:root:Passengers: 24
+INFO:root:Passengers: 8
 INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 82222 km
-INFO:root:Average bus time: 226 hours
-INFO:root:Average passenger time: 69 hours
-INFO:root:===== Greedy Offline 16 =====
-INFO:root:Seed: 3217
+INFO:root:Avegera distance per bus: 63003 km
+INFO:root:Average bus time: 129 hours
+INFO:root:Average passenger time: 47 hours
+INFO:root:===== Greedy Offline 10 =====
+INFO:root:Seed: 20331
+INFO:root:Buses: 8
+INFO:root:Passengers: 13
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 71120 km
+INFO:root:Average bus time: 157 hours
+INFO:root:Average passenger time: 64 hours
+INFO:root:===== Greedy Offline 11 =====
+INFO:root:Seed: 20331
+INFO:root:Buses: 8
+INFO:root:Passengers: 18
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 76600 km
+INFO:root:Average bus time: 78 hours
+INFO:root:Average passenger time: 72 hours
+INFO:root:===== Greedy Offline 12 =====
+INFO:root:Seed: 20331
+INFO:root:Buses: 8
+INFO:root:Passengers: 23
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 82218 km
+INFO:root:Average bus time: 280 hours
+INFO:root:Average passenger time: 84 hours
+INFO:root:===== Greedy Offline 13 =====
+INFO:root:Seed: 20587
 INFO:root:Buses: 11
 INFO:root:Passengers: 11
 INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 44310 km
-INFO:root:Average bus time: 159 hours
-INFO:root:Average passenger time: 47 hours
-INFO:root:===== Greedy Offline 17 =====
-INFO:root:Seed: 3217
+INFO:root:Avegera distance per bus: 52126 km
+INFO:root:Average bus time: 82 hours
+INFO:root:Average passenger time: 42 hours
+INFO:root:===== Greedy Offline 14 =====
+INFO:root:Seed: 20587
 INFO:root:Buses: 11
-INFO:root:Passengers: 15
+INFO:root:Passengers: 16
 INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 46673 km
-INFO:root:Average bus time: 134 hours
-INFO:root:Average passenger time: 62 hours
-INFO:root:===== Greedy Offline 18 =====
-INFO:root:Seed: 3217
-INFO:root:Buses: 11
-INFO:root:Passengers: 19
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 47622 km
-INFO:root:Average bus time: 215 hours
-INFO:root:Average passenger time: 65 hours
-INFO:root:===== Greedy Offline 19 =====
-INFO:root:Seed: 3217
-INFO:root:Buses: 11
-INFO:root:Passengers: 23
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 62886 km
-INFO:root:Average bus time: 147 hours
-INFO:root:Average passenger time: 66 hours
-INFO:root:===== Greedy Offline 1 =====
-INFO:root:Seed: 8200
-INFO:root:Buses: 2
-INFO:root:Passengers: 2
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 49746 km
-INFO:root:Average bus time: 117 hours
-INFO:root:Average passenger time: 59 hours
-INFO:root:===== Greedy Offline 2 =====
-INFO:root:Seed: 8200
-INFO:root:Buses: 2
-INFO:root:Passengers: 6
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 72528 km
-INFO:root:Average bus time: 229 hours
-INFO:root:Average passenger time: 59 hours
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 8200
-INFO:root:Buses: 2
-INFO:root:Passengers: 10
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 100486 km
-INFO:root:Average bus time: 201 hours
-INFO:root:Average passenger time: 81 hours
-INFO:root:===== Greedy Offline 4 =====
-INFO:root:Seed: 8200
-INFO:root:Buses: 2
-INFO:root:Passengers: 14
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 127671 km
-INFO:root:Average bus time: 235 hours
-INFO:root:Average passenger time: 102 hours
-INFO:root:===== Greedy Offline 5 =====
-INFO:root:Seed: 8200
-INFO:root:Buses: 2
-INFO:root:Passengers: 18
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 138799 km
-INFO:root:Average bus time: 302 hours
-INFO:root:Average passenger time: 128 hours
-INFO:root:===== Greedy Offline 6 =====
-INFO:root:Seed: 29771
-INFO:root:Buses: 5
-INFO:root:Passengers: 5
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 38367 km
-INFO:root:Average bus time: 131 hours
-INFO:root:Average passenger time: 62 hours
-INFO:root:===== Greedy Offline 7 =====
-INFO:root:Seed: 29771
-INFO:root:Buses: 5
-INFO:root:Passengers: 9
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 58326 km
-INFO:root:Average bus time: 120 hours
-INFO:root:Average passenger time: 62 hours
-INFO:root:===== Greedy Offline 8 =====
-INFO:root:Seed: 29771
-INFO:root:Buses: 5
-INFO:root:Passengers: 13
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 83809 km
-INFO:root:Average bus time: 125 hours
-INFO:root:Average passenger time: 80 hours
-INFO:root:===== Greedy Offline 1 =====
-INFO:root:Seed: 26399
-INFO:root:Buses: 3
-INFO:root:Passengers: 3
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 38945 km
-INFO:root:Average bus time: 95 hours
-INFO:root:Average passenger time: 61 hours
-INFO:root:===== Greedy Offline 2 =====
-INFO:root:Seed: 26399
-INFO:root:Buses: 3
-INFO:root:Passengers: 8
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 82588 km
-INFO:root:Average bus time: 355 hours
-INFO:root:Average passenger time: 89 hours
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 26399
-INFO:root:Buses: 3
-INFO:root:Passengers: 13
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 84910 km
-INFO:root:Average bus time: 145 hours
-INFO:root:Average passenger time: 101 hours
-INFO:root:===== Greedy Offline 4 =====
-INFO:root:Seed: 26399
-INFO:root:Buses: 3
-INFO:root:Passengers: 18
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 122154 km
-INFO:root:Average bus time: 234 hours
-INFO:root:Average passenger time: 112 hours
-INFO:root:===== Greedy Offline 5 =====
-INFO:root:Seed: 9342
-INFO:root:Buses: 6
-INFO:root:Passengers: 6
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 48747 km
-INFO:root:Average bus time: 144 hours
-INFO:root:Average passenger time: 56 hours
-INFO:root:===== Greedy Offline 1 =====
-INFO:root:Seed: 8324
-INFO:root:Buses: 7
-INFO:root:Passengers: 7
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 58498 km
-INFO:root:Average bus time: 206 hours
-INFO:root:Average passenger time: 62 hours
-INFO:root:===== Greedy Offline 2 =====
-INFO:root:Seed: 8324
-INFO:root:Buses: 7
-INFO:root:Passengers: 12
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 58526 km
-INFO:root:Average bus time: 171 hours
-INFO:root:Average passenger time: 67 hours
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 8324
-INFO:root:Buses: 7
-INFO:root:Passengers: 17
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 68976 km
-INFO:root:Average bus time: 105 hours
-INFO:root:Average passenger time: 87 hours
-INFO:root:===== Greedy Offline 1 =====
-INFO:root:Seed: 22674
-INFO:root:Buses: 7
-INFO:root:Passengers: 7
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 43980 km
-INFO:root:Average bus time: 122 hours
-INFO:root:Average passenger time: 36 hours
-INFO:root:===== Greedy Offline 2 =====
-INFO:root:Seed: 22674
-INFO:root:Buses: 7
-INFO:root:Passengers: 12
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 60268 km
-INFO:root:Average bus time: 117 hours
-INFO:root:Average passenger time: 46 hours
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 22674
-INFO:root:Buses: 7
-INFO:root:Passengers: 17
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 56017 km
-INFO:root:Average bus time: 128 hours
-INFO:root:Average passenger time: 60 hours
-INFO:root:===== Greedy Offline 4 =====
-INFO:root:Seed: 22674
-INFO:root:Buses: 7
-INFO:root:Passengers: 22
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 82218 km
-INFO:root:Average bus time: 178 hours
-INFO:root:Average passenger time: 72 hours
-INFO:root:===== Greedy Offline 5 =====
-INFO:root:Seed: 21822
-INFO:root:Buses: 10
-INFO:root:Passengers: 10
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 41393 km
-INFO:root:Average bus time: 98 hours
+INFO:root:Avegera distance per bus: 50017 km
+INFO:root:Average bus time: 150 hours
 INFO:root:Average passenger time: 50 hours
-INFO:root:===== Greedy Offline 6 =====
-INFO:root:Seed: 21822
-INFO:root:Buses: 10
-INFO:root:Passengers: 15
+INFO:root:===== Greedy Offline 15 =====
+INFO:root:Seed: 20587
+INFO:root:Buses: 11
+INFO:root:Passengers: 21
 INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 42086 km
-INFO:root:Average bus time: 138 hours
-INFO:root:Average passenger time: 56 hours
-INFO:root:===== Greedy Offline 7 =====
-INFO:root:Seed: 21822
-INFO:root:Buses: 10
-INFO:root:Passengers: 20
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 58754 km
-INFO:root:Average bus time: 202 hours
-INFO:root:Average passenger time: 67 hours
-INFO:root:===== Greedy Offline 8 =====
-INFO:root:Seed: 21822
-INFO:root:Buses: 10
-INFO:root:Passengers: 25
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 68135 km
-INFO:root:Average bus time: 182 hours
-INFO:root:Average passenger time: 64 hours
-INFO:root:===== Greedy Offline 9 =====
-INFO:root:Seed: 23674
-INFO:root:Buses: 13
-INFO:root:Passengers: 13
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 26557 km
-INFO:root:Average bus time: 25 hours
-INFO:root:Average passenger time: 51 hours
-INFO:root:===== Greedy Offline 10 =====
-INFO:root:Seed: 23674
-INFO:root:Buses: 13
-INFO:root:Passengers: 18
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 43634 km
-INFO:root:Average bus time: 138 hours
-INFO:root:Average passenger time: 56 hours
-INFO:root:===== Greedy Offline 1 =====
-INFO:root:Seed: 30190
-INFO:root:Buses: 20
-INFO:root:Passengers: 20
-INFO:root:===== Greedy Offline 2 =====
-INFO:root:Seed: 30190
-INFO:root:Buses: 20
-INFO:root:Passengers: 25
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 47572 km
-INFO:root:Average bus time: 124 hours
+INFO:root:Avegera distance per bus: 58407 km
+INFO:root:Average bus time: 147 hours
 INFO:root:Average passenger time: 52 hours
+INFO:root:===== Greedy Offline 1 =====
+INFO:root:Seed: 13767
+INFO:root:Buses: 20
+INFO:root:Passengers: 20
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 44774 km
+INFO:root:Average bus time: 159 hours
+INFO:root:Average passenger time: 51 hours
+INFO:root:===== Greedy Offline 2 =====
+INFO:root:Seed: 13767
+INFO:root:Buses: 20
+INFO:root:Passengers: 25
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 49983 km
+INFO:root:Average bus time: 89 hours
+INFO:root:Average passenger time: 64 hours
 INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 30190
+INFO:root:Seed: 13767
 INFO:root:Buses: 20
 INFO:root:Passengers: 30
 INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 60995 km
-INFO:root:Average bus time: 83 hours
-INFO:root:Average passenger time: 56 hours
-INFO:root:===== Greedy Offline 1 =====
-INFO:root:Seed: 26666
-INFO:root:Buses: 2
-INFO:root:Passengers: 2
+INFO:root:Avegera distance per bus: 58616 km
+INFO:root:Average bus time: 93 hours
+INFO:root:Average passenger time: 65 hours
+INFO:root:===== Greedy Offline 4 =====
+INFO:root:Seed: 13767
+INFO:root:Buses: 20
+INFO:root:Passengers: 35
+INFO:root:===== Greedy Offline 5 =====
+INFO:root:Seed: 32164
+INFO:root:Buses: 23
+INFO:root:Passengers: 23
 INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 52545 km
-INFO:root:Average bus time: 157 hours
-INFO:root:Average passenger time: 55 hours
-INFO:root:===== Greedy Offline 1 =====
-INFO:root:Seed: 12264
-INFO:root:Buses: 2
-INFO:root:Passengers: 2
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 37188 km
-INFO:root:Average bus time: 37 hours
-INFO:root:Average passenger time: 32 hours
-INFO:root:===== Greedy Offline 2 =====
-INFO:root:Seed: 12264
-INFO:root:Buses: 2
-INFO:root:Passengers: 7
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 71595 km
-INFO:root:Average bus time: 168 hours
-INFO:root:Average passenger time: 58 hours
-INFO:root:===== Greedy Offline 1 =====
-INFO:root:Seed: 13175
-INFO:root:Buses: 2
-INFO:root:Passengers: 2
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 52356 km
-INFO:root:Average bus time: 52 hours
+INFO:root:Avegera distance per bus: 33138 km
+INFO:root:Average bus time: 116 hours
 INFO:root:Average passenger time: 39 hours
+INFO:root:===== Greedy Offline 6 =====
+INFO:root:Seed: 32164
+INFO:root:Buses: 23
+INFO:root:Passengers: 28
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 30696 km
+INFO:root:Average bus time: 119 hours
+INFO:root:Average passenger time: 52 hours
+INFO:root:===== Greedy Offline 7 =====
+INFO:root:Seed: 32164
+INFO:root:Buses: 23
+INFO:root:Passengers: 33
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 50790 km
+INFO:root:Average bus time: 103 hours
+INFO:root:Average passenger time: 59 hours
+INFO:root:===== Greedy Offline 8 =====
+INFO:root:Seed: 32164
+INFO:root:Buses: 23
+INFO:root:Passengers: 38
+INFO:root:===== Greedy Offline 9 =====
+INFO:root:Seed: 18196
+INFO:root:Buses: 26
+INFO:root:Passengers: 26
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 25241 km
+INFO:root:Average bus time: 34 hours
+INFO:root:Average passenger time: 49 hours
+INFO:root:===== Greedy Offline 10 =====
+INFO:root:Seed: 18196
+INFO:root:Buses: 26
+INFO:root:Passengers: 31
+INFO:root:===== Greedy Offline 11 =====
+INFO:root:Seed: 18196
+INFO:root:Buses: 26
+INFO:root:Passengers: 36
+INFO:root:===== Greedy Offline 12 =====
+INFO:root:Seed: 18196
+INFO:root:Buses: 26
+INFO:root:Passengers: 41
+INFO:root:===== Greedy Offline 13 =====
+INFO:root:Seed: 25200
+INFO:root:Buses: 29
+INFO:root:Passengers: 29
+INFO:root:===== Greedy Offline 14 =====
+INFO:root:Seed: 25200
+INFO:root:Buses: 29
+INFO:root:Passengers: 34
+INFO:root:===== Greedy Offline 15 =====
+INFO:root:Seed: 25200
+INFO:root:Buses: 29
+INFO:root:Passengers: 39
+INFO:root:===== Greedy Offline 1 =====
+INFO:root:Seed: 20046
+INFO:root:Buses: 2
+INFO:root:Passengers: 2
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 38044 km
+INFO:root:Average bus time: 71 hours
+INFO:root:Average passenger time: 44 hours
 INFO:root:===== Greedy Offline 2 =====
-INFO:root:Seed: 13175
+INFO:root:Seed: 20046
 INFO:root:Buses: 2
 INFO:root:Passengers: 7
 INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 95443 km
-INFO:root:Average bus time: 206 hours
-INFO:root:Average passenger time: 45 hours
+INFO:root:Avegera distance per bus: 79741 km
+INFO:root:Average bus time: 171 hours
+INFO:root:Average passenger time: 60 hours
 INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 13175
+INFO:root:Seed: 20046
 INFO:root:Buses: 2
 INFO:root:Passengers: 12
 INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 95822 km
-INFO:root:Average bus time: 252 hours
-INFO:root:Average passenger time: 51 hours
+INFO:root:Avegera distance per bus: 121328 km
+INFO:root:Average bus time: 279 hours
+INFO:root:Average passenger time: 69 hours
 INFO:root:===== Greedy Offline 4 =====
-INFO:root:Seed: 13175
+INFO:root:Seed: 20046
 INFO:root:Buses: 2
 INFO:root:Passengers: 17
 INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 121289 km
-INFO:root:Average bus time: 327 hours
-INFO:root:Average passenger time: 88 hours
+INFO:root:Avegera distance per bus: 151756 km
+INFO:root:Average bus time: 410 hours
+INFO:root:Average passenger time: 92 hours
 INFO:root:===== Greedy Offline 5 =====
-INFO:root:Seed: 5361
+INFO:root:Seed: 27292
 INFO:root:Buses: 5
 INFO:root:Passengers: 5
 INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 32764 km
-INFO:root:Average bus time: 156 hours
-INFO:root:Average passenger time: 35 hours
+INFO:root:Avegera distance per bus: 46154 km
+INFO:root:Average bus time: 166 hours
+INFO:root:Average passenger time: 54 hours
 INFO:root:===== Greedy Offline 6 =====
-INFO:root:Seed: 5361
+INFO:root:Seed: 27292
 INFO:root:Buses: 5
 INFO:root:Passengers: 10
 INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 48367 km
-INFO:root:Average bus time: 167 hours
-INFO:root:Average passenger time: 45 hours
+INFO:root:Avegera distance per bus: 71655 km
+INFO:root:Average bus time: 100 hours
+INFO:root:Average passenger time: 73 hours
 INFO:root:===== Greedy Offline 7 =====
-INFO:root:Seed: 5361
+INFO:root:Seed: 27292
 INFO:root:Buses: 5
 INFO:root:Passengers: 15
 INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 71915 km
-INFO:root:Average bus time: 91 hours
-INFO:root:Average passenger time: 56 hours
+INFO:root:Avegera distance per bus: 79701 km
+INFO:root:Average bus time: 127 hours
+INFO:root:Average passenger time: 76 hours
 INFO:root:===== Greedy Offline 8 =====
-INFO:root:Seed: 5361
+INFO:root:Seed: 27292
 INFO:root:Buses: 5
 INFO:root:Passengers: 20
 INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 90735 km
-INFO:root:Average bus time: 198 hours
-INFO:root:Average passenger time: 71 hours
+INFO:root:Avegera distance per bus: 99402 km
+INFO:root:Average bus time: 226 hours
+INFO:root:Average passenger time: 84 hours
+INFO:root:===== Greedy Offline 9 =====
+INFO:root:Seed: 8975
+INFO:root:Buses: 8
+INFO:root:Passengers: 8
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 36220 km
+INFO:root:Average bus time: 163 hours
+INFO:root:Average passenger time: 50 hours
+INFO:root:===== Greedy Offline 10 =====
+INFO:root:Seed: 8975
+INFO:root:Buses: 8
+INFO:root:Passengers: 13
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 58020 km
+INFO:root:Average bus time: 75 hours
+INFO:root:Average passenger time: 47 hours
+INFO:root:===== Greedy Offline 11 =====
+INFO:root:Seed: 8975
+INFO:root:Buses: 8
+INFO:root:Passengers: 18
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 77947 km
+INFO:root:Average bus time: 161 hours
+INFO:root:Average passenger time: 56 hours
 INFO:root:===== Greedy Offline 1 =====
-INFO:root:Seed: 14074
+INFO:root:Seed: 5015
 INFO:root:Buses: 10
 INFO:root:Passengers: 10
 INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 43127 km
-INFO:root:Average bus time: 90 hours
-INFO:root:Average passenger time: 45 hours
+INFO:root:Avegera distance per bus: 47997 km
+INFO:root:Average bus time: 88 hours
+INFO:root:Average passenger time: 42 hours
 INFO:root:===== Greedy Offline 2 =====
-INFO:root:Seed: 14074
+INFO:root:Seed: 5015
 INFO:root:Buses: 10
+INFO:root:Passengers: 17
+INFO:root:===== Greedy Offline 3 =====
+INFO:root:Seed: 5015
+INFO:root:Buses: 10
+INFO:root:Passengers: 24
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 73413 km
+INFO:root:Average bus time: 167 hours
+INFO:root:Average passenger time: 68 hours
+INFO:root:===== Greedy Offline 4 =====
+INFO:root:Seed: 5015
+INFO:root:Buses: 10
+INFO:root:Passengers: 31
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 84056 km
+INFO:root:Average bus time: 163 hours
+INFO:root:Average passenger time: 76 hours
+INFO:root:===== Greedy Offline 5 =====
+INFO:root:Seed: 3031
+INFO:root:Buses: 15
 INFO:root:Passengers: 15
 INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 55825 km
-INFO:root:Average bus time: 152 hours
-INFO:root:Average passenger time: 68 hours
-INFO:root:===== Greedy Offline 3 =====
-INFO:root:Seed: 14074
-INFO:root:Buses: 10
-INFO:root:Passengers: 20
+INFO:root:Avegera distance per bus: 39330 km
+INFO:root:Average bus time: 168 hours
+INFO:root:Average passenger time: 42 hours
+INFO:root:===== Greedy Offline 6 =====
+INFO:root:Seed: 3031
+INFO:root:Buses: 15
+INFO:root:Passengers: 22
+INFO:root:===== Greedy Offline 7 =====
+INFO:root:Seed: 3031
+INFO:root:Buses: 15
+INFO:root:Passengers: 29
 INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 57350 km
-INFO:root:Average bus time: 107 hours
-INFO:root:Average passenger time: 65 hours
+INFO:root:Avegera distance per bus: 54788 km
+INFO:root:Average bus time: 146 hours
+INFO:root:Average passenger time: 62 hours
+INFO:root:===== Greedy Offline 1 =====
+INFO:root:Seed: 13717
+INFO:root:Buses: 2
+INFO:root:Passengers: 2
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 50272 km
+INFO:root:Average bus time: 177 hours
+INFO:root:Average passenger time: 56 hours
+INFO:root:===== Greedy Offline 2 =====
+INFO:root:Seed: 13717
+INFO:root:Buses: 2
+INFO:root:Passengers: 10
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 110602 km
+INFO:root:Average bus time: 308 hours
+INFO:root:Average passenger time: 119 hours
+INFO:root:===== Greedy Offline 3 =====
+INFO:root:Seed: 13717
+INFO:root:Buses: 2
+INFO:root:Passengers: 18
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 133001 km
+INFO:root:Average bus time: 320 hours
+INFO:root:Average passenger time: 115 hours
 INFO:root:===== Greedy Offline 4 =====
-INFO:root:Seed: 14074
-INFO:root:Buses: 10
-INFO:root:Passengers: 25
+INFO:root:Seed: 13717
+INFO:root:Buses: 2
+INFO:root:Passengers: 26
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 175826 km
+INFO:root:Average bus time: 461 hours
+INFO:root:Average passenger time: 132 hours
 INFO:root:===== Greedy Offline 5 =====
-INFO:root:Seed: 16868
+INFO:root:Seed: 2315
+INFO:root:Buses: 7
+INFO:root:Passengers: 7
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 56025 km
+INFO:root:Average bus time: 95 hours
+INFO:root:Average passenger time: 51 hours
+INFO:root:===== Greedy Offline 6 =====
+INFO:root:Seed: 2315
+INFO:root:Buses: 7
+INFO:root:Passengers: 15
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 74754 km
+INFO:root:Average bus time: 117 hours
+INFO:root:Average passenger time: 64 hours
+INFO:root:===== Greedy Offline 7 =====
+INFO:root:Seed: 2315
+INFO:root:Buses: 7
+INFO:root:Passengers: 23
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 76527 km
+INFO:root:Average bus time: 238 hours
+INFO:root:Average passenger time: 69 hours
+INFO:root:===== Greedy Offline 8 =====
+INFO:root:Seed: 2315
+INFO:root:Buses: 7
+INFO:root:Passengers: 31
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 105968 km
+INFO:root:Average bus time: 135 hours
+INFO:root:Average passenger time: 71 hours
+INFO:root:===== Greedy Offline 9 =====
+INFO:root:Seed: 27878
+INFO:root:Buses: 12
+INFO:root:Passengers: 12
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 34071 km
+INFO:root:Average bus time: 90 hours
+INFO:root:Average passenger time: 37 hours
+INFO:root:===== Greedy Offline 1 =====
+INFO:root:Seed: 32351
 INFO:root:Buses: 13
 INFO:root:Passengers: 13
 INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 38290 km
-INFO:root:Average bus time: 85 hours
-INFO:root:Average passenger time: 38 hours
-INFO:root:===== Greedy Offline 6 =====
-INFO:root:Seed: 16868
+INFO:root:Avegera distance per bus: 60245 km
+INFO:root:Average bus time: 95 hours
+INFO:root:Average passenger time: 43 hours
+INFO:root:===== Greedy Offline 2 =====
+INFO:root:Seed: 32351
 INFO:root:Buses: 13
-INFO:root:Passengers: 18
-INFO:root:===== Greedy Offline 7 =====
-INFO:root:Seed: 16868
-INFO:root:Buses: 13
-INFO:root:Passengers: 23
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 55023 km
-INFO:root:Average bus time: 72 hours
-INFO:root:Average passenger time: 52 hours
-INFO:root:===== Greedy Offline 8 =====
-INFO:root:Seed: 16868
-INFO:root:Buses: 13
-INFO:root:Passengers: 28
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 50863 km
-INFO:root:Average bus time: 178 hours
-INFO:root:Average passenger time: 55 hours
-INFO:root:===== Greedy Offline 9 =====
-INFO:root:Seed: 12763
-INFO:root:Buses: 16
-INFO:root:Passengers: 16
-INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 36326 km
-INFO:root:Average bus time: 172 hours
-INFO:root:Average passenger time: 49 hours
-INFO:root:===== Greedy Offline 10 =====
-INFO:root:Seed: 12763
-INFO:root:Buses: 16
 INFO:root:Passengers: 21
 INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 40414 km
-INFO:root:Average bus time: 124 hours
-INFO:root:Average passenger time: 64 hours
-INFO:root:===== Greedy Offline 11 =====
-INFO:root:Seed: 12763
-INFO:root:Buses: 16
+INFO:root:Avegera distance per bus: 56295 km
+INFO:root:Average bus time: 136 hours
+INFO:root:Average passenger time: 55 hours
+INFO:root:===== Greedy Offline 3 =====
+INFO:root:Seed: 32351
+INFO:root:Buses: 13
+INFO:root:Passengers: 29
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 67983 km
+INFO:root:Average bus time: 169 hours
+INFO:root:Average passenger time: 65 hours
+INFO:root:===== Greedy Offline 4 =====
+INFO:root:Seed: 32351
+INFO:root:Buses: 13
+INFO:root:Passengers: 37
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 75126 km
+INFO:root:Average bus time: 239 hours
+INFO:root:Average passenger time: 70 hours
+INFO:root:===== Greedy Offline 5 =====
+INFO:root:Seed: 4794
+INFO:root:Buses: 18
+INFO:root:Passengers: 18
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 41358 km
+INFO:root:Average bus time: 115 hours
+INFO:root:Average passenger time: 53 hours
+INFO:root:===== Greedy Offline 6 =====
+INFO:root:Seed: 4794
+INFO:root:Buses: 18
 INFO:root:Passengers: 26
 INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 64110 km
-INFO:root:Average bus time: 84 hours
-INFO:root:Average passenger time: 65 hours
-INFO:root:===== Greedy Offline 12 =====
-INFO:root:Seed: 12763
-INFO:root:Buses: 16
-INFO:root:Passengers: 31
-INFO:root:===== Greedy Offline 13 =====
-INFO:root:Seed: 2984
-INFO:root:Buses: 19
-INFO:root:Passengers: 19
-INFO:root:===== Greedy Offline 14 =====
-INFO:root:Seed: 2984
-INFO:root:Buses: 19
-INFO:root:Passengers: 24
-INFO:root:===== Greedy Offline 15 =====
-INFO:root:Seed: 2984
-INFO:root:Buses: 19
-INFO:root:Passengers: 29
-INFO:root:===== Greedy Offline 16 =====
-INFO:root:Seed: 2984
-INFO:root:Buses: 19
+INFO:root:Avegera distance per bus: 49118 km
+INFO:root:Average bus time: 65 hours
+INFO:root:Average passenger time: 59 hours
+INFO:root:===== Greedy Offline 7 =====
+INFO:root:Seed: 4794
+INFO:root:Buses: 18
 INFO:root:Passengers: 34
+INFO:root:===== Greedy Offline 8 =====
+INFO:root:Seed: 4794
+INFO:root:Buses: 18
+INFO:root:Passengers: 42
+INFO:root:===== Greedy Offline 9 =====
+INFO:root:Seed: 10895
+INFO:root:Buses: 23
+INFO:root:Passengers: 23
 INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 69618 km
-INFO:root:Average bus time: 111 hours
+INFO:root:Avegera distance per bus: 37600 km
+INFO:root:Average bus time: 135 hours
+INFO:root:Average passenger time: 46 hours
+INFO:root:===== Greedy Offline 10 =====
+INFO:root:Seed: 10895
+INFO:root:Buses: 23
+INFO:root:Passengers: 31
+INFO:root:===== Greedy Offline 11 =====
+INFO:root:Seed: 10895
+INFO:root:Buses: 23
+INFO:root:Passengers: 39
+INFO:root:===== Greedy Offline 12 =====
+INFO:root:Seed: 10895
+INFO:root:Buses: 23
+INFO:root:Passengers: 47
+INFO:root:===== Greedy Offline 1 =====
+INFO:root:Seed: 2597
+INFO:root:Buses: 2
+INFO:root:Passengers: 2
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 47120 km
+INFO:root:Average bus time: 127 hours
+INFO:root:Average passenger time: 54 hours
+INFO:root:===== Greedy Offline 2 =====
+INFO:root:Seed: 2597
+INFO:root:Buses: 2
+INFO:root:Passengers: 10
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 90747 km
+INFO:root:Average bus time: 195 hours
+INFO:root:Average passenger time: 104 hours
+INFO:root:===== Greedy Offline 3 =====
+INFO:root:Seed: 2597
+INFO:root:Buses: 2
+INFO:root:Passengers: 18
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 156319 km
+INFO:root:Average bus time: 386 hours
+INFO:root:Average passenger time: 144 hours
+INFO:root:===== Greedy Offline 4 =====
+INFO:root:Seed: 2597
+INFO:root:Buses: 2
+INFO:root:Passengers: 26
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 174442 km
+INFO:root:Average bus time: 433 hours
+INFO:root:Average passenger time: 158 hours
+INFO:root:===== Greedy Offline 5 =====
+INFO:root:Seed: 9569
+INFO:root:Buses: 7
+INFO:root:Passengers: 7
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 44726 km
+INFO:root:Average bus time: 170 hours
+INFO:root:Average passenger time: 42 hours
+INFO:root:===== Greedy Offline 6 =====
+INFO:root:Seed: 9569
+INFO:root:Buses: 7
+INFO:root:Passengers: 15
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 63753 km
+INFO:root:Average bus time: 151 hours
+INFO:root:Average passenger time: 46 hours
+INFO:root:===== Greedy Offline 7 =====
+INFO:root:Seed: 9569
+INFO:root:Buses: 7
+INFO:root:Passengers: 23
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 83041 km
+INFO:root:Average bus time: 217 hours
+INFO:root:Average passenger time: 75 hours
+INFO:root:===== Greedy Offline 8 =====
+INFO:root:Seed: 9569
+INFO:root:Buses: 7
+INFO:root:Passengers: 31
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 92467 km
+INFO:root:Average bus time: 191 hours
+INFO:root:Average passenger time: 93 hours
+INFO:root:===== Greedy Offline 9 =====
+INFO:root:Seed: 5071
+INFO:root:Buses: 12
+INFO:root:Passengers: 12
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 39262 km
+INFO:root:Average bus time: 51 hours
+INFO:root:Average passenger time: 47 hours
+INFO:root:===== Greedy Offline 10 =====
+INFO:root:Seed: 5071
+INFO:root:Buses: 12
+INFO:root:Passengers: 20
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 49058 km
+INFO:root:Average bus time: 175 hours
+INFO:root:Average passenger time: 70 hours
+INFO:root:===== Greedy Offline 11 =====
+INFO:root:Seed: 5071
+INFO:root:Buses: 12
+INFO:root:Passengers: 28
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 71619 km
+INFO:root:Average bus time: 124 hours
+INFO:root:Average passenger time: 66 hours
+INFO:root:===== Greedy Offline 12 =====
+INFO:root:Seed: 5071
+INFO:root:Buses: 12
+INFO:root:Passengers: 36
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 71356 km
+INFO:root:Average bus time: 246 hours
+INFO:root:Average passenger time: 75 hours
+INFO:root:===== Greedy Offline 13 =====
+INFO:root:Seed: 29881
+INFO:root:Buses: 17
+INFO:root:Passengers: 17
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 22633 km
+INFO:root:Average bus time: 15 hours
+INFO:root:Average passenger time: 43 hours
+INFO:root:===== Greedy Offline 14 =====
+INFO:root:Seed: 29881
+INFO:root:Buses: 17
+INFO:root:Passengers: 25
+INFO:root:===== Greedy Offline 15 =====
+INFO:root:Seed: 29881
+INFO:root:Buses: 17
+INFO:root:Passengers: 33
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 49680 km
+INFO:root:Average bus time: 142 hours
 INFO:root:Average passenger time: 65 hours
+INFO:root:===== Greedy Offline 16 =====
+INFO:root:Seed: 29881
+INFO:root:Buses: 17
+INFO:root:Passengers: 41
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 61854 km
+INFO:root:Average bus time: 143 hours
+INFO:root:Average passenger time: 64 hours
 INFO:root:===== Greedy Offline 17 =====
-INFO:root:Seed: 26839
+INFO:root:Seed: 12756
 INFO:root:Buses: 22
 INFO:root:Passengers: 22
 INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 22223 km
-INFO:root:Average bus time: 10 hours
-INFO:root:Average passenger time: 39 hours
+INFO:root:Avegera distance per bus: 41864 km
+INFO:root:Average bus time: 98 hours
+INFO:root:Average passenger time: 49 hours
 INFO:root:===== Greedy Offline 18 =====
-INFO:root:Seed: 26839
+INFO:root:Seed: 12756
 INFO:root:Buses: 22
-INFO:root:Passengers: 27
-INFO:root:===== Greedy Offline 19 =====
-INFO:root:Seed: 26839
-INFO:root:Buses: 22
-INFO:root:Passengers: 32
-INFO:root:===== Greedy Offline 1 =====
-INFO:root:Seed: 27266
-INFO:root:Buses: 10
-INFO:root:Passengers: 10
+INFO:root:Passengers: 30
 INFO:root:Total wait time: 0 minutes
-INFO:root:Avegera distance per bus: 38368 km
-INFO:root:Average bus time: 199 hours
-INFO:root:Average passenger time: 42 hours
+INFO:root:Avegera distance per bus: 49538 km
+INFO:root:Average bus time: 79 hours
+INFO:root:Average passenger time: 60 hours
+INFO:root:===== Greedy Offline 19 =====
+INFO:root:Seed: 12756
+INFO:root:Buses: 22
+INFO:root:Passengers: 38
+INFO:root:===== Greedy Offline 20 =====
+INFO:root:Seed: 12756
+INFO:root:Buses: 22
+INFO:root:Passengers: 46
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 64761 km
+INFO:root:Average bus time: 109 hours
+INFO:root:Average passenger time: 67 hours
+INFO:root:===== Greedy Offline 1 =====
+INFO:root:Seed: 6282
+INFO:root:Buses: 30
+INFO:root:Passengers: 30
+INFO:root:===== Greedy Offline 2 =====
+INFO:root:Seed: 6282
+INFO:root:Buses: 30
+INFO:root:Passengers: 40
+INFO:root:===== Greedy Offline 3 =====
+INFO:root:Seed: 6282
+INFO:root:Buses: 30
+INFO:root:Passengers: 50
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 52760 km
+INFO:root:Average bus time: 129 hours
+INFO:root:Average passenger time: 66 hours
+INFO:root:===== Greedy Offline 4 =====
+INFO:root:Seed: 6282
+INFO:root:Buses: 30
+INFO:root:Passengers: 60
+INFO:root:===== Greedy Offline 5 =====
+INFO:root:Seed: 26253
+INFO:root:Buses: 37
+INFO:root:Passengers: 37
+INFO:root:===== Greedy Offline 6 =====
+INFO:root:Seed: 26253
+INFO:root:Buses: 37
+INFO:root:Passengers: 47
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 55693 km
+INFO:root:Average bus time: 178 hours
+INFO:root:Average passenger time: 57 hours
+INFO:root:===== Greedy Offline 1 =====
+INFO:root:Seed: 3598
+INFO:root:Buses: 2
+INFO:root:Passengers: 2
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 26321 km
+INFO:root:Average bus time: 40 hours
+INFO:root:Average passenger time: 27 hours
+INFO:root:===== Greedy Offline 2 =====
+INFO:root:Seed: 3598
+INFO:root:Buses: 2
+INFO:root:Passengers: 8
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 86238 km
+INFO:root:Average bus time: 161 hours
+INFO:root:Average passenger time: 96 hours
+INFO:root:===== Greedy Offline 3 =====
+INFO:root:Seed: 3598
+INFO:root:Buses: 2
+INFO:root:Passengers: 14
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 129564 km
+INFO:root:Average bus time: 260 hours
+INFO:root:Average passenger time: 90 hours
+INFO:root:===== Greedy Offline 4 =====
+INFO:root:Seed: 3598
+INFO:root:Buses: 2
+INFO:root:Passengers: 20
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 149449 km
+INFO:root:Average bus time: 322 hours
+INFO:root:Average passenger time: 114 hours
+INFO:root:===== Greedy Offline 5 =====
+INFO:root:Seed: 3598
+INFO:root:Buses: 2
+INFO:root:Passengers: 26
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 161681 km
+INFO:root:Average bus time: 314 hours
+INFO:root:Average passenger time: 146 hours
+INFO:root:===== Greedy Offline 6 =====
+INFO:root:Seed: 74
+INFO:root:Buses: 7
+INFO:root:Passengers: 7
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 44221 km
+INFO:root:Average bus time: 71 hours
+INFO:root:Average passenger time: 46 hours
+INFO:root:===== Greedy Offline 7 =====
+INFO:root:Seed: 74
+INFO:root:Buses: 7
+INFO:root:Passengers: 13
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 57533 km
+INFO:root:Average bus time: 234 hours
+INFO:root:Average passenger time: 70 hours
+INFO:root:===== Greedy Offline 8 =====
+INFO:root:Seed: 74
+INFO:root:Buses: 7
+INFO:root:Passengers: 19
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 70327 km
+INFO:root:Average bus time: 224 hours
+INFO:root:Average passenger time: 67 hours
+INFO:root:===== Greedy Offline 9 =====
+INFO:root:Seed: 74
+INFO:root:Buses: 7
+INFO:root:Passengers: 25
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 90329 km
+INFO:root:Average bus time: 170 hours
+INFO:root:Average passenger time: 97 hours
+INFO:root:===== Greedy Offline 10 =====
+INFO:root:Seed: 74
+INFO:root:Buses: 7
+INFO:root:Passengers: 31
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 109026 km
+INFO:root:Average bus time: 257 hours
+INFO:root:Average passenger time: 101 hours
+INFO:root:===== Greedy Offline 11 =====
+INFO:root:Seed: 22722
+INFO:root:Buses: 12
+INFO:root:Passengers: 12
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 37505 km
+INFO:root:Average bus time: 109 hours
+INFO:root:Average passenger time: 48 hours
+INFO:root:===== Greedy Offline 12 =====
+INFO:root:Seed: 22722
+INFO:root:Buses: 12
+INFO:root:Passengers: 18
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 46421 km
+INFO:root:Average bus time: 125 hours
+INFO:root:Average passenger time: 63 hours
+INFO:root:===== Greedy Offline 13 =====
+INFO:root:Seed: 22722
+INFO:root:Buses: 12
+INFO:root:Passengers: 24
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 68290 km
+INFO:root:Average bus time: 101 hours
+INFO:root:Average passenger time: 73 hours
+INFO:root:===== Greedy Offline 14 =====
+INFO:root:Seed: 22722
+INFO:root:Buses: 12
+INFO:root:Passengers: 30
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 69463 km
+INFO:root:Average bus time: 143 hours
+INFO:root:Average passenger time: 80 hours
+INFO:root:===== Greedy Offline 15 =====
+INFO:root:Seed: 22722
+INFO:root:Buses: 12
+INFO:root:Passengers: 36
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 84845 km
+INFO:root:Average bus time: 171 hours
+INFO:root:Average passenger time: 82 hours
+INFO:root:===== Greedy Offline 16 =====
+INFO:root:Seed: 20534
+INFO:root:Buses: 17
+INFO:root:Passengers: 17
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 47366 km
+INFO:root:Average bus time: 140 hours
+INFO:root:Average passenger time: 44 hours
+INFO:root:===== Greedy Offline 17 =====
+INFO:root:Seed: 20534
+INFO:root:Buses: 17
+INFO:root:Passengers: 23
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 55091 km
+INFO:root:Average bus time: 142 hours
+INFO:root:Average passenger time: 57 hours
+INFO:root:===== Greedy Offline 18 =====
+INFO:root:Seed: 20534
+INFO:root:Buses: 17
+INFO:root:Passengers: 29
+INFO:root:===== Greedy Offline 19 =====
+INFO:root:Seed: 20534
+INFO:root:Buses: 17
+INFO:root:Passengers: 35
+INFO:root:===== Greedy Offline 20 =====
+INFO:root:Seed: 20534
+INFO:root:Buses: 17
+INFO:root:Passengers: 41
+INFO:root:===== Greedy Offline 21 =====
+INFO:root:Seed: 5751
+INFO:root:Buses: 22
+INFO:root:Passengers: 22
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 38678 km
+INFO:root:Average bus time: 102 hours
+INFO:root:Average passenger time: 55 hours
+INFO:root:===== Greedy Offline 22 =====
+INFO:root:Seed: 5751
+INFO:root:Buses: 22
+INFO:root:Passengers: 28
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 42731 km
+INFO:root:Average bus time: 141 hours
+INFO:root:Average passenger time: 61 hours
+INFO:root:===== Greedy Offline 23 =====
+INFO:root:Seed: 5751
+INFO:root:Buses: 22
+INFO:root:Passengers: 34
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 49355 km
+INFO:root:Average bus time: 215 hours
+INFO:root:Average passenger time: 60 hours
+INFO:root:===== Greedy Offline 24 =====
+INFO:root:Seed: 5751
+INFO:root:Buses: 22
+INFO:root:Passengers: 40
+INFO:root:===== Greedy Offline 25 =====
+INFO:root:Seed: 5751
+INFO:root:Buses: 22
+INFO:root:Passengers: 46
+INFO:root:===== Greedy Offline 26 =====
+INFO:root:Seed: 27321
+INFO:root:Buses: 27
+INFO:root:Passengers: 27
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 25346 km
+INFO:root:Average bus time: 46 hours
+INFO:root:Average passenger time: 45 hours
+INFO:root:===== Greedy Offline 27 =====
+INFO:root:Seed: 27321
+INFO:root:Buses: 27
+INFO:root:Passengers: 33
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 44254 km
+INFO:root:Average bus time: 146 hours
+INFO:root:Average passenger time: 49 hours
+INFO:root:===== Greedy Offline 28 =====
+INFO:root:Seed: 27321
+INFO:root:Buses: 27
+INFO:root:Passengers: 39
+INFO:root:===== Greedy Offline 29 =====
+INFO:root:Seed: 27321
+INFO:root:Buses: 27
+INFO:root:Passengers: 45
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 49819 km
+INFO:root:Average bus time: 120 hours
+INFO:root:Average passenger time: 60 hours
+INFO:root:===== Greedy Offline 30 =====
+INFO:root:Seed: 27321
+INFO:root:Buses: 27
+INFO:root:Passengers: 51
+INFO:root:===== Greedy Offline 31 =====
+INFO:root:Seed: 8809
+INFO:root:Buses: 32
+INFO:root:Passengers: 32
+INFO:root:===== Greedy Offline 32 =====
+INFO:root:Seed: 8809
+INFO:root:Buses: 32
+INFO:root:Passengers: 38
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 39660 km
+INFO:root:Average bus time: 142 hours
+INFO:root:Average passenger time: 55 hours
+INFO:root:===== Greedy Offline 33 =====
+INFO:root:Seed: 8809
+INFO:root:Buses: 32
+INFO:root:Passengers: 44
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 43047 km
+INFO:root:Average bus time: 117 hours
+INFO:root:Average passenger time: 57 hours
+INFO:root:===== Greedy Offline 34 =====
+INFO:root:Seed: 8809
+INFO:root:Buses: 32
+INFO:root:Passengers: 50
+INFO:root:===== Greedy Offline 35 =====
+INFO:root:Seed: 8809
+INFO:root:Buses: 32
+INFO:root:Passengers: 56
+INFO:root:===== Greedy Offline 36 =====
+INFO:root:Seed: 25949
+INFO:root:Buses: 37
+INFO:root:Passengers: 37
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 44638 km
+INFO:root:Average bus time: 140 hours
+INFO:root:Average passenger time: 39 hours
+INFO:root:===== Greedy Offline 37 =====
+INFO:root:Seed: 25949
+INFO:root:Buses: 37
+INFO:root:Passengers: 43
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 43049 km
+INFO:root:Average bus time: 134 hours
+INFO:root:Average passenger time: 48 hours
+INFO:root:===== Greedy Offline 38 =====
+INFO:root:Seed: 25949
+INFO:root:Buses: 37
+INFO:root:Passengers: 49
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 40689 km
+INFO:root:Average bus time: 127 hours
+INFO:root:Average passenger time: 55 hours
+INFO:root:===== Greedy Offline 39 =====
+INFO:root:Seed: 25949
+INFO:root:Buses: 37
+INFO:root:Passengers: 55
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 51446 km
+INFO:root:Average bus time: 218 hours
+INFO:root:Average passenger time: 63 hours
+INFO:root:===== Greedy Offline 40 =====
+INFO:root:Seed: 25949
+INFO:root:Buses: 37
+INFO:root:Passengers: 61
+INFO:root:===== Greedy Offline 41 =====
+INFO:root:Seed: 5964
+INFO:root:Buses: 42
+INFO:root:Passengers: 42
+INFO:root:Total wait time: 0 minutes
+INFO:root:Avegera distance per bus: 45230 km
+INFO:root:Average bus time: 63 hours
+INFO:root:Average passenger time: 45 hours

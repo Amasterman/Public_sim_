@@ -13,8 +13,8 @@ alg2_data = data[data['alg_name'] == 'greedy']
 equal_data = alg1_data.merge(alg2_data, on=['buses', 'passengers'])
 
 # Create a scatter plot of distance vs time, color-coded by algorithm
-plt.scatter(equal_data['distance_x'], equal_data['time_x'], c='blue', label='Algorithm 1')
-plt.scatter(equal_data['distance_y'], equal_data['time_y'], c='red', label='Algorithm 2')
+plt.scatter(equal_data['distance_x'], equal_data['time_x'], c='blue', label='Transfer')
+plt.scatter(equal_data['distance_y'], equal_data['time_y'], c='red', label='Greedy')
 
 # Calculate and plot the regression lines for each algorithm
 x = equal_data['distance_x']
