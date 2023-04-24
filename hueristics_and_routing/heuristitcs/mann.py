@@ -13,8 +13,8 @@ alg2_data = data[data['alg_name'] == 'greedy']
 equal_data = alg1_data.merge(alg2_data, on=['buses', 'passengers'])
 
 # Extract the time data for each algorithm
-alg1_time = equal_data['distance_x'].values
-alg2_time = equal_data['distance_y'].values
+alg1_time = equal_data['time_x'].values
+alg2_time = equal_data['time_y'].values
 
 # Shapiro-Wilk test for normality
 stat, p = shapiro(alg1_time)
