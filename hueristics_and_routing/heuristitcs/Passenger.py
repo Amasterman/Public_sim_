@@ -75,10 +75,17 @@ class Passenger:
         # self.journey_start_time = rnd.randint(1, self.pickup_time)
         self.first_stop = 0,
         self.total_time = 0
+        self.total_wait_time = 0
         self.total_distance=0
+        
+        self.picked_up = None
+        self.dropped_off = None
         
         # The bus the passenger is just transfered from
         self.prev_bus = None
+        
+        self.transfer_time = None
+        self.transfer_stop = None
         
         self.should_walk = False
 
@@ -295,6 +302,25 @@ class Passenger:
         """
 
         return self.dropoff_time
+    
+    def get_total_waiting_time(self):
+        """
+        Get the total time the passenger has been waiting
+        :return: Total waiting time
+        :rtype: int
+        """
+
+        return self.total_wait_time
+    
+    def increase_total_waiting_time(self, value):
+        """
+        Increase the total time the passenger has been waiting
+
+        :param value: Time to increase by
+        :type value: int
+        """
+
+        self.total_wait_time += value
     
     def set_dissatisfaction(self, value):
         """

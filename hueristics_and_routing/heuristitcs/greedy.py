@@ -8,6 +8,7 @@ import csv
 import matplotlib.pyplot as plt
 import numpy as np
 from math import radians, sin, cos, sqrt, atan2
+from matplotlib.lines import Line2D
 
 import Buses as Bus
 import Passenger as Pass
@@ -62,7 +63,7 @@ break_count = args.stops
 rnd=np.random
 rnd.seed(seed)
 
-max_lateness=15
+max_lateness=20
 max_bus_cap=15
 dynamic=False
 
@@ -174,7 +175,7 @@ if dynamic:
                                         rnd.uniform(minlat, maxlat),
                                         rnd.uniform(minlon, maxlon), rnd.randint(1, 4), rnd.randint(1, 100),
                                         rnd.randint(1, 3),now,now,
-                                        bool(random.getrandbits(1)), max_lateness)
+                                        bool(rnd.randint(0,1)), max_lateness)
 
         # Append to list of passengers
         list_of_passengers.append(temp_passenger)
@@ -196,79 +197,12 @@ else:
 passenger_booked = []
 passenger_not_booked = []
 
-# ---------------------- Passenger grouping
-
-# passenger influence range in coord ranges? Dunno how thats gonna pan out
-passenger_influence_range = 0.2
-
-
 # run the system on the provided method and time the time it takes to run
-def run(method):
-    # Take the computer time before the run
-    start_time = time.perf_counter()
+def run():
 
-    # Dived the selection by dynamic and static
-    if dynamic:
-        # Init Dynamic
-        int_dynamic()
+    list_of_active_stops, passenger_bookings = ini_static()
 
-        # Switch statement for selecting the heuristic
-        # Ok no switch statment thats in python 3.10 and im not updatitng and breaking everything again
-        if method == "greedy":
-            return greedy_online()
-
-        elif method == "ant":
-            return ant_colony_online()
-
-        elif method == "consensus":
-            return concensus_online()
-        pass
-
-    else:
-
-        # Init Static
-        list_of_active_stops, passenger_bookings = ini_static()
-
-        # Switch statement for selecting the heuristic
-        if method == "greedy":
-            return greedy_offline(list_of_active_stops, passenger_bookings)
-
-        elif method == "ant":
-            return ant_colony(list_of_active_stops)
-
-        elif method == "consensus":
-            return consensus()
-
-        pass
-
-    # Take the differance between the start time and the current clock time to get the run time
-    run_time = time.perf_counter() - start_time
-    print("Method " + method + " finished in " + str(run_time))
-
-
-def int_dynamic():
-    # Check through passengers for those who have booked in advance vs appear
-    # Populate the the lists based on the booked value
-    for i in range(0, no_passengers):
-        if list_of_passengers[i].booked:
-            passenger_booked.append(list_of_passengers[i])
-        else:
-            passenger_not_booked.append(list_of_passengers[i])
-
-    # The dynamically appearing passengers need a time to appear
-    generate_booking_times(passenger_not_booked)
-
-
-def serve_new_booking(current_time, active_passengers):
-    temp_new_passenger = []
-
-    # Iterate through the non booked passengers and serve any passengers that have arrived in the time that have not
-    for passenger in passenger_not_booked:
-        if passenger not in active_passengers and passenger.booking_time() < current_time:
-            temp_new_passenger.append(passenger)
-
-    return temp_new_passenger
-
+    return greedy_offline(list_of_active_stops, passenger_bookings)
 
 def ini_static():
 
@@ -281,27 +215,7 @@ def ini_static():
 
     return list_of_active_stops, passenger_bookings
 
-def generate_booking_times(passengers):
-    # booking times can appear either at the moment they want to be picked up or a percentage in advance (lets start
-    # with 30%?
-
-    roll_preeminence = 0
-    roll_prebook = 0
-
-    passenger_preeminence_percent = 50
-    passenger_prebook_percentage = .30
-
-    for passenger in passengers:
-        roll_preeminence = random(0, 100)
-        if roll_preeminence < passenger_preeminence_percent:
-            passenger.set_booking_time(passenger.pickup_time)
-        else:
-            roll_prebook = random(0, passenger_prebook_percentage, 0.01)
-            passenger.set_booking_time(passenger.pickup_time * (1 + roll_prebook))
-
-
 # The offline (ie non dynamic) version of the greedy heuristic
-# TODO Improve implementation of the heuristic
 def greedy_offline(list_of_active_stops, passenger_bookings):
     logging.info("===== Greedy Offline %d =====", index)
     logging.info("Seed: %d", seed)
@@ -309,16 +223,12 @@ def greedy_offline(list_of_active_stops, passenger_bookings):
     logging.info("Passengers: %d", no_passengers)
     return route_generator(list_of_passengers.copy(), list_of_buses.copy(), list_of_active_stops, depo)
 
-
-def greedy_online():
-    pass
-
-
 # Return all stops in use for this set of passengers and the booking register
 def user_stops():
     # Get the Greedy nearest pick and drop stops
     # TODO improve this away from a greedy method
     for p in passenger_booked:
+            
             nearest_stop=p.getNearestStop(list_of_stops)
             nearest_drop=p.getNearestDrop(list_of_stops)
             
@@ -326,10 +236,11 @@ def user_stops():
             
             time_to_stop = calc_walk_time(nearest_stop.lat, nearest_stop.long, p.lat, p.long)
             pickup_time = now+ datetime.timedelta(minutes=time_to_stop)
-            p.set_pickup_time(pickup_time)
+            p.set_pickup_time(now)
             
             time_to_drop = calc_arrival(nearest_stop, nearest_drop, 0)
-            time_to_drop+=time_to_drop*0.25+max_lateness
+            time_to_drop*=2
+            time_to_drop+=max_lateness
             drop_time = now+ datetime.timedelta(minutes=time_to_drop)
             p.set_dropoff_time(drop_time)
 
@@ -459,6 +370,7 @@ def validate_route(passenger_route, bus_route):
     return True
 
 loop=0
+dissatisfied_passengers = []
 
 def check_infinite_loop(non_visited):
     global loop
@@ -471,7 +383,6 @@ def check_infinite_loop(non_visited):
 # Generate a route that satisfies the passenger pick up and drop off requirements
 def route_generator(passengers, buses, stops, depo):
     # Initialize the necessary lists
-    generated_route = []
     non_visited_stops = []
     
     pickups = []
@@ -488,12 +399,6 @@ def route_generator(passengers, buses, stops, depo):
     carried_passengers = []
     until = False
     
-    dissatisfied_passengers = []
-    
-    total_wait = 0
-    total_distance = 0
-    total_time = 0
-
     # For each of the buses append a second dimension to the arrays
     for bus in range(0, len(buses)):
         current_stop.append([])
@@ -526,7 +431,7 @@ def route_generator(passengers, buses, stops, depo):
     
             check_infinite_loop(non_visited_stops)
             
-            if(loop>10):
+            if(loop>100):
                 return 
             
             if bool(pickups[bus]) or bool(dropoffs[bus]):
@@ -534,6 +439,8 @@ def route_generator(passengers, buses, stops, depo):
                 available_stops = pickups[bus].union(dropoffs[bus])
             
                 near_stop = get_nearest_stop(current_stop[bus][0], available_stops)
+                if near_stop ==None:
+                    return
                 # Add the stop to the visited stop list and remove it from the non_visited stop list
                 visited_stops[bus].add(near_stop)
                 if near_stop in dropoffs[bus]:
@@ -546,11 +453,8 @@ def route_generator(passengers, buses, stops, depo):
                         non_visited_stops[bus2].remove(near_stop)
                 print (near_stop)
 
-                # The delay time of the bus to arrive at the stop 
-                wait[bus] = 0
 
-                # The time it took to get to the stop
-                arrival_time = calc_arrival(current_stop[bus][0], near_stop, wait[bus])
+                arrival_time = calc_arrival(current_stop[bus][0], near_stop, 0)
 
                 arrival=ind_bus[bus][-1].getSetOff()+datetime.timedelta(minutes=arrival_time)
                 current_time=arrival
@@ -584,22 +488,22 @@ def route_generator(passengers, buses, stops, depo):
                         # passenger.increase_total_time(time_to_dest)
                         passenger.increase_total_distance(distance_to_dest)
                         passenger.set_current_pos(near_stop.lat,near_stop.long)
-
+                        passenger.dropped_off=current_time
                         # check if the passenger is dissatisfied
-                        if passenger.get_dropoff_time() >current_time :
+                        if passenger.get_dropoff_time()<current_time :
                             passenger.set_dissatisfaction(True)
                             # print("Dissatisfied passenger", passenger.id,)
                             dissatisfied_passengers.append(passenger)
 
                         print ("\n<<<<<<<<<<<<<<<<<<< Dropped off passenger", passenger.id, "at stop", str(near_stop.getStopId())[:5],"by bus", bus,"\n")
 
-                temp_carried_passengers = []
+                temp_passengers = []
                 for passenger in passengers_not_picked:
                     if passenger.getNearestStop(stops.copy()) == near_stop:
-                        temp_carried_passengers.append(passenger)
+                        temp_passengers.append(passenger)
 
                 # If the stop is the nearest stop of any passenger pick them up
-                for passenger in temp_carried_passengers:
+                for passenger in temp_passengers:
                 
                     carried_passengers[bus].add(passenger)
                     passengers_picked.add(passenger)
@@ -610,34 +514,41 @@ def route_generator(passengers, buses, stops, depo):
                     dropoffs[bus].add(passenger.getNearestDrop(list_of_stops))
 
                     distance_to_stop = calc_distance(near_stop.lat,near_stop.long, passenger.lat, passenger.long)
-                    time_to_stop = calc_walk_time(near_stop.lat,near_stop.long, passenger.lat, passenger.long)
-                    passenger.increase_total_time(time_to_stop)
+                    # time_to_stop = calc_walk_time(near_stop.lat,near_stop.long, passenger.lat, passenger.long)
+                    wait_to_pickup = (current_time-passenger.get_pickup_time()).total_seconds()/60
+                    
+                    passenger.picked_up = current_time
+                    # passenger.increase_total_time(time_to_stop)
                     passenger.increase_total_distance(distance_to_stop)
+                    passenger.increase_total_waiting_time(wait_to_pickup)
                     passenger.set_current_pos(near_stop.lat,near_stop.long)
                     print ("\n>>>>>>>>>>>>>>>>> Picked up passenger", passenger.id, "at stop", str(near_stop.getStopId())[:5],"by bus", bus,"\n")
-
-                ind_bus[bus].append(Route.Route(near_stop,current_time, arrival,distance, wait[bus], carried_passengers[bus]))
+                
+                wait[bus] = 1+(len(temp_passengers)*0.3) 
+                # # wait time is 1 minute plus 20 seconds for each passenger
+                set_off = current_time + datetime.timedelta(minutes=wait[bus])
+                ind_bus[bus].append(Route.Route(near_stop,set_off, arrival,distance, wait[bus], carried_passengers[bus]))
                 current_stop[bus][0] = near_stop
 
-            # print("Picked",str(len(passengers_picked)))
-            # print("Dropped",str(len(passengers_dropped)))
-            # if len(passengers_not_picked) > 0:
-            #     print("Not picked",list(passengers_not_picked)[0].getNearestStop(stops) in non_visited_stops[bus])
+            print("Picked",str(len(passengers_picked)))
+            print("Dropped",str(len(passengers_dropped)))
+            print("Not picked",str(len(passengers_not_picked)))
                 
-            # print("Disss",str(len(dissatisfied_passengers)))
-
+            print("Disss",str(len(dissatisfied_passengers)))
+            print(len(passengers_dropped)==len(list_of_passengers))
             # Check all passengers were picked up and dropped off
             if len(passengers_dropped) == len(list_of_passengers) and len(passengers_picked) == 0 and len(
                     passengers_not_picked) == 0:
                 until = True
+                print("All passengers picked up and dropped off")
 
-    wait[bus] = 0
-    arrival=ind_bus[bus][-1].getSetOff()+datetime.timedelta(minutes=arrival_time)
-    set_off=arrival+datetime.timedelta(minutes=wait[bus])
-    distance=calc_distance(current_stop[bus][0].lat, current_stop[bus][0].long, depo.lat, depo.long)
     for bus in range(0, len(buses)):
-        ind_bus[bus].append(Route.Route(depo,set_off, arrival_time,distance, wait[bus], carried_passengers[bus]))
-        
+        arrival_time = calc_arrival(current_stop[bus][0], depo, 0)
+        arrival = ind_bus[bus][len(ind_bus[bus])-1].getSetOff() + datetime.timedelta(minutes=arrival_time)
+        distance=calc_distance(current_stop[bus][0].lat, current_stop[bus][0].long, depo.lat, depo.long)
+        for bus in range(0, len(buses)):
+            ind_bus[bus].append(Route.Route(depo,arrival, arrival,distance, wait[bus], carried_passengers[bus]))
+      
     save_results(ind_bus)
     # print(ind_bus)
     return ind_bus
@@ -649,32 +560,47 @@ def save_results(ind_bus):
 
     for bus in range(0, len(list_of_buses)):
         for route in ind_bus[bus]:
-            total_wait += route.getWait()
             total_distance += route.getDistance()
+            total_wait += route.getWait()
     
     for bus in range(0, len(list_of_buses)):
-        start = ind_bus[bus][0].getArrival()
+        start = ind_bus[bus][0].getSetOff()
         end= ind_bus[bus][-1].getSetOff()
         total_time += (end-start).total_seconds()/60
 
-    logging.info("Total wait time: %d minutes", total_wait)
-    logging.info("Avegera distance per bus: %d km", total_distance/len(list_of_buses))
-    logging.info("Average bus time: %d hours", total_time/len(list_of_buses))
+    average_bus_wait = total_wait/len(list_of_buses)
+    average_distance_per_bus = total_distance/1000/len(list_of_buses)
+    average_bus_time = total_time/len(list_of_buses)
     
-    print("Total wait time: ", total_wait)
-    print("Avegera distance per bus: ", total_distance/len(list_of_buses))
-    print("Average bus time: ", total_time/len(list_of_buses))
+    logging.info("Average bus wait: %d minutes", average_bus_wait)
+    logging.info("Average distance per bus: %d km", average_distance_per_bus)
+    logging.info("Average bus time: %d minutes", average_bus_time)
+    
+    print("Average bus wait: ", average_bus_wait, " minutes")
+    print("Avegera distance per bus: ", average_distance_per_bus, " km")
+    print("Average bus time: ", average_bus_time, " minutes")
     
     average_passenger_time = 0
+    average_passenger_wait = 0
     for passenger in list_of_passengers:
-        average_passenger_time += passenger.get_total_time()
+        average_passenger_time += (passenger.dropped_off-passenger.picked_up).total_seconds()/60
+        average_passenger_wait += passenger.get_total_waiting_time()
         
     average_passenger_time = average_passenger_time/len(list_of_passengers)
+    average_passenger_wait = average_passenger_wait/len(list_of_passengers)
     
-    logging.info("Average passenger time: %d hours", average_passenger_time)
-    print("Average passenger time: ", average_passenger_time%1000)
+    logging.info("Average passenger time: %d minutes", average_passenger_time)
+    print("Average passenger time: ", average_passenger_time, " minutes")
     
-    data = [["greedy",no_buses,no_passengers,total_distance%1000, total_time%60, total_wait]]
+    logging.info("Average passenger wait: %d minutes", average_passenger_wait)  
+    print("Average passenger wait: ", average_passenger_wait, " minutes")
+    
+    logging.info("Dissatisfied passengers: %d",len(dissatisfied_passengers) )  
+    print("Dissatisfied passengers: ", len(dissatisfied_passengers))
+    
+    
+    data = [["greedy",no_buses,no_passengers,average_distance_per_bus,\
+        average_bus_time, average_passenger_time,average_passenger_wait, len(dissatisfied_passengers),0, average_bus_wait,len(list_of_stops),seed]]
     
     for row in data:
         worksheet.append(row)
@@ -718,6 +644,10 @@ def calc_distance(lat1, lon1, lat2, lon2):
 def get_arrival(stop1, stop2, arrival, wait):
     return arrival + wait + stop_relations[int(stop1.id)][int(stop2.id)]
 
+def get_pickup_wait(ind_bus):
+    total_wait= int((ind_bus[-1].getSetOff()- now).total_seconds()/60)
+    return total_wait
+    
 
 # Describe the routes of a bus in the console
 def explore_bus_route(route, bus):
@@ -786,33 +716,8 @@ def bus_evaluate(bus):
     return bus[-1].getArrival()
 
 
-def calc_visablity(stop_i, stop_j):
-    if stop_i != stop_j and float(stop_relations[stop_i.look_up_index][stop_j.look_up_index]) != 0:
-        return 1 / float(stop_relations[stop_i.look_up_index][stop_j.look_up_index])
-    else:
-        return 0
 
-
-def calc_probablity(stop_candidates):
-    for bus in list_of_buses:
-        sum_prob_of_stops = 0
-        for stop_i in stop_candidates:
-            for stop_j in stop_candidates:
-                sum_prob_of_stops += (pheromone_trails[stop_i.look_up_index][stop_j.look_up_index] ** a_hyp) * \
-                                     (calc_visablity(stop_i, stop_j) ** b_hyp)
-
-        for stop_i in stop_candidates:
-            for stop_j in stop_candidates:
-                # print(    (((pheromone_trails[stop_i.look_up_index][stop_j.look_up_index] ** a_hyp) * (
-                # calcVisablity(stop_i, stop_j) ** b_hyp)) / sum_prob_of_stops ) )
-                stop_probs[bus.id][stop_i.look_up_index][stop_j.look_up_index] = \
-                    (((pheromone_trails[stop_i.look_up_index][stop_j.look_up_index] ** a_hyp) * (
-                            calc_visablity(stop_i, stop_j) ** b_hyp)) / sum_prob_of_stops)
-                # print(stop_probs[bus.id][stop_i.look_up_index][stop_j.look_up_index] )
-        # print(stop_probs)
-
-
-def plot(list_of_stops, list_of_passengers, list_of_buses, passenger_bookings, bus_routes):
+def plot(list_of_stops, list_of_passengers, passenger_bookings, bus_routes):
     # ----------------------  Plot figure
 
     # Plot the stops
@@ -823,8 +728,8 @@ def plot(list_of_stops, list_of_passengers, list_of_buses, passenger_bookings, b
     # Plot the passengers origins and destinations
     for i in range(0, len(list_of_passengers)):
 
-        plt.text(list_of_passengers[i].origin_x, list_of_passengers[i].origin_y, list_of_passengers[i].id, ha="center", va="center")
-        plt.text(list_of_passengers[i].destination_x,list_of_passengers[i].destination_y, "^"+str(list_of_passengers[i].id)+"^")
+        plt.text(list_of_passengers[i].origin_x, list_of_passengers[i].origin_y, "P"+str(list_of_passengers[i].id), ha="center", va="center")
+        plt.text(list_of_passengers[i].destination_x,list_of_passengers[i].destination_y, "D"+str(list_of_passengers[i].id))
         plt.plot(list_of_passengers[i].destination_x, list_of_passengers[i].destination_y, 'gx')
         plt.annotate('p_%d' % i, (list_of_passengers[i].origin_x + 2, list_of_passengers[i].origin_y))
         plt.annotate('p_%d' % i, (list_of_passengers[i].destination_x + 2, list_of_passengers[i].destination_y))
@@ -835,7 +740,7 @@ def plot(list_of_stops, list_of_passengers, list_of_buses, passenger_bookings, b
                      [list_of_passengers[i].origin_y, passenger_bookings[i][0].long], ':r')
 
             plt.plot([list_of_passengers[i].destination_x, passenger_bookings[i][1].lat],
-                     [list_of_passengers[i].destination_y, passenger_bookings[i][1].long], ':m')
+                     [list_of_passengers[i].destination_y, passenger_bookings[i][1].long], ':r')
 
     # Plot the buses routes
     for i in range(0, len(bus_routes)):
@@ -844,7 +749,17 @@ def plot(list_of_stops, list_of_passengers, list_of_buses, passenger_bookings, b
             plt.plot([bus_routes[i][j - 1].lat, bus_routes[i][j].lat],
                      [bus_routes[i][j - 1].long, bus_routes[i][j].long], c=col, linewidth=0.90, marker='D')
    
-    plt.title('Greedy')
+    # plt.title('Greedy')
+    plt.xlabel('Latitude')
+    plt.ylabel('Longitude')
+    # Custom legend
+    custom_lines = [Line2D([0], [0], color='b', marker='o', linestyle='None', markersize=5),
+                    Line2D([0], [0], color='C0', marker='P', linestyle='None', markersize=10),
+                    Line2D([0], [0], color='g', marker='x', linestyle='None', markersize=10),
+                    Line2D([0], [0], color='r', linestyle=':', linewidth=2),
+                    Line2D([0], [0], color='k', linestyle='-', linewidth=2, marker='D')]
+    plt.legend(custom_lines, ['Bus Stop', 'P: Passenger', 'D: Destination', 'Passenger walking', 'Bus Route'],bbox_to_anchor=(0.16, 0.8))
+
     plt.show()
 
 def get_nearest_stop(stop, stop_candidates):
@@ -863,7 +778,7 @@ def get_nearest_stop(stop, stop_candidates):
 
 # calcProbablity(1, list_of_stops)
 
-routes = run("greedy")
+routes = run()
 
 bus_routes = []
 
@@ -871,6 +786,6 @@ for i in range(0, len(routes)):
     bus_routes.append(get_bus_order(routes[i]))
 # bus_routes = [getBusOrder(routes[0]), getBusOrder(routes[1]), getBusOrder(routes)]
 
-# plot(list_of_stops, list_of_passengers, list_of_buses, passenger_bookings, bus_routes)
+plot(list_of_stops, list_of_passengers, passenger_bookings, bus_routes)
 
 # run(None)

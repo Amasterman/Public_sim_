@@ -12,16 +12,16 @@ grouped_df = grouped_df.sort_values(['buses', 'passengers'])
 
 # Define a function to calculate the test statistic
 def test_statistic(data):
-    new_heuristic_data = data[data['alg_name'] == 'new_heuristic']['time']
+    transfer_data = data[data['alg_name'] == 'transfer']['time']
     greedy_data = data[data['alg_name'] == 'greedy']['time']
-    return np.mean(new_heuristic_data) - np.mean(greedy_data)
+    return np.mean(transfer_data) - np.mean(greedy_data)
 
 # Split the data into two groups based on the algorithm used
-new_heuristic_data = grouped_df[grouped_df['alg_name'] == 'new_heuristic']['time']
+transfer_data = grouped_df[grouped_df['alg_name'] == 'transfer']['time']
 greedy_data = grouped_df[grouped_df['alg_name'] == 'greedy']['time']
 
 # Perform a two-sided t-test
-t_stat, p_value = ttest_ind(new_heuristic_data, greedy_data, equal_var=False)
+t_stat, p_value = ttest_ind(transfer_data, greedy_data, equal_var=False)
 
 # Print the results
 print("Two-sample t-test results:")

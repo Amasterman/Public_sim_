@@ -7,7 +7,7 @@ from scipy.stats import linregress
 # KEEEP THIS
 # Read the Excel file into a pandas DataFrame
 data = pd.read_excel('result.xlsx')
-alg1_data = data[data['alg_name'] == 'new_heuristic']
+alg1_data = data[data['alg_name'] == 'transfer']
 alg2_data = data[data['alg_name'] == 'greedy']
 # Select only the rows where both the number of buses and passengers are equal for both algorithms
 equal_data = alg1_data.merge(alg2_data, on=['buses', 'passengers'])
