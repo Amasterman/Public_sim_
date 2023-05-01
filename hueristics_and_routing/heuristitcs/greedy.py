@@ -186,7 +186,7 @@ else:
                                         rnd.uniform(minlat, maxlat),
                                         rnd.uniform(minlon, maxlon), rnd.randint(1, 4), rnd.randint(1, 100),
                                         rnd.randint(1, 3),now,now, 1,
-                                        max_lateness)
+                                        rnd.randint(10, 25))
 
         # Append to list of passengers
         list_of_passengers.append(temp_passenger)
@@ -240,7 +240,7 @@ def user_stops():
             
             time_to_drop = calc_arrival(nearest_stop, nearest_drop, 0)
             time_to_drop*=2
-            time_to_drop+=max_lateness
+            time_to_drop+=p.lateness
             drop_time = now+ datetime.timedelta(minutes=time_to_drop)
             p.set_dropoff_time(drop_time)
 
@@ -786,6 +786,6 @@ for i in range(0, len(routes)):
     bus_routes.append(get_bus_order(routes[i]))
 # bus_routes = [getBusOrder(routes[0]), getBusOrder(routes[1]), getBusOrder(routes)]
 
-plot(list_of_stops, list_of_passengers, passenger_bookings, bus_routes)
+# plot(list_of_stops, list_of_passengers, passenger_bookings, bus_routes)
 
 # run(None)

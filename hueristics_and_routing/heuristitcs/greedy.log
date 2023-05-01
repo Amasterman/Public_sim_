@@ -4619,3 +4619,273 @@ INFO:root:Average bus time: 379 minutes
 INFO:root:Average passenger time: 106 minutes
 INFO:root:Average passenger wait: 45 minutes
 INFO:root:Dissatisfied passengers: 7
+INFO:root:===== Greedy Offline 1 =====
+INFO:root:Seed: 18467
+INFO:root:Buses: 2
+INFO:root:Passengers: 4
+INFO:root:Average bus wait: 6 minutes
+INFO:root:Average distance per bus: 72 km
+INFO:root:Average bus time: 200 minutes
+INFO:root:Average passenger time: 59 minutes
+INFO:root:Average passenger wait: 60 minutes
+INFO:root:Dissatisfied passengers: 3
+INFO:root:===== Greedy Offline 1 =====
+INFO:root:Seed: 23579
+INFO:root:Buses: 2
+INFO:root:Passengers: 4
+INFO:root:Average bus wait: 6 minutes
+INFO:root:Average distance per bus: 70 km
+INFO:root:Average bus time: 200 minutes
+INFO:root:Average passenger time: 37 minutes
+INFO:root:Average passenger wait: 51 minutes
+INFO:root:Dissatisfied passengers: 2
+INFO:root:===== Greedy Offline 2 =====
+INFO:root:Seed: 23579
+INFO:root:Buses: 2
+INFO:root:Passengers: 10
+INFO:root:Average bus wait: 13 minutes
+INFO:root:Average distance per bus: 124 km
+INFO:root:Average bus time: 343 minutes
+INFO:root:Average passenger time: 76 minutes
+INFO:root:Average passenger wait: 50 minutes
+INFO:root:Dissatisfied passengers: 7
+INFO:root:===== Greedy Offline 3 =====
+INFO:root:Seed: 32345
+INFO:root:Buses: 6
+INFO:root:Passengers: 12
+INFO:root:Average bus wait: 10 minutes
+INFO:root:Average distance per bus: 98 km
+INFO:root:Average bus time: 218 minutes
+INFO:root:Average passenger time: 57 minutes
+INFO:root:Average passenger wait: 53 minutes
+INFO:root:Dissatisfied passengers: 5
+INFO:root:===== Greedy Offline 4 =====
+INFO:root:Seed: 32345
+INFO:root:Buses: 6
+INFO:root:Passengers: 30
+INFO:root:Average bus wait: 16 minutes
+INFO:root:Average distance per bus: 180 km
+INFO:root:Average bus time: 484 minutes
+INFO:root:Average passenger time: 78 minutes
+INFO:root:Average passenger wait: 65 minutes
+INFO:root:Dissatisfied passengers: 21
+INFO:root:===== Greedy Offline 5 =====
+INFO:root:Seed: 22178
+INFO:root:Buses: 10
+INFO:root:Passengers: 20
+INFO:root:Average bus wait: 14 minutes
+INFO:root:Average distance per bus: 195 km
+INFO:root:Average bus time: 432 minutes
+INFO:root:Average passenger time: 62 minutes
+INFO:root:Average passenger wait: 59 minutes
+INFO:root:Dissatisfied passengers: 11
+INFO:root:===== Greedy Offline 6 =====
+INFO:root:Seed: 22178
+INFO:root:Buses: 10
+INFO:root:Passengers: 50
+INFO:root:Average bus wait: 21 minutes
+INFO:root:Average distance per bus: 224 km
+INFO:root:Average bus time: 610 minutes
+INFO:root:Average passenger time: 92 minutes
+INFO:root:Average passenger wait: 61 minutes
+INFO:root:Dissatisfied passengers: 43
+INFO:root:===== Greedy Offline 7 =====
+INFO:root:Seed: 14183
+INFO:root:Buses: 14
+INFO:root:Passengers: 28
+INFO:root:Average bus wait: 18 minutes
+INFO:root:Average distance per bus: 302 km
+INFO:root:Average bus time: 719 minutes
+INFO:root:Average passenger time: 50 minutes
+INFO:root:Average passenger wait: 42 minutes
+INFO:root:Dissatisfied passengers: 15
+INFO:root:===== Greedy Offline 8 =====
+INFO:root:Seed: 14183
+INFO:root:Buses: 14
+INFO:root:Passengers: 70
+INFO:root:Average bus wait: 24 minutes
+INFO:root:Average distance per bus: 234 km
+INFO:root:Average bus time: 602 minutes
+INFO:root:Average passenger time: 82 minutes
+INFO:root:Average passenger wait: 55 minutes
+INFO:root:Dissatisfied passengers: 57
+INFO:root:===== Greedy Offline 9 =====
+INFO:root:Seed: 26632
+INFO:root:Buses: 18
+INFO:root:Passengers: 36
+INFO:root:Average bus wait: 22 minutes
+INFO:root:Average distance per bus: 320 km
+INFO:root:Average bus time: 814 minutes
+INFO:root:Average passenger time: 52 minutes
+INFO:root:Average passenger wait: 49 minutes
+INFO:root:Dissatisfied passengers: 19
+INFO:root:===== Greedy Offline 10 =====
+INFO:root:Seed: 26632
+INFO:root:Buses: 18
+INFO:root:Passengers: 90
+INFO:root:Average bus wait: 29 minutes
+INFO:root:Average distance per bus: 285 km
+INFO:root:Average bus time: 627 minutes
+INFO:root:Average passenger time: 91 minutes
+INFO:root:Average passenger wait: 62 minutes
+INFO:root:Dissatisfied passengers: 69
+INFO:root:===== Greedy Offline 11 =====
+INFO:root:Seed: 13545
+INFO:root:Buses: 22
+INFO:root:Passengers: 44
+INFO:root:Average bus wait: 26 minutes
+INFO:root:Average distance per bus: 343 km
+INFO:root:Average bus time: 840 minutes
+INFO:root:Average passenger time: 58 minutes
+INFO:root:Average passenger wait: 38 minutes
+INFO:root:Dissatisfied passengers: 15
+INFO:root:===== Greedy Offline 1 =====
+INFO:root:Seed: 11430
+INFO:root:Buses: 2
+INFO:root:Passengers: 4
+INFO:root:Average bus wait: 6 minutes
+INFO:root:Average distance per bus: 77 km
+INFO:root:Average bus time: 229 minutes
+INFO:root:Average passenger time: 45 minutes
+INFO:root:Average passenger wait: 33 minutes
+INFO:root:Dissatisfied passengers: 1
+INFO:root:===== Greedy Offline 2 =====
+INFO:root:Seed: 11430
+INFO:root:Buses: 2
+INFO:root:Passengers: 10
+INFO:root:Average bus wait: 13 minutes
+INFO:root:Average distance per bus: 122 km
+INFO:root:Average bus time: 273 minutes
+INFO:root:Average passenger time: 54 minutes
+INFO:root:Average passenger wait: 95 minutes
+INFO:root:Dissatisfied passengers: 7
+INFO:root:===== Greedy Offline 3 =====
+INFO:root:Seed: 14070
+INFO:root:Buses: 8
+INFO:root:Passengers: 16
+INFO:root:Average bus wait: 12 minutes
+INFO:root:Average distance per bus: 144 km
+INFO:root:Average bus time: 287 minutes
+INFO:root:Average passenger time: 35 minutes
+INFO:root:Average passenger wait: 48 minutes
+INFO:root:Dissatisfied passengers: 9
+INFO:root:===== Greedy Offline 4 =====
+INFO:root:Seed: 14070
+INFO:root:Buses: 8
+INFO:root:Passengers: 40
+INFO:root:Average bus wait: 19 minutes
+INFO:root:Average distance per bus: 188 km
+INFO:root:Average bus time: 493 minutes
+INFO:root:Average passenger time: 83 minutes
+INFO:root:Average passenger wait: 53 minutes
+INFO:root:Dissatisfied passengers: 36
+INFO:root:===== Greedy Offline 5 =====
+INFO:root:Seed: 16704
+INFO:root:Buses: 14
+INFO:root:Passengers: 28
+INFO:root:Average bus wait: 18 minutes
+INFO:root:Average distance per bus: 187 km
+INFO:root:Average bus time: 443 minutes
+INFO:root:Average passenger time: 57 minutes
+INFO:root:Average passenger wait: 47 minutes
+INFO:root:Dissatisfied passengers: 18
+INFO:root:===== Greedy Offline 6 =====
+INFO:root:Seed: 16704
+INFO:root:Buses: 14
+INFO:root:Passengers: 70
+INFO:root:Average bus wait: 25 minutes
+INFO:root:Average distance per bus: 243 km
+INFO:root:Average bus time: 594 minutes
+INFO:root:Average passenger time: 95 minutes
+INFO:root:Average passenger wait: 69 minutes
+INFO:root:Dissatisfied passengers: 62
+INFO:root:===== Greedy Offline 7 =====
+INFO:root:Seed: 8589
+INFO:root:Buses: 20
+INFO:root:Passengers: 40
+INFO:root:Average bus wait: 24 minutes
+INFO:root:Average distance per bus: 412 km
+INFO:root:Average bus time: 1033 minutes
+INFO:root:Average passenger time: 51 minutes
+INFO:root:Average passenger wait: 60 minutes
+INFO:root:Dissatisfied passengers: 31
+INFO:root:===== Greedy Offline 8 =====
+INFO:root:Seed: 8589
+INFO:root:Buses: 20
+INFO:root:Passengers: 100
+INFO:root:Average bus wait: 31 minutes
+INFO:root:Average distance per bus: 376 km
+INFO:root:Average bus time: 884 minutes
+INFO:root:Average passenger time: 79 minutes
+INFO:root:Average passenger wait: 70 minutes
+INFO:root:Dissatisfied passengers: 81
+INFO:root:===== Greedy Offline 9 =====
+INFO:root:Seed: 13880
+INFO:root:Buses: 26
+INFO:root:Passengers: 52
+INFO:root:Average bus wait: 30 minutes
+INFO:root:Average distance per bus: 452 km
+INFO:root:Average bus time: 1084 minutes
+INFO:root:Average passenger time: 47 minutes
+INFO:root:Average passenger wait: 51 minutes
+INFO:root:Dissatisfied passengers: 29
+INFO:root:===== Greedy Offline 10 =====
+INFO:root:Seed: 13880
+INFO:root:Buses: 26
+INFO:root:Passengers: 130
+INFO:root:Average bus wait: 36 minutes
+INFO:root:Average distance per bus: 362 km
+INFO:root:Average bus time: 843 minutes
+INFO:root:Average passenger time: 79 minutes
+INFO:root:Average passenger wait: 64 minutes
+INFO:root:Dissatisfied passengers: 106
+INFO:root:===== Greedy Offline 11 =====
+INFO:root:Seed: 24242
+INFO:root:Buses: 32
+INFO:root:Passengers: 64
+INFO:root:Average bus wait: 36 minutes
+INFO:root:Average distance per bus: 499 km
+INFO:root:Average bus time: 1169 minutes
+INFO:root:Average passenger time: 52 minutes
+INFO:root:Average passenger wait: 49 minutes
+INFO:root:Dissatisfied passengers: 33
+INFO:root:===== Greedy Offline 12 =====
+INFO:root:Seed: 24242
+INFO:root:Buses: 32
+INFO:root:Passengers: 160
+INFO:root:Average bus wait: 42 minutes
+INFO:root:Average distance per bus: 528 km
+INFO:root:Average bus time: 1318 minutes
+INFO:root:Average passenger time: 87 minutes
+INFO:root:Average passenger wait: 57 minutes
+INFO:root:Dissatisfied passengers: 125
+INFO:root:===== Greedy Offline 13 =====
+INFO:root:Seed: 10595
+INFO:root:Buses: 38
+INFO:root:Passengers: 76
+INFO:root:Average bus wait: 42 minutes
+INFO:root:Average distance per bus: 466 km
+INFO:root:Average bus time: 1118 minutes
+INFO:root:Average passenger time: 59 minutes
+INFO:root:Average passenger wait: 33 minutes
+INFO:root:Dissatisfied passengers: 36
+INFO:root:===== Greedy Offline 14 =====
+INFO:root:Seed: 10595
+INFO:root:Buses: 38
+INFO:root:Passengers: 190
+INFO:root:Average bus wait: 48 minutes
+INFO:root:Average distance per bus: 565 km
+INFO:root:Average bus time: 1426 minutes
+INFO:root:Average passenger time: 91 minutes
+INFO:root:Average passenger wait: 40 minutes
+INFO:root:Dissatisfied passengers: 155
+INFO:root:===== Greedy Offline 1 =====
+INFO:root:Seed: 10786
+INFO:root:Buses: 40
+INFO:root:Passengers: 80
+INFO:root:Average bus wait: 44 minutes
+INFO:root:Average distance per bus: 539 km
+INFO:root:Average bus time: 1359 minutes
+INFO:root:Average passenger time: 54 minutes
+INFO:root:Average passenger wait: 47 minutes
+INFO:root:Dissatisfied passengers: 50

@@ -4834,3 +4834,419 @@ INFO:root:===== NEW RUN 16 =====
 INFO:root:Seed: 18179
 INFO:root:Buses: 30
 INFO:root:Passengers: 150
+INFO:root:===== NEW RUN 3 =====
+INFO:root:Seed: 450
+INFO:root:Buses: 2
+INFO:root:Passengers: 8
+INFO:root:Average bus wait: 11 minutes
+INFO:root:Average distance per bus: 103 km
+INFO:root:Average bus time: 285 minutes
+INFO:root:Average passenger time: 59 minutes
+INFO:root:Average passenger wait: 86 minutes
+INFO:root:Dissatisfied passengers: 8
+INFO:root:Monitored passengers: 1
+INFO:root:===== NEW RUN 3 =====
+INFO:root:Seed: 450
+INFO:root:Buses: 2
+INFO:root:Passengers: 8
+INFO:root:Average bus wait: 11 minutes
+INFO:root:Average distance per bus: 103 km
+INFO:root:Average bus time: 285 minutes
+INFO:root:Average passenger time: 59 minutes
+INFO:root:Average passenger wait: 86 minutes
+INFO:root:Dissatisfied passengers: 8
+INFO:root:Monitored passengers: 1
+INFO:root:===== NEW RUN 3 =====
+INFO:root:Seed: 450
+INFO:root:Buses: 3
+INFO:root:Passengers: 30
+INFO:root:===== NEW RUN 3 =====
+INFO:root:Seed: 50
+INFO:root:Buses: 3
+INFO:root:Passengers: 30
+INFO:root:===== NEW RUN 3 =====
+INFO:root:Seed: 50
+INFO:root:Buses: 3
+INFO:root:Passengers: 30
+INFO:root:Average bus wait: 31 minutes
+INFO:root:Average distance per bus: 163 km
+INFO:root:Average bus time: 393 minutes
+INFO:root:Average passenger time: 110 minutes
+INFO:root:Average passenger wait: 110 minutes
+INFO:root:Dissatisfied passengers: 27
+INFO:root:Monitored passengers: 20
+INFO:root:===== NEW RUN 3 =====
+INFO:root:Seed: 50
+INFO:root:Buses: 2
+INFO:root:Passengers: 10
+INFO:root:Average bus wait: 18 minutes
+INFO:root:Average distance per bus: 124 km
+INFO:root:Average bus time: 356 minutes
+INFO:root:Average passenger time: 79 minutes
+INFO:root:Average passenger wait: 107 minutes
+INFO:root:Dissatisfied passengers: 7
+INFO:root:Monitored passengers: 8
+INFO:root:===== NEW RUN 3 =====
+INFO:root:Seed: 50
+INFO:root:Buses: 2
+INFO:root:Passengers: 10
+INFO:root:Average bus wait: 18 minutes
+INFO:root:Average distance per bus: 124 km
+INFO:root:Average bus time: 356 minutes
+INFO:root:Average passenger time: 79 minutes
+INFO:root:Average passenger wait: 107 minutes
+INFO:root:Dissatisfied passengers: 7
+INFO:root:Monitored passengers: 8
+INFO:root:===== NEW RUN 3 =====
+INFO:root:Seed: 50
+INFO:root:Buses: 2
+INFO:root:Passengers: 10
+INFO:root:Average bus wait: 18 minutes
+INFO:root:Average distance per bus: 124 km
+INFO:root:Average bus time: 356 minutes
+INFO:root:Average passenger time: 79 minutes
+INFO:root:Average passenger wait: 107 minutes
+INFO:root:Dissatisfied passengers: 7
+INFO:root:Monitored passengers: 8
+INFO:root:===== NEW RUN 3 =====
+INFO:root:Seed: 50
+INFO:root:Buses: 2
+INFO:root:Passengers: 10
+INFO:root:Average bus wait: 16 minutes
+INFO:root:Average distance per bus: 131 km
+INFO:root:Average bus time: 334 minutes
+INFO:root:Average passenger time: 77 minutes
+INFO:root:Average passenger wait: 109 minutes
+INFO:root:Dissatisfied passengers: 7
+INFO:root:Monitored passengers: 6
+INFO:root:===== NEW RUN 3 =====
+INFO:root:Seed: 50
+INFO:root:Buses: 2
+INFO:root:Passengers: 10
+INFO:root:Average bus wait: 15 minutes
+INFO:root:Average distance per bus: 123 km
+INFO:root:Average bus time: 276 minutes
+INFO:root:Average passenger time: 76 minutes
+INFO:root:Average passenger wait: 101 minutes
+INFO:root:Dissatisfied passengers: 7
+INFO:root:Monitored passengers: 4
+INFO:root:===== NEW RUN 1 =====
+INFO:root:Seed: 18467
+INFO:root:Buses: 2
+INFO:root:Passengers: 4
+INFO:root:Average bus wait: 6 minutes
+INFO:root:Average distance per bus: 72 km
+INFO:root:Average bus time: 200 minutes
+INFO:root:Average passenger time: 59 minutes
+INFO:root:Average passenger wait: 60 minutes
+INFO:root:Dissatisfied passengers: 3
+INFO:root:Monitored passengers: 0
+INFO:root:===== NEW RUN 2 =====
+INFO:root:Seed: 18467
+INFO:root:Buses: 2
+INFO:root:Passengers: 10
+INFO:root:Average bus wait: 14 minutes
+INFO:root:Average distance per bus: 136 km
+INFO:root:Average bus time: 380 minutes
+INFO:root:Average passenger time: 76 minutes
+INFO:root:Average passenger wait: 117 minutes
+INFO:root:Dissatisfied passengers: 8
+INFO:root:Monitored passengers: 1
+INFO:root:===== NEW RUN 1 =====
+INFO:root:Seed: 23579
+INFO:root:Buses: 2
+INFO:root:Passengers: 4
+INFO:root:Average bus wait: 6 minutes
+INFO:root:Average distance per bus: 70 km
+INFO:root:Average bus time: 200 minutes
+INFO:root:Average passenger time: 37 minutes
+INFO:root:Average passenger wait: 51 minutes
+INFO:root:Dissatisfied passengers: 2
+INFO:root:Monitored passengers: 0
+INFO:root:===== NEW RUN 2 =====
+INFO:root:Seed: 23579
+INFO:root:Buses: 2
+INFO:root:Passengers: 10
+INFO:root:Average bus wait: 14 minutes
+INFO:root:Average distance per bus: 132 km
+INFO:root:Average bus time: 350 minutes
+INFO:root:Average passenger time: 68 minutes
+INFO:root:Average passenger wait: 63 minutes
+INFO:root:Dissatisfied passengers: 7
+INFO:root:Monitored passengers: 2
+INFO:root:===== NEW RUN 3 =====
+INFO:root:Seed: 32345
+INFO:root:Buses: 6
+INFO:root:Passengers: 12
+INFO:root:Average bus wait: 10 minutes
+INFO:root:Average distance per bus: 111 km
+INFO:root:Average bus time: 247 minutes
+INFO:root:Average passenger time: 48 minutes
+INFO:root:Average passenger wait: 53 minutes
+INFO:root:Dissatisfied passengers: 5
+INFO:root:Monitored passengers: 1
+INFO:root:===== NEW RUN 4 =====
+INFO:root:Seed: 32345
+INFO:root:Buses: 6
+INFO:root:Passengers: 30
+INFO:root:Average bus wait: 19 minutes
+INFO:root:Average distance per bus: 166 km
+INFO:root:Average bus time: 423 minutes
+INFO:root:Average passenger time: 72 minutes
+INFO:root:Average passenger wait: 88 minutes
+INFO:root:Dissatisfied passengers: 27
+INFO:root:Monitored passengers: 11
+INFO:root:===== NEW RUN 5 =====
+INFO:root:Seed: 22178
+INFO:root:Buses: 10
+INFO:root:Passengers: 20
+INFO:root:Average bus wait: 14 minutes
+INFO:root:Average distance per bus: 203 km
+INFO:root:Average bus time: 454 minutes
+INFO:root:Average passenger time: 58 minutes
+INFO:root:Average passenger wait: 64 minutes
+INFO:root:Dissatisfied passengers: 12
+INFO:root:Monitored passengers: 6
+INFO:root:===== NEW RUN 6 =====
+INFO:root:Seed: 22178
+INFO:root:Buses: 10
+INFO:root:Passengers: 50
+INFO:root:Average bus wait: 23 minutes
+INFO:root:Average distance per bus: 229 km
+INFO:root:Average bus time: 597 minutes
+INFO:root:Average passenger time: 91 minutes
+INFO:root:Average passenger wait: 79 minutes
+INFO:root:Dissatisfied passengers: 44
+INFO:root:Monitored passengers: 20
+INFO:root:===== NEW RUN 7 =====
+INFO:root:Seed: 14183
+INFO:root:Buses: 14
+INFO:root:Passengers: 28
+INFO:root:Average bus wait: 19 minutes
+INFO:root:Average distance per bus: 293 km
+INFO:root:Average bus time: 727 minutes
+INFO:root:Average passenger time: 44 minutes
+INFO:root:Average passenger wait: 48 minutes
+INFO:root:Dissatisfied passengers: 19
+INFO:root:Monitored passengers: 7
+INFO:root:===== NEW RUN 8 =====
+INFO:root:Seed: 14183
+INFO:root:Buses: 14
+INFO:root:Passengers: 70
+INFO:root:Average bus wait: 26 minutes
+INFO:root:Average distance per bus: 256 km
+INFO:root:Average bus time: 808 minutes
+INFO:root:Average passenger time: 84 minutes
+INFO:root:Average passenger wait: 69 minutes
+INFO:root:Dissatisfied passengers: 60
+INFO:root:Monitored passengers: 26
+INFO:root:===== NEW RUN 9 =====
+INFO:root:Seed: 26632
+INFO:root:Buses: 18
+INFO:root:Passengers: 36
+INFO:root:Average bus wait: 23 minutes
+INFO:root:Average distance per bus: 381 km
+INFO:root:Average bus time: 998 minutes
+INFO:root:Average passenger time: 47 minutes
+INFO:root:Average passenger wait: 53 minutes
+INFO:root:Dissatisfied passengers: 22
+INFO:root:Monitored passengers: 8
+INFO:root:===== NEW RUN 10 =====
+INFO:root:Seed: 26632
+INFO:root:Buses: 18
+INFO:root:Passengers: 90
+INFO:root:Average bus wait: 31 minutes
+INFO:root:Average distance per bus: 357 km
+INFO:root:Average bus time: 936 minutes
+INFO:root:Average passenger time: 80 minutes
+INFO:root:Average passenger wait: 85 minutes
+INFO:root:Dissatisfied passengers: 79
+INFO:root:Monitored passengers: 41
+INFO:root:===== NEW RUN 11 =====
+INFO:root:Seed: 13545
+INFO:root:Buses: 22
+INFO:root:Passengers: 44
+INFO:root:Average bus wait: 27 minutes
+INFO:root:Average distance per bus: 349 km
+INFO:root:Average bus time: 923 minutes
+INFO:root:Average passenger time: 56 minutes
+INFO:root:Average passenger wait: 45 minutes
+INFO:root:Dissatisfied passengers: 23
+INFO:root:Monitored passengers: 11
+INFO:root:===== NEW RUN 12 =====
+INFO:root:Seed: 13545
+INFO:root:Buses: 22
+INFO:root:Passengers: 110
+INFO:root:===== NEW RUN 1 =====
+INFO:root:Seed: 11430
+INFO:root:Buses: 2
+INFO:root:Passengers: 4
+INFO:root:Average bus wait: 6 minutes
+INFO:root:Average distance per bus: 77 km
+INFO:root:Average bus time: 229 minutes
+INFO:root:Average passenger time: 45 minutes
+INFO:root:Average passenger wait: 33 minutes
+INFO:root:Dissatisfied passengers: 1
+INFO:root:Monitored passengers: 0
+INFO:root:===== NEW RUN 2 =====
+INFO:root:Seed: 11430
+INFO:root:Buses: 2
+INFO:root:Passengers: 10
+INFO:root:Average bus wait: 14 minutes
+INFO:root:Average distance per bus: 125 km
+INFO:root:Average bus time: 310 minutes
+INFO:root:Average passenger time: 61 minutes
+INFO:root:Average passenger wait: 109 minutes
+INFO:root:Dissatisfied passengers: 7
+INFO:root:Monitored passengers: 2
+INFO:root:===== NEW RUN 3 =====
+INFO:root:Seed: 14070
+INFO:root:Buses: 8
+INFO:root:Passengers: 16
+INFO:root:Average bus wait: 13 minutes
+INFO:root:Average distance per bus: 164 km
+INFO:root:Average bus time: 522 minutes
+INFO:root:Average passenger time: 35 minutes
+INFO:root:Average passenger wait: 51 minutes
+INFO:root:Dissatisfied passengers: 9
+INFO:root:Monitored passengers: 4
+INFO:root:===== NEW RUN 4 =====
+INFO:root:Seed: 14070
+INFO:root:Buses: 8
+INFO:root:Passengers: 40
+INFO:root:Average bus wait: 24 minutes
+INFO:root:Average distance per bus: 198 km
+INFO:root:Average bus time: 597 minutes
+INFO:root:Average passenger time: 86 minutes
+INFO:root:Average passenger wait: 75 minutes
+INFO:root:Dissatisfied passengers: 33
+INFO:root:Monitored passengers: 32
+INFO:root:===== NEW RUN 5 =====
+INFO:root:Seed: 16704
+INFO:root:Buses: 14
+INFO:root:Passengers: 28
+INFO:root:Average bus wait: 19 minutes
+INFO:root:Average distance per bus: 190 km
+INFO:root:Average bus time: 572 minutes
+INFO:root:Average passenger time: 47 minutes
+INFO:root:Average passenger wait: 50 minutes
+INFO:root:Dissatisfied passengers: 17
+INFO:root:Monitored passengers: 13
+INFO:root:===== NEW RUN 6 =====
+INFO:root:Seed: 16704
+INFO:root:Buses: 14
+INFO:root:Passengers: 70
+INFO:root:Average bus wait: 29 minutes
+INFO:root:Average distance per bus: 250 km
+INFO:root:Average bus time: 718 minutes
+INFO:root:Average passenger time: 92 minutes
+INFO:root:Average passenger wait: 94 minutes
+INFO:root:Dissatisfied passengers: 65
+INFO:root:Monitored passengers: 54
+INFO:root:===== NEW RUN 7 =====
+INFO:root:Seed: 8589
+INFO:root:Buses: 20
+INFO:root:Passengers: 40
+INFO:root:Average bus wait: 25 minutes
+INFO:root:Average distance per bus: 402 km
+INFO:root:Average bus time: 984 minutes
+INFO:root:Average passenger time: 47 minutes
+INFO:root:Average passenger wait: 69 minutes
+INFO:root:Dissatisfied passengers: 32
+INFO:root:Monitored passengers: 16
+INFO:root:===== NEW RUN 8 =====
+INFO:root:Seed: 8589
+INFO:root:Buses: 20
+INFO:root:Passengers: 100
+INFO:root:Average bus wait: 35 minutes
+INFO:root:Average distance per bus: 468 km
+INFO:root:Average bus time: 1354 minutes
+INFO:root:Average passenger time: 76 minutes
+INFO:root:Average passenger wait: 107 minutes
+INFO:root:Dissatisfied passengers: 87
+INFO:root:Monitored passengers: 74
+INFO:root:===== NEW RUN 9 =====
+INFO:root:Seed: 13880
+INFO:root:Buses: 26
+INFO:root:Passengers: 52
+INFO:root:Average bus wait: 31 minutes
+INFO:root:Average distance per bus: 448 km
+INFO:root:Average bus time: 1189 minutes
+INFO:root:Average passenger time: 40 minutes
+INFO:root:Average passenger wait: 59 minutes
+INFO:root:Dissatisfied passengers: 34
+INFO:root:Monitored passengers: 17
+INFO:root:===== NEW RUN 10 =====
+INFO:root:Seed: 13880
+INFO:root:Buses: 26
+INFO:root:Passengers: 130
+INFO:root:Average bus wait: 41 minutes
+INFO:root:Average distance per bus: 518 km
+INFO:root:Average bus time: 1790 minutes
+INFO:root:Average passenger time: 108 minutes
+INFO:root:Average passenger wait: 120 minutes
+INFO:root:Dissatisfied passengers: 117
+INFO:root:Monitored passengers: 105
+INFO:root:===== NEW RUN 11 =====
+INFO:root:Seed: 24242
+INFO:root:Buses: 32
+INFO:root:Passengers: 64
+INFO:root:Average bus wait: 37 minutes
+INFO:root:Average distance per bus: 514 km
+INFO:root:Average bus time: 1363 minutes
+INFO:root:Average passenger time: 48 minutes
+INFO:root:Average passenger wait: 60 minutes
+INFO:root:Dissatisfied passengers: 37
+INFO:root:Monitored passengers: 23
+INFO:root:===== NEW RUN 12 =====
+INFO:root:Seed: 24242
+INFO:root:Buses: 32
+INFO:root:Passengers: 160
+INFO:root:Average bus wait: 46 minutes
+INFO:root:Average distance per bus: 523 km
+INFO:root:Average bus time: 1808 minutes
+INFO:root:Average passenger time: 108 minutes
+INFO:root:Average passenger wait: 115 minutes
+INFO:root:Dissatisfied passengers: 148
+INFO:root:Monitored passengers: 120
+INFO:root:===== NEW RUN 13 =====
+INFO:root:Seed: 10595
+INFO:root:Buses: 38
+INFO:root:Passengers: 76
+INFO:root:Average bus wait: 43 minutes
+INFO:root:Average distance per bus: 473 km
+INFO:root:Average bus time: 1286 minutes
+INFO:root:Average passenger time: 57 minutes
+INFO:root:Average passenger wait: 52 minutes
+INFO:root:Dissatisfied passengers: 42
+INFO:root:Monitored passengers: 40
+INFO:root:===== NEW RUN 14 =====
+INFO:root:Seed: 10595
+INFO:root:Buses: 38
+INFO:root:Passengers: 190
+INFO:root:Average bus wait: 52 minutes
+INFO:root:Average distance per bus: 495 km
+INFO:root:Average bus time: 1489 minutes
+INFO:root:Average passenger time: 102 minutes
+INFO:root:Average passenger wait: 93 minutes
+INFO:root:Dissatisfied passengers: 169
+INFO:root:Monitored passengers: 144
+INFO:root:===== NEW RUN 15 =====
+INFO:root:Seed: 27118
+INFO:root:Buses: 44
+INFO:root:Passengers: 88
+INFO:root:===== NEW RUN 1 =====
+INFO:root:Seed: 10786
+INFO:root:Buses: 40
+INFO:root:Passengers: 80
+INFO:root:Average bus wait: 45 minutes
+INFO:root:Average distance per bus: 674 km
+INFO:root:Average bus time: 1738 minutes
+INFO:root:Average passenger time: 53 minutes
+INFO:root:Average passenger wait: 56 minutes
+INFO:root:Dissatisfied passengers: 53
+INFO:root:Monitored passengers: 44
+INFO:root:===== NEW RUN 2 =====
+INFO:root:Seed: 10786
+INFO:root:Buses: 40
+INFO:root:Passengers: 200

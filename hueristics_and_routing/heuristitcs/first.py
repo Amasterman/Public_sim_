@@ -184,7 +184,7 @@ else:
                                         rnd.uniform(minlat, maxlat),
                                         rnd.uniform(minlon, maxlon), rnd.randint(1, 4), rnd.randint(1, 100),
                                         rnd.randint(1, 3), now,now, 1,
-                                        max_lateness)
+                                        rnd.randint(10, 25))
 
         # Append to list of passengers
         list_of_passengers.append(temp_passenger)
@@ -277,7 +277,7 @@ def user_stops():
             
             time_to_drop = calc_arrival(nearest_stop, nearest_drop, 0)
             time_to_drop*=2
-            time_to_drop+=max_lateness
+            time_to_drop+=p.lateness
             drop_time = now+ datetime.timedelta(minutes=time_to_drop)
             p.set_dropoff_time(drop_time)
             
@@ -431,7 +431,7 @@ def naive_utility(passenger, bus1, bus2,destination,stay_convenience, transfer_c
         return 0
     
     # calculate the utility
-    utility = w3*d_b1_d-w5*d_b2_d + w4*t_b1_d-w6*t_b2_d
+    utility = w3*(d_b1_d+t_b1_d)-w6*(t_b2_d+d_b2_d)
 
     print("utility",utility)
     return utility/1000

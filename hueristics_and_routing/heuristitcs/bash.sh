@@ -2,7 +2,7 @@
 
 # Set the seed for both programs based on $RANDOM
 SEED=$RANDOM
-BUSES=2
+BUSES=40
 run=1
 
 for j in {1..10}
@@ -16,6 +16,6 @@ do
     PASSENGERS=$((PASSENGERS+3*BUSES))
     run=$((run+1))
 done
-BUSES=$((BUSES+4))
+BUSES=$((BUSES+6))
 SEED=$RANDOM
 done
