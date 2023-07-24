@@ -9,9 +9,18 @@ class Controller:
 
     """
 
-    def __init__(self, no_buses, no_passengers, max_bus_cap, max_lateness):
-        self.rnd = np.random
-        self.rnd.seed(1)
+    def __init__(self, no_buses, no_passengers, max_bus_cap, max_lateness, sim_runs):
+        # Seed settings. Here we have two seeds, one for sim randomization and one for heuristic randomization
+
+        # Sim randomization
+        self.rnd_sim = np.random
+        self.rnd_sim_seed = 1
+        self.rnd_sim.seed(self.rnd_sim_seed)
+
+        # Heuristic randomization
+        self.rnd_hur = np.random
+        self.rnd_hur_seed = 20
+        self.rnd_hur.seed(self.rnd_hur_seed)
 
         # Global toggle for dynamism [UI setting?]
         self.dynamic = False
@@ -48,7 +57,7 @@ class Controller:
         # Depo is the start and stop position of the buses
         # TODO Replace ths random selector with the data set information,
         #  might need to still need to have some randomness as there are multiple depos on the map
-        self.depo = list_of_stops[rnd.randint(0, no_stops)]
+        self.depo = list_of_stops[rnd_sim.randint(0, no_stops)]
 
         # List of passengers
         self.list_of_passengers = []
@@ -59,6 +68,9 @@ class Controller:
         # Two lists; passengers booked more than a day in advance/repeat trips, and new requests
         self.passenger_booked = []
         self.passenger_not_booked = []
+
+        # Testing settings
+        self.sim_runs = sim_runs
 
     # -------------------------------------------------------------------------------------Initialization and generators
     def generate_booking_times(self, passengers):
@@ -117,7 +129,7 @@ class Controller:
         # count list entries
         self.no_stops = len(list_of_stops)
 
-    def importStopData(self):
+    def import_stop_relations_data(self):
         # Initialze the psudo-array
         for i in range(0, no_stops):
             self.stop_relations.append([])
@@ -150,8 +162,8 @@ class Controller:
         # TODO Need to get some more info on the buses in the area, unilink and bluestar maybe?
         for i in range(0, self.no_buses):
             # Generate vehicle with random parameters, also potential to be renamed
-            temp_bus = Bus.Buses(i, depo, rnd.randint(4, max_bus_cap), rnd.randint(30, 70),
-                                 rnd.randint(1, 4), depo)
+            temp_bus = Bus.Buses(i, depo, rnd_sim.randint(4, max_bus_cap), rnd_sim.randint(30, 70),
+                                 rnd_sim.randint(1, 4), depo)
 
             # Append to list
             self.list_of_buses.append(temp_bus)
@@ -162,10 +174,10 @@ class Controller:
             # Generate up to the target number of passengers
             for i in range(0, self.no_passengers):
                 # Generate random passenger data including if the trip has been booked in advance
-                temp_passenger = Pass.Passenger(i, rnd.uniform(minlat, maxlat), rnd.uniform(minlon, maxlon),
-                                                rnd.uniform(minlat, maxlat),
-                                                rnd.uniform(minlon, maxlon), rnd.randint(1, 4), rnd.randint(1, 100),
-                                                rnd.randint(1, 3), rnd.randint(1, 1000), rnd.randint(2000, 10000),
+                temp_passenger = Pass.Passenger(i, rnd_sim.uniform(minlat, maxlat), rnd_sim.uniform(minlon, maxlon),
+                                                rnd_sim.uniform(minlat, maxlat),
+                                                rnd_sim.uniform(minlon, maxlon), rnd_sim.randint(1, 4), rnd_sim.randint(1, 100),
+                                                rnd_sim.randint(1, 3), rnd_sim.randint(1, 1000), rnd_sim.randint(2000, 10000),
                                                 bool(random.getrandbits(1)), max_lateness)
 
                 # Append to list of passengers
@@ -173,209 +185,37 @@ class Controller:
         else:
             # Generate random passenger data the prebooked flag is set to 1
             for i in range(0, self.no_passengers):
-                temp_passenger = Pass.Passenger(i, rnd.uniform(minlat, maxlat), rnd.uniform(minlon, maxlon),
-                                                rnd.uniform(minlat, maxlat),
-                                                rnd.uniform(minlon, maxlon), rnd.randint(1, 4), rnd.randint(1, 100),
-                                                rnd.randint(1, 3), rnd.randint(1, 1000), rnd.randint(2000, 10000), 1,
+                temp_passenger = Pass.Passenger(i, rnd_sim.uniform(minlat, maxlat), rnd_sim.uniform(minlon, maxlon),
+                                                rnd_sim.uniform(minlat, maxlat),
+                                                rnd_sim.uniform(minlon, maxlon), rnd_sim.randint(1, 4), rnd_sim.randint(1, 100),
+                                                rnd_sim.randint(1, 3), rnd_sim.randint(1, 1000), rnd_sim.randint(2000, 10000), 1,
                                                 max_lateness)
 
                 # Append to list of passengers
                 self.list_of_passengers.append(temp_passenger)
 
+    # Tick up sim seed
+    def inc_sim_seed(self):
+        self.rnd_sim_seed += 1
+
+    # Tick up heuristic seed
+    def inc_heur_seed(self):
+        self.rnd_hur_seed += 1
+
+    # Tick up both
+    def inc_both_seeds(self):
+        self.inc_sim_seed()
+        self.inc_heur_seed()
+
+    def inti_all(self, passengers):
+        self.import_stop_data()
+        self.import_stop_relations_data()
+        self.generate_passenger()
+        self.generate_buses()
+
+        # This may be wrong
+        self.list_of_passengers = self.generate_booking_times(self.list_of_passengers)
+
+
     # ------------------------------------------------------------------------------------Route heirstics and Validation
-    def greedyHeuristic(buses, stops, passengers):
-        # Initialize the necessary lists
-        generated_route = []
-        non_visited_stops = []
-        visited_stops = []
-        passengers_picked = set()
-        passengers_dropped = set()
-        passengers_not_picked = set(passengers)
-        current_stop = []
-        ind_bus = []
-        wait = []
-        setoff_time = []
-        carried_passengers = []
-        until = False
 
-        # For each of the buses append a second dimension to the arrays
-        for bus in range(0, len(buses)):
-            current_stop.append([])
-            ind_bus.append([])
-            carried_passengers.append(set())
-            wait.append([])
-            setoff_time.append([])
-            non_visited_stops.append(set(stops))
-            visited_stops.append(set())
-
-        # Append a third dimention
-        for bus in range(0, len(buses)):
-            current_stop[bus].append(depo)
-            ind_bus[bus] = [Route.Route(depo, 0, 0, [])]
-            wait[bus] = 0
-            setoff_time[bus] = 0
-            visited_stops[bus].add(depo)
-            non_visited_stops[bus].remove(depo)
-
-        # Loop until the conditions are satisfied
-        while not until:
-            for bus in range(0, len(buses)):
-                extra_drop = False
-                # If there exist any non-visited stops
-                if bool(non_visited_stops[bus]):
-                    # Get the nearest stop
-                    near_stop = get_nearest_stop(current_stop[bus][0], non_visited_stops[bus])
-                    # Add the stop to the visited stop list and remove it from the non_visited stop list
-                    visited_stops[bus].add(near_stop)
-                    non_visited_stops[bus].remove(near_stop)
-
-                # Generate the list of carried passengers to drop off
-                temp_list = [
-                    passenger for passenger in carried_passengers[bus]
-                    if passenger.getNearestDrop(stops) == near_stop
-                ]
-
-                # If the stop is the destination of any passenger on the bus, drop them off
-                for passenger in temp_list:
-                    carried_passengers[bus].remove(passenger)
-                    if passenger in passengers_picked:
-                        passengers_picked.remove(passenger)
-                        passengers_dropped.add(passenger)
-
-                # If the stop is the nearest stop of any passenger pick them up
-                for passenger in passengers_not_picked:
-                    if passenger.getNearestStop(stops) == near_stop:
-                        carried_passengers[bus].add(passenger)
-                        passengers_picked.add(passenger)
-                        passengers_not_picked.remove(passenger)
-
-                # If there are any remaining passengers not picked up, try to drop them off at their destination
-                if not bool(non_visited_stops[bus]) and bool(passengers_picked):
-                    for on_board_passenger in passengers_picked:
-                        if on_board_passenger in carried_passengers[bus]:
-                            near_stop = on_board_passenger.getNearestDrop(stops)
-                            extra_drop = True
-
-                if extra_drop:
-                    passengers_dropped.add(on_board_passenger)
-                    passengers_picked.remove(on_board_passenger)
-
-                    # Calculate arrival time
-                arrival_time = get_arrival_time(current_stop[bus][0], near_stop, buses[bus].getSpeed())
-
-                # Calculate wait time
-                wait[bus] += arrival_time - setoff_time[bus]
-
-                # Calculate set off time
-                setoff_time[bus] = arrival_time + wait[bus]
-
-                # Update the current stop
-                current_stop[bus][0] = near_stop
-
-                # Update the Route
-                ind_bus[bus][0].addStop(near_stop, arrival_time, setoff_time[bus], carried_passengers[bus])
-
-                # If all the stops have been visited and all the passengers have been dropped off
-                if not bool(non_visited_stops[bus]) and not bool(passengers_picked):
-                    until = True
-                    break
-
-                # If all the passengers have been picked up
-            if not bool(passengers_not_picked):
-                until = True
-                break
-
-    def validate_route(passenger_route, bus_route):
-        # List of passenger target arrival time, indexed by position
-        passenger_stop_arrival = []
-
-        # Save passenger stop arrival time indexed by passenger location
-        for p in passenger_booked:
-            passenger_stop_arrival.append(p.journey_start_time + p.calcTimeToTravel(p.lat, p.long,
-                                                                                    passenger_route[p.id][0].lat,
-                                                                                    passenger_route[p.id][0].long))
-
-        # Check each bus validity
-        for bus in range(len(bus_route)):  # use range(len()) instead of range(0, len())
-            # Store current bus
-            current_bus = bus_route[bus]
-            stop_order = []
-            passenger_manifest = []
-            passengers_carried = []
-            bus_arrival = []
-            bus_depart = []
-
-            for node in range(len(current_bus)):  # use range(len()) instead of range(0, len())
-                # Take current node bus
-                current_node = current_bus[node]
-                capacity_check = 0
-
-                # Append the information from this node to the relevant lists
-                # First append the current stop
-                stop_order.append(current_node.getStops())
-
-                # Next the passengers
-                passenger_manifest.append(current_node.getPassengers())
-
-                # Then arrival and departures
-                bus_arrival.append(current_node.getArrival())
-                bus_depart.append(current_node.getArrival() + current_node.getWait())
-
-                # Passenger capacity check
-                for passengers in current_node.getPassengers():
-                    capacity_check += passengers.capacity_cost  # use += instead of = +
-                    passengers_carried.append(passengers)
-
-                if capacity_check > list_of_buses[bus].bus_capacity:
-                    return False
-
-            # For every passenger the bus carries validate that there is a route that picks them up and drops them off
-            for passengers in passengers_carried:
-
-                # Get the pick up and drop off stops for passenger
-                pick = passenger_route[passengers.id][0]
-                drop = passenger_route[passengers.id][1]
-
-                # Set picked and dropped flags to false
-                picked = False
-                dropped = False
-
-                # Check through the stop list and find the pick up stop
-                for i in range(len(stop_order)):  # use range(len()) instead of range(0, len())
-                    if stop_order[i] == pick:
-                        picked = True
-
-                        # Check the remain stops for the drop stop
-                        for j in range(i, len(stop_order)):
-                            if stop_order[j] == drop:
-                                dropped = True
-                                picked_stop = i
-                                dropped_stop = j
-                                break  # exit inner loop once drop is found
-                        if dropped:  # exit outer loop once pick and drop are found
-                            break
-
-                # Break if not picked or dropped
-                if not picked or not dropped:
-                    return False
-                    # Check the stops between the pick up and drop off stops to ensure that the passenger is on board
-                    for i in range(picked_stop + 1, dropped_stop):
-                        if passenger_manifest[i] != passengers:
-                            return False
-
-                    # Check all other stops to ensure the passenger isn't on board
-                    for i in range(0, picked_stop):
-                        if passenger_manifest[i] == passengers:
-                            return False
-
-                    for i in range(dropped_stop + 1, len(passenger_manifest)):
-                        if passenger_manifest[i] == passengers:
-                            return False
-
-                    if bus_depart[picked_stop] <= passenger_stop_arrival[passengers.id]:
-                        return False
-
-                    if bus_arrival[bus] >= passengers.dropoff_time:
-                        return False
-
-            return True

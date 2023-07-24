@@ -13,9 +13,11 @@ import Route as Route
 import Stops as Stop
 
 # -----------------------  Random settings
-rnd = np.random
-rnd.seed(1)
+cntr_rnd = np.random
+cntr_rnd.seed(1)
 
+heur_rnd = np.random
+heur_rnd.seed(2)
 # -----------------------  World settings
 
 # Global toggle for dynamism [UI setting?]
@@ -125,14 +127,14 @@ list_of_buses = []
 # Depo is the start and stop position of the buses
 # TODO Replace ths random selector with the data set information,
 #  might need to still need to have some randomness as there are multiple depos on the map
-depo = list_of_stops[rnd.randint(0, no_stops)]
+depo = list_of_stops[cntr_rnd.randint(0, no_stops)]
 
 # Random bus generator
 # TODO Need to get some more info on the buses in the area, unilink and bluestar maybe?
 for i in range(0, no_buses):
     # Generate vehicle with random parameters, also potential to be renamed
-    temp_bus = Bus.Buses(i, depo, rnd.randint(4, max_bus_cap), rnd.randint(30, 70),
-                         rnd.randint(1, 4), depo)
+    temp_bus = Bus.Buses(i, depo, cntr_rnd.randint(4, max_bus_cap), cntr_rnd.randint(30, 70),
+                         cntr_rnd.randint(1, 4), depo)
 
     # Append to list
     list_of_buses.append(temp_bus)
@@ -152,10 +154,10 @@ if dynamic:
     # Generate up to the target number of passengers
     for i in range(0, no_passengers):
         # Generate random passenger data including if the trip has been booked in advance
-        temp_passenger = Pass.Passenger(i, rnd.uniform(minlat, maxlat), rnd.uniform(minlon, maxlon),
-                                        rnd.uniform(minlat, maxlat),
-                                        rnd.uniform(minlon, maxlon), rnd.randint(1, 4), rnd.randint(1, 100),
-                                        rnd.randint(1, 3), rnd.randint(1, 1000), rnd.randint(2000, 10000),
+        temp_passenger = Pass.Passenger(i, cntr_rnd.uniform(minlat, maxlat), cntr_rnd.uniform(minlon, maxlon),
+                                        cntr_rnd.uniform(minlat, maxlat),
+                                        cntr_rnd.uniform(minlon, maxlon), cntr_rnd.randint(1, 4), cntr_rnd.randint(1, 100),
+                                        cntr_rnd.randint(1, 3), cntr_rnd.randint(1, 1000), cntr_rnd.randint(2000, 10000),
                                         bool(random.getrandbits(1)), max_lateness)
 
         # Append to list of passengers
@@ -163,10 +165,10 @@ if dynamic:
 else:
     # Generate random passenger data the prebooked flag is set to 1
     for i in range(0, no_passengers):
-        temp_passenger = Pass.Passenger(i, rnd.uniform(minlat, maxlat), rnd.uniform(minlon, maxlon),
-                                        rnd.uniform(minlat, maxlat),
-                                        rnd.uniform(minlon, maxlon), rnd.randint(1, 4), rnd.randint(1, 100),
-                                        rnd.randint(1, 3), rnd.randint(1, 1000), rnd.randint(2000, 10000), 1,
+        temp_passenger = Pass.Passenger(i, cntr_rnd.uniform(minlat, maxlat), cntr_rnd.uniform(minlon, maxlon),
+                                        cntr_rnd.uniform(minlat, maxlat),
+                                        cntr_rnd.uniform(minlon, maxlon), cntr_rnd.randint(1, 4), cntr_rnd.randint(1, 100),
+                                        cntr_rnd.randint(1, 3), cntr_rnd.randint(1, 1000), cntr_rnd.randint(2000, 10000), 1,
                                         max_lateness)
 
         # Append to list of passengers
@@ -765,7 +767,7 @@ def ant_colony(list_of_stop_candidates, passenger_route, passengers):
 
 
 def wait_time():
-    return rnd.randint(0, 10000)
+    return cntr_rnd.randint(0, 10000)
 
 
 def tabu_search(current_solution_bus, current_solution_passenger):
