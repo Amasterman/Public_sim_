@@ -1,4 +1,11 @@
 import itertools
+import csv
+
+import numpy as np
+
+import Stops as Stop
+import Buses as Bus
+import Passenger as Pass
 
 
 class Controller:
@@ -59,9 +66,7 @@ class Controller:
         self.list_of_buses = []
 
         # Depo is the start and stop position of the buses
-        # TODO Replace ths random selector with the data set information,
-        #  might need to still need to have some randomness as there are multiple depos on the map
-        self.depo = list_of_stops[rnd_sim.randint(0, no_stops)]
+        self.depo = None
 
         # List of passengers
         self.list_of_passengers = []
@@ -77,27 +82,49 @@ class Controller:
         self.sim_runs = sim_runs
 
     # -------------------------------------------------------------------------------------Initialization and generators
-    def generate_booking_times(self, passengers):
-        # booking times can appear either at the moment they want to be picked up or a percentage in advance (lets start
-        # with 30%?
+    def generate_booking_times(self, passengers, preeminence_percent, preebook_percent):
+        """
+        Generator for the the booking time paramiter. By passing the population (or a sample) of passengers it will set
+        a percentage (set by passenger_preeminence_precent) of the passengers to be random passengers where their pickup
+        time is the same as their booking time, or passengers who have prebooked and ie their pickup time exists after
+        their booking time.
+
+        :param passengers: The population of passengers that you want to set as booked/nonbooked
+        :type passengers: List<passengers>
+
+        :param preeminence_percent: The percentage of passengers who have prebooked
+        :type preeminence_percent: int
+
+        :param preebook_percent: The maximum percantage of pickup time in advance that the passenger booked
+        :type preebook_percent: float
+
+        :return: passengers
+        :rtype: List<Passengers>
+        """
 
         roll_preeminence = 0
         roll_prebook = 0
 
-        passenger_preeminence_percent = 50
-        passenger_prebook_percentage = .30
+        passenger_preeminence_percent = preeminence_percent
+        passenger_prebook_percentage = preebook_percent
 
         for passenger in passengers:
-            roll_preeminence = random(0, 100)
+            roll_preeminence = self.rnd_sim.rand(0, 100)
             if roll_preeminence < passenger_preeminence_percent:
                 passenger.set_booking_time(passenger.pickup_time)
+                passenger.booked = 0
             else:
-                roll_prebook = random(0, passenger_prebook_percentage, 0.01)
-                passenger.set_booking_time(passenger.pickup_time * (1 + roll_prebook))
+                roll_prebook = self.rnd_sim.rand(0, passenger_prebook_percentage, 0.01)
+                passenger.set_booking_time(passenger.pickup_time - (passenger.pickup_time * roll_prebook))
+                passenger.booked = 1
 
-        return passenger
+        return passengers
 
     def import_stop_data(self):
+        """
+        Runs the stop importer to extract the stop data from the CSV to the self.list_of_stops
+        """
+
         # Stop importer; IN XML scraped from www.openstreetmap.org OUT List of stop objects
         # Open file with CSV reader
         with open("XML_to_CSV_OUT.CSV", newline='') as csvfile:
@@ -131,13 +158,19 @@ class Controller:
         csvfile.close()
 
         # count list entries
-        self.no_stops = len(list_of_stops)
+        self.no_stops = len(self.list_of_stops)
 
     def import_stop_relations_data(self):
-        # Initialze the psudo-array
-        for i in range(0, no_stops):
+        """
+        Extracts the relationship data between stops (read time between) from the ProjectOSM generated file into an
+        array. This array is implicitly indexed by the X Y position in the array corresponding to the stop in the same
+        position in self.list_of_stops
+
+        """
+        # Initialize the array
+        for i in range(0, self.no_stops):
             self.stop_relations.append([])
-            for j in range(0, no_stops):
+            for j in range(0, self.no_stops):
                 self.stop_relations[i].append("")
 
         # Reset temp variables
@@ -161,65 +194,78 @@ class Controller:
                 for f in range(0, self.no_stops):
                     self.stop_relations[g][f] = rows[g][f]
 
+    def generate_depo(self, stops):
+        """
+        Randomly selects a stop from the provided list of stops to be the designated depo
+        """
+        self.depo = stops[self.rnd_sim.randint(0, len(stops))]
+
     def generate_buses(self):
-        # Random bus generator
-        # TODO Need to get some more info on the buses in the area, unilink and bluestar maybe?
+        """
+        Generate the parameters and list of the bus agents.
+
+        """
+
         for i in range(0, self.no_buses):
             # Generate vehicle with random parameters, also potential to be renamed
-            temp_bus = Bus.Buses(i, depo, rnd_sim.randint(4, max_bus_cap), rnd_sim.randint(30, 70),
-                                 rnd_sim.randint(1, 4), depo)
+            temp_bus = Bus.Buses(i, self.depo, self.rnd_sim.randint(4, self.max_bus_cap), self.rnd_sim.randint(30, 70),
+                                 self.rnd_sim.randint(1, 4), self.depo)
 
             # Append to list
             self.list_of_buses.append(temp_bus)
 
     def generate_passenger(self):
-        # Two versions for static and dynamic versions. Decided by the preivously declared global variable.
-        if dynamic:
-            # Generate up to the target number of passengers
-            for i in range(0, self.no_passengers):
-                # Generate random passenger data including if the trip has been booked in advance
-                temp_passenger = Pass.Passenger(i, rnd_sim.uniform(minlat, maxlat), rnd_sim.uniform(minlon, maxlon),
-                                                rnd_sim.uniform(minlat, maxlat),
-                                                rnd_sim.uniform(minlon, maxlon), rnd_sim.randint(1, 4), rnd_sim.randint(1, 100),
-                                                rnd_sim.randint(1, 3), rnd_sim.randint(1, 1000), rnd_sim.randint(2000, 10000),
-                                                bool(random.getrandbits(1)), max_lateness)
+        """
+        Generate the parameters and list of passenger agents
+        """
+        # Generate random passenger data the prebooked flag is set to 1
+        for i in range(0, self.no_passengers):
+            temp_passenger = Pass.Passenger(i, self.rnd_sim.uniform(self.minlat, self.maxlat),
+                                            self.rnd_sim.uniform(self.minlon, self.maxlon),
+                                            self.rnd_sim.uniform(self.minlat, self.maxlat),
+                                            self.rnd_sim.uniform(self.minlon, self.maxlon), self.rnd_sim.randint(1, 4),
+                                            self.rnd_sim.randint(1, 100),
+                                            self.rnd_sim.randint(1, 3), self.rnd_sim.randint(1, 1000),
+                                            self.rnd_sim.randint(2000, 10000), 1,
+                                            self.max_lateness)
 
-                # Append to list of passengers
-                self.list_of_passengers.append(temp_passenger)
-        else:
-            # Generate random passenger data the prebooked flag is set to 1
-            for i in range(0, self.no_passengers):
-                temp_passenger = Pass.Passenger(i, rnd_sim.uniform(minlat, maxlat), rnd_sim.uniform(minlon, maxlon),
-                                                rnd_sim.uniform(minlat, maxlat),
-                                                rnd_sim.uniform(minlon, maxlon), rnd_sim.randint(1, 4), rnd_sim.randint(1, 100),
-                                                rnd_sim.randint(1, 3), rnd_sim.randint(1, 1000), rnd_sim.randint(2000, 10000), 1,
-                                                max_lateness)
-
-                # Append to list of passengers
-                self.list_of_passengers.append(temp_passenger)
+            # Append to list of passengers
+            self.list_of_passengers.append(temp_passenger)
 
     # Tick up sim seed
     def inc_sim_seed(self):
+        """
+        Increment Simulator seed
+        """
+
         self.rnd_sim_seed += 1
 
     # Tick up heuristic seed
     def inc_heur_seed(self):
+        """
+        Increment Heuristic seed
+        """
         self.rnd_hur_seed += 1
 
     # Tick up both
     def inc_both_seeds(self):
+        """
+        Increment both sim and hur seeds
+        """
         self.inc_sim_seed()
         self.inc_heur_seed()
 
-    def inti_all(self, passengers):
+    def inti_all_gen(self, passengers):
+        """
+        This will initialize and run all the generators needed to initialize the world settings
+        """
         self.import_stop_data()
         self.import_stop_relations_data()
+        self.generate_depo(self.list_of_stops)
         self.generate_passenger()
         self.generate_buses()
 
-        # This may be wrong
-        self.list_of_passengers = self.generate_booking_times(self.list_of_passengers)
-
+        # The preeminance and preebook need to be made more versatile
+        self.list_of_passengers = self.generate_booking_times(self.list_of_passengers, 50, 0.5)
 
     # ------------------------------------------------------------------------------------Route heirstics and Validation
-

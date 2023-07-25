@@ -37,7 +37,6 @@ no_buses = 5
 # Amount of passengers
 no_passengers = 30
 
-
 # Bus max capacity
 max_bus_cap = 15
 
@@ -156,8 +155,10 @@ if dynamic:
         # Generate random passenger data including if the trip has been booked in advance
         temp_passenger = Pass.Passenger(i, cntr_rnd.uniform(minlat, maxlat), cntr_rnd.uniform(minlon, maxlon),
                                         cntr_rnd.uniform(minlat, maxlat),
-                                        cntr_rnd.uniform(minlon, maxlon), cntr_rnd.randint(1, 4), cntr_rnd.randint(1, 100),
-                                        cntr_rnd.randint(1, 3), cntr_rnd.randint(1, 1000), cntr_rnd.randint(2000, 10000),
+                                        cntr_rnd.uniform(minlon, maxlon), cntr_rnd.randint(1, 4),
+                                        cntr_rnd.randint(1, 100),
+                                        cntr_rnd.randint(1, 3), cntr_rnd.randint(1, 1000),
+                                        cntr_rnd.randint(2000, 10000),
                                         bool(random.getrandbits(1)), max_lateness)
 
         # Append to list of passengers
@@ -167,8 +168,10 @@ else:
     for i in range(0, no_passengers):
         temp_passenger = Pass.Passenger(i, cntr_rnd.uniform(minlat, maxlat), cntr_rnd.uniform(minlon, maxlon),
                                         cntr_rnd.uniform(minlat, maxlat),
-                                        cntr_rnd.uniform(minlon, maxlon), cntr_rnd.randint(1, 4), cntr_rnd.randint(1, 100),
-                                        cntr_rnd.randint(1, 3), cntr_rnd.randint(1, 1000), cntr_rnd.randint(2000, 10000), 1,
+                                        cntr_rnd.uniform(minlon, maxlon), cntr_rnd.randint(1, 4),
+                                        cntr_rnd.randint(1, 100),
+                                        cntr_rnd.randint(1, 3), cntr_rnd.randint(1, 1000),
+                                        cntr_rnd.randint(2000, 10000), 1,
                                         max_lateness)
 
         # Append to list of passengers
@@ -301,7 +304,6 @@ def serve_new_booking(current_time, active_passengers):
 
 
 def ini_static():
-
     for i in range(0, no_passengers):
         if list_of_passengers[i].booked:
             passenger_booked.append(list_of_passengers[i])
@@ -310,11 +312,6 @@ def ini_static():
     list_of_active_stops, passenger_bookings = user_stops()
 
     return list_of_active_stops, passenger_bookings
-
-
-def group_riders(passengers):
-    pass
-
 
 def generate_booking_times(passengers):
     # booking times can appear either at the moment they want to be picked up or a percentage in advance (lets start
@@ -341,10 +338,6 @@ def greedy_offline(list_of_active_stops, passenger_bookings):
     return route_generator(list_of_passengers.copy(), list_of_buses.copy(), list_of_active_stops, depo)
 
 
-def greedy_online():
-    pass
-
-
 # Return all stops in use for this set of passengers and the booking register
 def user_stops():
     # Get the Greedy nearest pick and drop stops
@@ -360,8 +353,8 @@ def user_stops():
         one, two = elements
         if one not in list_of_active_stops:
             list_of_active_stops.add(one)
-       # if two not in list_of_active_stops:
-       #     list_of_active_stops.add(two)
+    # if two not in list_of_active_stops:
+    #     list_of_active_stops.add(two)
 
     # Convert set to list
     list_of_active_stops = list(list_of_active_stops)
@@ -573,8 +566,8 @@ def route_generator(passengers, buses, stops, depo):
                 passengers_picked.remove(on_board_passenger)
 
             # Calculate arrival time
-            #Worikng on changing to time stamp not calc
-            #arrival_time = get_arrival(current_stop[bus][0], near_stop, setoff_time[bus], wait[bus])
+            # Worikng on changing to time stamp not calc
+            # arrival_time = get_arrival(current_stop[bus][0], near_stop, setoff_time[bus], wait[bus])
             arrival_time = 1
             # TODO This needs some more real data, unilink?
             wait[bus] = wait_time()
@@ -595,16 +588,6 @@ def route_generator(passengers, buses, stops, depo):
 
     # print(ind_bus)
     return ind_bus
-
-
-# These are depreciated in favor of stop relations ---------------------------------------------------------------------
-def calc_arrival(stop1, stop2, speed, arrival, wait):
-    return arrival + wait + (calc_distance(stop1.lat, stop1.long, stop2.lat, stop2.long) / speed)
-
-
-def calc_distance(x1, y1, x2, y2):
-    return math.sqrt(abs(x1 - x2) ** 2 + abs(y1 - y2) ** 2)
-
 
 # ----------------------------------------------------------------------------------------------------------------------
 
@@ -641,11 +624,6 @@ def get_bus_order(route):
         order.append(stop.getStops())
 
     return order
-
-
-def ant_colony_online():
-    pass
-
 
 def ant_colony(list_of_stop_candidates, passenger_route, passengers):
     calc_probablity(list_of_stop_candidates)
@@ -769,11 +747,6 @@ def ant_colony(list_of_stop_candidates, passenger_route, passengers):
 def wait_time():
     return cntr_rnd.randint(0, 10000)
 
-
-def tabu_search(current_solution_bus, current_solution_passenger):
-    pass
-
-
 def evaluate_soloution(passenger_route, bus_route):
     current_passenger = None
     start = 0
@@ -863,11 +836,11 @@ def plot(list_of_stops, list_of_passengers, list_of_buses, passengers_route, bus
     for i in range(0, len(bus_routes)):
         col = (np.random.random(), np.random.random(), np.random.random())
         for j in range(1, len(bus_routes[i])):
-
             plt.plot([bus_routes[i][j - 1].lat, bus_routes[i][j].lat],
                      [bus_routes[i][j - 1].long, bus_routes[i][j].long], c=col, linewidth=0.60)
 
     plt.show()
+
 
 def get_nearest_stop(stop, stop_candidates):
     current_nearest = 100000000000
@@ -880,165 +853,6 @@ def get_nearest_stop(stop, stop_candidates):
             near_stop = destinations
 
     return near_stop
-
-
-def consensus_online():
-    pass
-
-
-def consensus():
-    pass
-
-
-def optimal_schedule(jobs, horizon):
-    max_p = " "
-    for times in horizon:
-        schedule[times] = " "
-
-    ordered_schedule = sorted(schedule, key=lambda schedule: (schedule[x].weight(), schedule[x].arrival_date()))
-    for job in ordered_schedule:
-        for times in horizon:
-            if times <= job.arrival_date + d and schedule[times] == " ":
-                if times > max_p:
-                    times = max_p
-
-            if max_p != " ":
-                if max_p >= job.arrival_date:
-                    schedule[max_p] = job
-                else:
-                    schedule = shuffle(schedule, job, p)
-    post_process(schedule, horizon)
-    return schedule
-
-
-def shuffle(schedule, job, p):
-    schedule_prime = schedule
-    schedule[p] = job
-    while p < job.arrival_date:
-        min_q = " "
-        if p + 1 <= t <= p + d and schedule[t].arrival_date <= p:
-            if t <= min_q:
-                min_q = t
-
-        if p != " ":
-            swap(schedule, p, q)
-        else:
-            return schedule_prime
-    return schedule
-
-
-def swap(schedule, p, q):
-    schedule[p], schedule[q] = schedule[q], schedule[p]
-
-
-def post_process(schedule, horizon):
-    for p in horizon:
-        for q in horizon:
-            if p < q:
-                if feasable_swap(schedule, p, q) and (schedule[p].weight(), schedule[p].arrival_date) < \
-                        (schedule[q].weight(), schedule[q].arrival_date):
-                    swap(schedule, p, q)
-
-
-def feasable_swap(schedule, t1, t2):
-    return bool(schedule[t1].arrival_date() <= t2 <= schedule[t1].arrival_date() + d) and \
-           bool(schedule[t2].arrival_date() <= t1 <= schedule[t2].arrival_date() + d)
-
-
-def choose_request_ne(jobs, t):
-    evalScore = []
-    for i in range(0, len(jobs)):
-        evalScore[i] = 0
-
-    for i in range(1, (nbOpt / len(jobs))):
-        R = jobs * get_sample(t + 1, t + delta)
-        T = [t + 1, t + 1 + delta + d]
-        for i in range(0, len(jobs)):
-            schedule = optimal_schedule(R / jobs(i), T)
-            # TODO add job weight
-            evalScore[i] = evalScore[i] + schedule[i].weight()
-        return argmax(jobs, evalScore)
-
-
-def choose_request_e(jobs, t):
-    eval_score_class = []
-    low_class = []
-    temp_min_class = 0
-
-    for job_class in jobClasses:
-        for job in jobs:
-            if job.type == job_class:
-                if job.arrival_date() < temp_min_class:
-                    lowClass[job_class] = 0
-
-    for i in range(1, nbOpt / len(job_class)):
-        R = jobs * get_sample(t + 1, t + delta)
-        T = [t + 1, t + 1 + delta + d]
-        for job_class in jobClasses:
-            schedule = optimal_schedule(R / job_class, T)
-            # TODO add job weight
-            eval_score_class[job_class] = eval_score_class[job_class]
-
-        c_prime = max(eval_score_class)
-        # j(c*)
-        return
-
-
-def choose_request_c(jobs, t):
-    c = 0
-    eval_score = []
-
-    for job in jobs:
-        c[job] = 0
-
-    for i in range(1, nbOpt):
-        R = jobs * get_sample(t + 1, t + delta)
-        schedule = optimal_schedule(R, [t, t + delta + d])
-        c[schedule(t)] = c[schedule(t)] + 1
-
-    return argmax(jobs, c(j))
-
-
-def choose_request_CE(jobs, t):
-    c = 0
-    for job in jobs:
-        c[job] = 0
-
-    for i in s_c:
-        R = jobs * get_sample(t + 1, t + delta)
-        schedule = optimal_schedule(R, [t, t + delta + d])
-        c[schedule(t)] = c[schedule(t)] + 1
-    P = argmax(k, jobs, c(j))
-
-    for job in P:
-        eval_score[job] = 0
-
-    for i in range(1, s_e):
-        R = P * get_sample(t + 1, t + delta)
-        T = [t + 1, t + 1 + delta + d]
-        for job in P:
-            schedule = optimal_schedule(R / job, T)
-            eval_score[job] = eval_score[job] + schedule[i].weight()
-
-    return argmax(P, eval_score)
-
-
-def get_sample(bt, et):
-    pass
-
-
-def cm_policy():
-    schedule = ["idle"]
-    pointer = 0
-
-    for i in range(0, len(task)):
-        schedule.append("idle")
-
-    for job_class in job_classes:
-        for task in job_class:
-            for i in range(0, len(schedule)):
-                if schedule[-i] == "idle":
-                    pass
 
 
 ###------------- Main run Start
