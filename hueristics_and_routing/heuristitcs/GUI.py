@@ -1,7 +1,20 @@
 import tkinter as tk
 
-class HeuristicSelector(tk.Frame):
+"""
+This is the GUI pannel. NOTE: I am a atrocious at UI/UX so this is peak programmer UI. This will be the file that you 
+run when you want to run a battery of experiments. It can (will ATM) take the parameters for a set of experiments (runs,
+heuristic/s, passenger count, bus count (There will be more as I develop this). Once these runs are complete the results
+will then be shown.
+
+Intended usage: If you are making changes here you are changing how the frames look or adjusting the input parameters  
+
+
+"""
+
+
+class GUI(tk.Frame):
     def __init__(self, parent, *args, **kwargs):
+        """Constructor class"""
         tk.Frame.__init__(self, parent, *args, **kwargs)
 
         # create a dynamic on/off variable
@@ -21,7 +34,7 @@ class HeuristicSelector(tk.Frame):
         self.submit_button.pack(side="bottom")
 
         # Create the a slider for amount of passengers
-        self.passenger_amount_label = tk.Label(self,text='Passenger amount:')
+        self.passenger_amount_label = tk.Label(self, text='Passenger amount:')
         self.passenger_amount_label.pack(side="top")
         self.passenger_amount = tk.Entry(self, width=5)
         self.passenger_amount.pack(side="top")
@@ -41,19 +54,27 @@ class HeuristicSelector(tk.Frame):
         self.sim_runs = tk.Entry(self, width=5)
         self.sim_runs.pack(side='top')
 
-
     def submit(self):
+        """
+        Submits selected parameters when button is pressed
+        """
+
         # handle the submission of the form here
         print("Selected heuristic:", self.heuristic.get())
         print("Dynamic mode:", self.dynamic.get())
         print("Passenger amount: ", self.passenger_amount.get())
         print("Bus amount: ", self.bus_amount.get())
 
+
 def main():
+    """
+    Packs and run the Tkinter frame with settings
+    """
     root = tk.Tk()
     root.geometry("500x500")
-    HeuristicSelector(root).pack(side="top", fill="both", expand=True)
+    GUI(root).pack(side="top", fill="both", expand=True)
     root.mainloop()
+
 
 if __name__ == "__main__":
     main()

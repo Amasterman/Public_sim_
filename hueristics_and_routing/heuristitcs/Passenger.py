@@ -10,10 +10,12 @@ class Passenger:
     """
     Passenger class
 
-    This class contains all the information regarding the passenger, it is currently a WIP as the data from the surveys
-    have not been implemented. Currently the class contians the id, start coords, destination coords, capacity cost,
-    walk_cost, speed, target pick up time, dropoff time, weather or not they are booked in advance and the maximum
-    allowable lateness.
+    This class contains paramiters and action sets of the passenger agent.
+
+    Intended Usage: If you are making changes here you are changing either the data pertaining to the passenger agent or
+    their action set.
+
+    TODO Action sets
 
     :param id: Passenger Id
     :type id: int

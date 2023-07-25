@@ -10,7 +10,16 @@ Classes
 .. automodule:: heuristitcs.Buses
     :members:
 
+.. automodule:: heuristitcs.Controller
+    :members:
+
+.. automodule:: heuristitcs.GUI
+    :members:
+
 .. automodule:: heuristitcs.Jobs
+    :members:
+
+.. automodule:: heuristitcs.Outputs
     :members:
 
 .. automodule:: heuristitcs.Passenger

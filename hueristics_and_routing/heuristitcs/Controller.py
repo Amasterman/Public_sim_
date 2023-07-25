@@ -4,12 +4,16 @@ import itertools
 class Controller:
     """
     This Class acts as the overall manager for the simulator, taking user input and data files and serving them to the
-    correct heuristic solver.
+    correct heuristic solver as well as managing the world enviornment inputs. The overall aim is to create a flexible
+    framework that manages the janker parts of the sim.
 
+    Intended use: In general if you are tweaking this you are aiming to change what
+    data is being served to various parts of the sim, not changing how that data is generated.
 
     """
 
     def __init__(self, no_buses, no_passengers, max_bus_cap, max_lateness, sim_runs):
+        """Constructor method"""
         # Seed settings. Here we have two seeds, one for sim randomization and one for heuristic randomization
 
         # Sim randomization

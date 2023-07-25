@@ -10,6 +10,8 @@ class Stop:
         Additionally many of these flags are null in the OSM data, this is an issue with the data source and future
         data collection will cover these flags.
 
+        Intended usage: If you are making changes here then you are changing the way the imported stop data is processed
+
         :param id: Stop id
         :type id: int
 

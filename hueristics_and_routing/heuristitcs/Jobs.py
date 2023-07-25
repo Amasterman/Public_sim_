@@ -1,5 +1,6 @@
 class Jobs:
     """ Jobs act as a dataset containing information on weight, arrival time and type
+        Intended usage: If you are making changes here you are modifying the data that a job (A section of a route) has
 
      :param weight: Current carry weight
      :type weight: int

@@ -1,6 +1,12 @@
 class Buses:
     """
-    Class containing the details of buses
+    Class containing the details of buses. This contains the tools needed to create bus agents within the simulator as
+    well as defining the action sets that they can take.
+
+    Intended use: If you are making changes to this then you are changing what data relating to the bus agent and/or
+    changing the action sets of the bus agents.
+
+    TODO Action sets : Move stop, wait(n), pickPass, dropPass
 
     :param id: ID of the bus
     :type id: int
@@ -32,7 +38,7 @@ class Buses:
         self.running_cost = running_cost
         self.current_stop = start_stop
 
-    def getStartStopId(self):
+    def get_start_stop_id(self):
         """Returns the id of the starting stop
         :return: Returns the stop ID of the buses starting stop
         :rtype: int

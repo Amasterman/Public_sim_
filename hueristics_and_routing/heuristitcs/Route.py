@@ -2,6 +2,8 @@ class Route:
     """
     Class contains information for a section of the route, contains the information about passengers and timing info
 
+    Intended usage: If you are making changes here then you are modifying the data that contains a route
+
     :param stop: The stop that is relevant to the route section
     :type stop: Stop
 
