@@ -14,7 +14,7 @@ sys.path.insert(0, os.path.abspath(os.path.join('..', '..', 'hueristics_and_rout
 project = 'Public_Python_Sim'
 copyright = '2022, Alexander Masterman'
 author = 'Alexander Masterman'
-release = '0.1 Alpha'
+release = '0.5 Alpha'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
