@@ -25,6 +25,7 @@ class World:
         """Constructor class"""
 
         # Init ticks
+
         self.tick_step = 0
 
         # Init rate that observers send event data
@@ -37,6 +38,9 @@ class World:
         # Init observers probably going to have more of these
         self.full_observer = []
         self.routing_observer = []
+
+        # Init Event subs
+        self.event_subs = []
 
         # Take actionsets from the agents into a list indexed the same way as the agent_list
         for passenger in self.passenger_agents:
@@ -53,12 +57,22 @@ class World:
         """
         Execute the standard procedure of the world
 
+        send triggers to subs
+
+        serve subs
+
+
         inc tick
         """
         if self.tick_step % self.time_step:
 
             for event in triggers:
-                self.trigger_subs(subscribers, event)
+                for subscriber in subscribers:
+                    if subscriber.is_event_watched(event):
+                        self.trigger_subs(subscriber, event)
+
+            for subscriber in subscribers:
+                self.serve_sub(subscriber)
 
         self.tick_up()
 

@@ -7,26 +7,32 @@ interface. This will be added soonTM!
 Classes
 -------
 
-.. automodule:: heuristitcs.Buses
+.. automodule:: heuristics.Buses
     :members:
 
-.. automodule:: heuristitcs.GUI
+.. automodule:: heuristics.GUI
     :members:
 
-.. automodule:: heuristitcs.Jobs
+.. automodule:: heuristics.Jobs
     :members:
 
-.. automodule:: heuristitcs.Outputs
+.. automodule:: heuristics.Outputs
     :members:
 
-.. automodule:: heuristitcs.Passenger
+.. automodule:: heuristics.Passenger
     :members:
 
-.. automodule:: heuristitcs.Route
+.. automodule:: heuristics.Route
     :members:
 
-.. automodule:: heuristitcs.Stops
+.. automodule:: heuristics.Stops
     :members:
 
-.. automodule:: heuristitcs.Controller
+.. automodule:: heuristics.Controller
+    :members:
+
+.. automodule:: heuristics.Event
+    :members:
+
+.. automodule:: heuristics.Observer
     :members:

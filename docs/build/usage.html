@@ -5,11 +5,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Usage &#8212; Public_Python_Sim 0.1 Alpha documentation</title>
+    <title>Usage &#8212; Public_Python_Sim 0.5 Alpha documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="_static/classic.css?v=89b800e6" />
     
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=7e08007d"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=3f1ce345"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=4825356b"></script>
     
@@ -29,7 +29,7 @@
         <li class="right" >
           <a href="index.html" title="Welcome to Public_Python_Sim’s documentation!"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Public_Python_Sim 0.1 Alpha documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Public_Python_Sim 0.5 Alpha documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Usage</a></li> 
       </ul>
     </div>  
@@ -43,11 +43,11 @@
 <h1>Usage<a class="headerlink" href="#usage" title="Permalink to this heading">¶</a></h1>
 <p>This section probably has the most to change and develop, currently the sim is not user friendly and lacks any user
 interface. This will be added soonTM!</p>
-<section id="module-heuristitcs.Buses">
-<span id="classes"></span><h2>Classes<a class="headerlink" href="#module-heuristitcs.Buses" title="Permalink to this heading">¶</a></h2>
+<section id="module-heuristics.Buses">
+<span id="classes"></span><h2>Classes<a class="headerlink" href="#module-heuristics.Buses" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt class="sig sig-object py" id="heuristitcs.Buses.Buses">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">heuristitcs.Buses.</span></span><span class="sig-name descname"><span class="pre">Buses</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_stop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bus_capacity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">running_cost</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_stop</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Buses.Buses" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="heuristics.Buses.Buses">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">heuristics.Buses.</span></span><span class="sig-name descname"><span class="pre">Buses</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_stop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bus_capacity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">running_cost</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_stop</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Buses.Buses" title="Permalink to this definition">¶</a></dt>
 <dd><p>Class containing the details of buses. This contains the tools needed to create bus agents within the simulator as
 well as defining the action sets that they can take.</p>
 <p>Intended use: If you are making changes to this then you are changing what data relating to the bus agent and/or
@@ -57,18 +57,18 @@ changing the action sets of the bus agents.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>id</strong> (<em>int</em>) – ID of the bus</p></li>
-<li><p><strong>start_stop</strong> (<a class="reference internal" href="#heuristitcs.Stops.Stop" title="heuristitcs.Stops.Stop"><em>Stop</em></a>) – The stop the bus begins its journey at</p></li>
+<li><p><strong>start_stop</strong> (<a class="reference internal" href="#heuristics.Stops.Stop" title="heuristics.Stops.Stop"><em>Stop</em></a>) – The stop the bus begins its journey at</p></li>
 <li><p><strong>bus_capacity</strong> (<em>int</em>) – Maximum passenger capacity</p></li>
 <li><p><strong>speed</strong> (<em>int</em>) – Speed the bus travels</p></li>
 <li><p><strong>running_cost</strong> (<em>int</em>) – The cost of moving the bus a single unit</p></li>
-<li><p><strong>current_stop</strong> (<a class="reference internal" href="#heuristitcs.Stops.Stop" title="heuristitcs.Stops.Stop"><em>Stop</em></a>) – The current stop the bus is at</p></li>
+<li><p><strong>current_stop</strong> (<a class="reference internal" href="#heuristics.Stops.Stop" title="heuristics.Stops.Stop"><em>Stop</em></a>) – The current stop the bus is at</p></li>
 </ul>
 </dd>
 </dl>
 <p>TODO Include ownership and accessibility</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="heuristitcs.Buses.Buses.get_start_stop_id">
-<span class="sig-name descname"><span class="pre">get_start_stop_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Buses.Buses.get_start_stop_id" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="heuristics.Buses.Buses.get_start_stop_id">
+<span class="sig-name descname"><span class="pre">get_start_stop_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Buses.Buses.get_start_stop_id" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the id of the starting stop
 :return: Returns the stop ID of the buses starting stop
 :rtype: int</p>
@@ -76,26 +76,26 @@ changing the action sets of the bus agents.</p>
 
 </dd></dl>
 
-<span class="target" id="module-heuristitcs.GUI"></span><dl class="py class">
-<dt class="sig sig-object py" id="heuristitcs.GUI.GUI">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">heuristitcs.GUI.</span></span><span class="sig-name descname"><span class="pre">GUI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.GUI.GUI" title="Permalink to this definition">¶</a></dt>
+<span class="target" id="module-heuristics.GUI"></span><dl class="py class">
+<dt class="sig sig-object py" id="heuristics.GUI.GUI">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">heuristics.GUI.</span></span><span class="sig-name descname"><span class="pre">GUI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.GUI.GUI" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="py method">
-<dt class="sig sig-object py" id="heuristitcs.GUI.GUI.submit">
-<span class="sig-name descname"><span class="pre">submit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.GUI.GUI.submit" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="heuristics.GUI.GUI.submit">
+<span class="sig-name descname"><span class="pre">submit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.GUI.GUI.submit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Submits selected parameters when button is pressed</p>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="heuristitcs.GUI.main">
-<span class="sig-prename descclassname"><span class="pre">heuristitcs.GUI.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.GUI.main" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="heuristics.GUI.main">
+<span class="sig-prename descclassname"><span class="pre">heuristics.GUI.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.GUI.main" title="Permalink to this definition">¶</a></dt>
 <dd><p>Packs and run the Tkinter frame with settings</p>
 </dd></dl>
 
-<span class="target" id="module-heuristitcs.Jobs"></span><dl class="py class">
-<dt class="sig sig-object py" id="heuristitcs.Jobs.Jobs">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">heuristitcs.Jobs.</span></span><span class="sig-name descname"><span class="pre">Jobs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">weight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arrival_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Jobs.Jobs" title="Permalink to this definition">¶</a></dt>
+<span class="target" id="module-heuristics.Jobs"></span><dl class="py class">
+<dt class="sig sig-object py" id="heuristics.Jobs.Jobs">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">heuristics.Jobs.</span></span><span class="sig-name descname"><span class="pre">Jobs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">weight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arrival_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Jobs.Jobs" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Jobs act as a dataset containing information on weight, arrival time and type</dt><dd><p>Intended usage: If you are making changes here you are modifying the data that a job (A section of a route) has</p>
 </dd>
@@ -111,13 +111,13 @@ changing the action sets of the bus agents.</p>
 </dl>
 </dd></dl>
 
-<span class="target" id="module-heuristitcs.Outputs"></span><p>This is the class that handles the outputs of the system. This includes the logs (i.e a dense record of the runs) and
+<span class="target" id="module-heuristics.Outputs"></span><p>This is the class that handles the outputs of the system. This includes the logs (i.e a dense record of the runs) and
 the generation of graphs and images.</p>
 <p>Intended usage: If you are making changes here you are changing the outputs that are calculated from the output data of
 the world enviornemnt.</p>
-<span class="target" id="module-heuristitcs.Passenger"></span><dl class="py class">
-<dt class="sig sig-object py" id="heuristitcs.Passenger.Passenger">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">heuristitcs.Passenger.</span></span><span class="sig-name descname"><span class="pre">Passenger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xcord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ycord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">capacity_cost</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">walk_cost</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pickup_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropoff_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">booked</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lateness</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Passenger.Passenger" title="Permalink to this definition">¶</a></dt>
+<span class="target" id="module-heuristics.Passenger"></span><dl class="py class">
+<dt class="sig sig-object py" id="heuristics.Passenger.Passenger">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">heuristics.Passenger.</span></span><span class="sig-name descname"><span class="pre">Passenger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xcord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ycord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">capacity_cost</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">walk_cost</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pickup_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropoff_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">booked</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lateness</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Passenger.Passenger" title="Permalink to this definition">¶</a></dt>
 <dd><p>Passenger class</p>
 <p>This class contains paramiters and action sets of the passenger agent.</p>
 <p>Intended Usage: If you are making changes here you are changing either the data pertaining to the passenger agent or
@@ -142,8 +142,8 @@ their action set.</p>
 </dd>
 </dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="heuristitcs.Passenger.Passenger.calcDistance">
-<span class="sig-name descname"><span class="pre">calcDistance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Passenger.Passenger.calcDistance" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="heuristics.Passenger.Passenger.calcDistance">
+<span class="sig-name descname"><span class="pre">calcDistance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Passenger.Passenger.calcDistance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the distance between two points</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -164,8 +164,8 @@ their action set.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="heuristitcs.Passenger.Passenger.calcTimeToTravel">
-<span class="sig-name descname"><span class="pre">calcTimeToTravel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Passenger.Passenger.calcTimeToTravel" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="heuristics.Passenger.Passenger.calcTimeToTravel">
+<span class="sig-name descname"><span class="pre">calcTimeToTravel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Passenger.Passenger.calcTimeToTravel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the time it will take the passenger to move between two points</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -186,8 +186,8 @@ their action set.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="heuristitcs.Passenger.Passenger.getNearestDrop">
-<span class="sig-name descname"><span class="pre">getNearestDrop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stop_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Passenger.Passenger.getNearestDrop" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="heuristics.Passenger.Passenger.getNearestDrop">
+<span class="sig-name descname"><span class="pre">getNearestDrop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stop_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Passenger.Passenger.getNearestDrop" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the nearest stop to the passengers destination from the stops contained in the stop_list</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -197,14 +197,14 @@ their action set.</p>
 <dd class="field-even"><p>The nearest stop to the passenger destination</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#heuristitcs.Stops.Stop" title="heuristitcs.Stops.Stop">Stop</a></p>
+<dd class="field-odd"><p><a class="reference internal" href="#heuristics.Stops.Stop" title="heuristics.Stops.Stop">Stop</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="heuristitcs.Passenger.Passenger.getNearestStop">
-<span class="sig-name descname"><span class="pre">getNearestStop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stop_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Passenger.Passenger.getNearestStop" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="heuristics.Passenger.Passenger.getNearestStop">
+<span class="sig-name descname"><span class="pre">getNearestStop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stop_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Passenger.Passenger.getNearestStop" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the nearest stop to the passenger from the stops contained in the stop_list</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -214,22 +214,22 @@ their action set.</p>
 <dd class="field-even"><p>The nearest stop to the passenger</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#heuristitcs.Stops.Stop" title="heuristitcs.Stops.Stop">Stop</a></p>
+<dd class="field-odd"><p><a class="reference internal" href="#heuristics.Stops.Stop" title="heuristics.Stops.Stop">Stop</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="heuristitcs.Passenger.Passenger.get_booking_time">
-<span class="sig-name descname"><span class="pre">get_booking_time</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Passenger.Passenger.get_booking_time" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="heuristics.Passenger.Passenger.get_booking_time">
+<span class="sig-name descname"><span class="pre">get_booking_time</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Passenger.Passenger.get_booking_time" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the time that the booking is made
 :return: The booking time
 :rtype: int</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="heuristitcs.Passenger.Passenger.set_booking_time">
-<span class="sig-name descname"><span class="pre">set_booking_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Passenger.Passenger.set_booking_time" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="heuristics.Passenger.Passenger.set_booking_time">
+<span class="sig-name descname"><span class="pre">set_booking_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Passenger.Passenger.set_booking_time" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the time that the booking is made</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -240,15 +240,15 @@ their action set.</p>
 
 </dd></dl>
 
-<span class="target" id="module-heuristitcs.Route"></span><dl class="py class">
-<dt class="sig sig-object py" id="heuristitcs.Route.Route">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">heuristitcs.Route.</span></span><span class="sig-name descname"><span class="pre">Route</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arrival_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wait_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">passenger_manifest</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Route.Route" title="Permalink to this definition">¶</a></dt>
+<span class="target" id="module-heuristics.Route"></span><dl class="py class">
+<dt class="sig sig-object py" id="heuristics.Route.Route">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">heuristics.Route.</span></span><span class="sig-name descname"><span class="pre">Route</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arrival_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wait_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">passenger_manifest</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Route.Route" title="Permalink to this definition">¶</a></dt>
 <dd><p>Class contains information for a section of the route, contains the information about passengers and timing info</p>
 <p>Intended usage: If you are making changes here then you are modifying the data that contains a route</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>stop</strong> (<a class="reference internal" href="#heuristitcs.Stops.Stop" title="heuristitcs.Stops.Stop"><em>Stop</em></a>) – The stop that is relevant to the route section</p></li>
+<li><p><strong>stop</strong> (<a class="reference internal" href="#heuristics.Stops.Stop" title="heuristics.Stops.Stop"><em>Stop</em></a>) – The stop that is relevant to the route section</p></li>
 <li><p><strong>arrival_time</strong> (<em>int</em>) – The time the vehicle arrives at the stop</p></li>
 <li><p><strong>wait_time</strong> (<em>int</em>) – The time the vehicle is waiting at the stop</p></li>
 <li><p><strong>passenger_manifest</strong> (<em>List</em><em> of </em><em>&lt;Passengers&gt;</em>) – List of passengers on vehicle at the stop</p></li>
@@ -256,8 +256,8 @@ their action set.</p>
 </dd>
 </dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="heuristitcs.Route.Route.getArrival">
-<span class="sig-name descname"><span class="pre">getArrival</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Route.Route.getArrival" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="heuristics.Route.Route.getArrival">
+<span class="sig-name descname"><span class="pre">getArrival</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Route.Route.getArrival" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Get the arrival time of the vehicle</p>
@@ -269,8 +269,8 @@ their action set.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="heuristitcs.Route.Route.getPassengers">
-<span class="sig-name descname"><span class="pre">getPassengers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Route.Route.getPassengers" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="heuristics.Route.Route.getPassengers">
+<span class="sig-name descname"><span class="pre">getPassengers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Route.Route.getPassengers" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>List of passengers</p>
@@ -282,21 +282,21 @@ their action set.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="heuristitcs.Route.Route.getStops">
-<span class="sig-name descname"><span class="pre">getStops</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Route.Route.getStops" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="heuristics.Route.Route.getStops">
+<span class="sig-name descname"><span class="pre">getStops</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Route.Route.getStops" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Get the Stop the vehicle is at</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#heuristitcs.Stops.Stop" title="heuristitcs.Stops.Stop">Stop</a></p>
+<dd class="field-even"><p><a class="reference internal" href="#heuristics.Stops.Stop" title="heuristics.Stops.Stop">Stop</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="heuristitcs.Route.Route.getWait">
-<span class="sig-name descname"><span class="pre">getWait</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Route.Route.getWait" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="heuristics.Route.Route.getWait">
+<span class="sig-name descname"><span class="pre">getWait</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Route.Route.getWait" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Vehicle wait time</p>
@@ -309,9 +309,9 @@ their action set.</p>
 
 </dd></dl>
 
-<span class="target" id="module-heuristitcs.Stops"></span><dl class="py class">
-<dt class="sig sig-object py" id="heuristitcs.Stops.Stop">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">heuristitcs.Stops.</span></span><span class="sig-name descname"><span class="pre">Stop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">long</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_ref</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">network</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shelter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bench</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tactile_paving</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wheelchair</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">departure_board</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bins</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">covered</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">passenger_information_display</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pole</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kerb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">traffic_sign</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">advertising</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">street</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crossing</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">look_up_index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Stops.Stop" title="Permalink to this definition">¶</a></dt>
+<span class="target" id="module-heuristics.Stops"></span><dl class="py class">
+<dt class="sig sig-object py" id="heuristics.Stops.Stop">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">heuristics.Stops.</span></span><span class="sig-name descname"><span class="pre">Stop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">long</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_ref</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">network</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shelter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bench</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tactile_paving</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wheelchair</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">departure_board</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bins</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">covered</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">passenger_information_display</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pole</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kerb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">traffic_sign</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">advertising</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">street</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crossing</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">look_up_index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Stops.Stop" title="Permalink to this definition">¶</a></dt>
 <dd><p>A class that handles the parameters of the stops, generally all these parameters are taken from the parameters that
 are taken from the XML flags in the <a class="reference external" href="https://www.openstreetmap.org/">Open Street Map</a> data. These flags make this
 class very cumbersome. However, these details will be integral to integrating the accessibility into the system.
@@ -350,8 +350,8 @@ data collection will cover these flags.</p>
 </dd>
 </dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="heuristitcs.Stops.Stop.calcDistance">
-<span class="sig-name descname"><span class="pre">calcDistance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Stops.Stop.calcDistance" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="heuristics.Stops.Stop.calcDistance">
+<span class="sig-name descname"><span class="pre">calcDistance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Stops.Stop.calcDistance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the distance between two points</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -372,8 +372,8 @@ data collection will cover these flags.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="heuristitcs.Stops.Stop.getNearStop">
-<span class="sig-name descname"><span class="pre">getNearStop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stop_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Stops.Stop.getNearStop" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="heuristics.Stops.Stop.getNearStop">
+<span class="sig-name descname"><span class="pre">getNearStop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stop_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Stops.Stop.getNearStop" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>stop_list</strong> (<em>List</em><em> of </em><em>&lt;Stops&gt;</em>) – List of valid stops to check</p>
@@ -382,14 +382,14 @@ data collection will cover these flags.</p>
 <dd class="field-even"><p>Nearest stop to the stop from the list of valid stops</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#heuristitcs.Stops.Stop" title="heuristitcs.Stops.Stop">Stop</a></p>
+<dd class="field-odd"><p><a class="reference internal" href="#heuristics.Stops.Stop" title="heuristics.Stops.Stop">Stop</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="heuristitcs.Stops.Stop.getRandStop">
-<span class="sig-name descname"><span class="pre">getRandStop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stop_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Stops.Stop.getRandStop" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="heuristics.Stops.Stop.getRandStop">
+<span class="sig-name descname"><span class="pre">getRandStop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stop_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Stops.Stop.getRandStop" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>stop_list</strong> (<em>List</em><em> of </em><em>&lt;Stops&gt;</em>) – List of valid stops to check</p>
@@ -398,14 +398,14 @@ data collection will cover these flags.</p>
 <dd class="field-even"><p>Random stop from list</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#heuristitcs.Stops.Stop" title="heuristitcs.Stops.Stop">Stop</a></p>
+<dd class="field-odd"><p><a class="reference internal" href="#heuristics.Stops.Stop" title="heuristics.Stops.Stop">Stop</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="heuristitcs.Stops.Stop.getStopId">
-<span class="sig-name descname"><span class="pre">getStopId</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Stops.Stop.getStopId" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="heuristics.Stops.Stop.getStopId">
+<span class="sig-name descname"><span class="pre">getStopId</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Stops.Stop.getStopId" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The stop ID</p>
@@ -418,17 +418,17 @@ data collection will cover these flags.</p>
 
 </dd></dl>
 
-<span class="target" id="module-heuristitcs.Controller"></span><dl class="py class">
-<dt class="sig sig-object py" id="heuristitcs.Controller.Controller">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">heuristitcs.Controller.</span></span><span class="sig-name descname"><span class="pre">Controller</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">no_buses</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_passengers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_bus_cap</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_lateness</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sim_runs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Controller.Controller" title="Permalink to this definition">¶</a></dt>
+<span class="target" id="module-heuristics.Controller"></span><dl class="py class">
+<dt class="sig sig-object py" id="heuristics.Controller.Controller">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">heuristics.Controller.</span></span><span class="sig-name descname"><span class="pre">Controller</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">no_buses</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_passengers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_bus_cap</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_lateness</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sim_runs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Controller.Controller" title="Permalink to this definition">¶</a></dt>
 <dd><p>This Class acts as the overall manager for the simulator, taking user input and data files and serving them to the
 correct heuristic solver as well as managing the world enviornment inputs. The overall aim is to create a flexible
 framework that manages the janker parts of the sim.</p>
 <p>Intended use: In general if you are tweaking this you are aiming to change what
 data is being served to various parts of the sim, not changing how that data is generated.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="heuristitcs.Controller.Controller.generate_booking_times">
-<span class="sig-name descname"><span class="pre">generate_booking_times</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">passengers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preeminence_percent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preebook_percent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Controller.Controller.generate_booking_times" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="heuristics.Controller.Controller.generate_booking_times">
+<span class="sig-name descname"><span class="pre">generate_booking_times</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">passengers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preeminence_percent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preebook_percent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Controller.Controller.generate_booking_times" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generator for the the booking time paramiter. By passing the population (or a sample) of passengers it will set
 a percentage (set by passenger_preeminence_precent) of the passengers to be random passengers where their pickup
 time is the same as their booking time, or passengers who have prebooked and ie their pickup time exists after
@@ -451,63 +451,69 @@ their booking time.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="heuristitcs.Controller.Controller.generate_buses">
-<span class="sig-name descname"><span class="pre">generate_buses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Controller.Controller.generate_buses" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="heuristics.Controller.Controller.generate_buses">
+<span class="sig-name descname"><span class="pre">generate_buses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Controller.Controller.generate_buses" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate the parameters and list of the bus agents.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="heuristitcs.Controller.Controller.generate_depo">
-<span class="sig-name descname"><span class="pre">generate_depo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stops</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Controller.Controller.generate_depo" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="heuristics.Controller.Controller.generate_depo">
+<span class="sig-name descname"><span class="pre">generate_depo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stops</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Controller.Controller.generate_depo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Randomly selects a stop from the provided list of stops to be the designated depo</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="heuristitcs.Controller.Controller.generate_passenger">
-<span class="sig-name descname"><span class="pre">generate_passenger</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Controller.Controller.generate_passenger" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="heuristics.Controller.Controller.generate_passenger">
+<span class="sig-name descname"><span class="pre">generate_passenger</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Controller.Controller.generate_passenger" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate the parameters and list of passenger agents</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="heuristitcs.Controller.Controller.import_stop_data">
-<span class="sig-name descname"><span class="pre">import_stop_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Controller.Controller.import_stop_data" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="heuristics.Controller.Controller.import_stop_data">
+<span class="sig-name descname"><span class="pre">import_stop_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Controller.Controller.import_stop_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Runs the stop importer to extract the stop data from the CSV to the self.list_of_stops</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="heuristitcs.Controller.Controller.import_stop_relations_data">
-<span class="sig-name descname"><span class="pre">import_stop_relations_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Controller.Controller.import_stop_relations_data" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="heuristics.Controller.Controller.import_stop_relations_data">
+<span class="sig-name descname"><span class="pre">import_stop_relations_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Controller.Controller.import_stop_relations_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extracts the relationship data between stops (read time between) from the ProjectOSM generated file into an
 array. This array is implicitly indexed by the X Y position in the array corresponding to the stop in the same
 position in self.list_of_stops</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="heuristitcs.Controller.Controller.inc_both_seeds">
-<span class="sig-name descname"><span class="pre">inc_both_seeds</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Controller.Controller.inc_both_seeds" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="heuristics.Controller.Controller.inc_both_seeds">
+<span class="sig-name descname"><span class="pre">inc_both_seeds</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Controller.Controller.inc_both_seeds" title="Permalink to this definition">¶</a></dt>
 <dd><p>Increment both sim and hur seeds</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="heuristitcs.Controller.Controller.inc_heur_seed">
-<span class="sig-name descname"><span class="pre">inc_heur_seed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Controller.Controller.inc_heur_seed" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="heuristics.Controller.Controller.inc_heur_seed">
+<span class="sig-name descname"><span class="pre">inc_heur_seed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Controller.Controller.inc_heur_seed" title="Permalink to this definition">¶</a></dt>
 <dd><p>Increment Heuristic seed</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="heuristitcs.Controller.Controller.inc_sim_seed">
-<span class="sig-name descname"><span class="pre">inc_sim_seed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Controller.Controller.inc_sim_seed" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="heuristics.Controller.Controller.inc_sim_seed">
+<span class="sig-name descname"><span class="pre">inc_sim_seed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Controller.Controller.inc_sim_seed" title="Permalink to this definition">¶</a></dt>
 <dd><p>Increment Simulator seed</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="heuristitcs.Controller.Controller.inti_all_gen">
-<span class="sig-name descname"><span class="pre">inti_all_gen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">passengers</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristitcs.Controller.Controller.inti_all_gen" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="heuristics.Controller.Controller.inti_all_gen">
+<span class="sig-name descname"><span class="pre">inti_all_gen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">passengers</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Controller.Controller.inti_all_gen" title="Permalink to this definition">¶</a></dt>
 <dd><p>This will initialize and run all the generators needed to initialize the world settings</p>
 </dd></dl>
 
 </dd></dl>
 
+<span class="target" id="module-heuristics.Event"></span><p>Event class hold the information used for an event including, start action, end action, relevent agents, position, and
+timing</p>
+<p>Intended usage: If you are making changes here you are modifying the events and what they contain not how they are
+handled</p>
+<span class="target" id="module-heuristics.Observer"></span><p>Class for observer. Each observer has a set list of event triggers that it can see</p>
+<p>Intended usage: Changing things here changes how the observers function</p>
 </section>
 </section>
 
@@ -522,51 +528,51 @@ position in self.list_of_stops</p>
     <h3><a href="index.html">Table of Contents</a></h3>
     <ul>
 <li><a class="reference internal" href="#">Usage</a><ul>
-<li><a class="reference internal" href="#module-heuristitcs.Buses">Classes</a><ul>
-<li><a class="reference internal" href="#heuristitcs.Buses.Buses"><code class="docutils literal notranslate"><span class="pre">Buses</span></code></a><ul>
-<li><a class="reference internal" href="#heuristitcs.Buses.Buses.get_start_stop_id"><code class="docutils literal notranslate"><span class="pre">Buses.get_start_stop_id()</span></code></a></li>
+<li><a class="reference internal" href="#module-heuristics.Buses">Classes</a><ul>
+<li><a class="reference internal" href="#heuristics.Buses.Buses"><code class="docutils literal notranslate"><span class="pre">Buses</span></code></a><ul>
+<li><a class="reference internal" href="#heuristics.Buses.Buses.get_start_stop_id"><code class="docutils literal notranslate"><span class="pre">Buses.get_start_stop_id()</span></code></a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#heuristitcs.GUI.GUI"><code class="docutils literal notranslate"><span class="pre">GUI</span></code></a><ul>
-<li><a class="reference internal" href="#heuristitcs.GUI.GUI.submit"><code class="docutils literal notranslate"><span class="pre">GUI.submit()</span></code></a></li>
+<li><a class="reference internal" href="#heuristics.GUI.GUI"><code class="docutils literal notranslate"><span class="pre">GUI</span></code></a><ul>
+<li><a class="reference internal" href="#heuristics.GUI.GUI.submit"><code class="docutils literal notranslate"><span class="pre">GUI.submit()</span></code></a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#heuristitcs.GUI.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
-<li><a class="reference internal" href="#heuristitcs.Jobs.Jobs"><code class="docutils literal notranslate"><span class="pre">Jobs</span></code></a></li>
-<li><a class="reference internal" href="#heuristitcs.Passenger.Passenger"><code class="docutils literal notranslate"><span class="pre">Passenger</span></code></a><ul>
-<li><a class="reference internal" href="#heuristitcs.Passenger.Passenger.calcDistance"><code class="docutils literal notranslate"><span class="pre">Passenger.calcDistance()</span></code></a></li>
-<li><a class="reference internal" href="#heuristitcs.Passenger.Passenger.calcTimeToTravel"><code class="docutils literal notranslate"><span class="pre">Passenger.calcTimeToTravel()</span></code></a></li>
-<li><a class="reference internal" href="#heuristitcs.Passenger.Passenger.getNearestDrop"><code class="docutils literal notranslate"><span class="pre">Passenger.getNearestDrop()</span></code></a></li>
-<li><a class="reference internal" href="#heuristitcs.Passenger.Passenger.getNearestStop"><code class="docutils literal notranslate"><span class="pre">Passenger.getNearestStop()</span></code></a></li>
-<li><a class="reference internal" href="#heuristitcs.Passenger.Passenger.get_booking_time"><code class="docutils literal notranslate"><span class="pre">Passenger.get_booking_time()</span></code></a></li>
-<li><a class="reference internal" href="#heuristitcs.Passenger.Passenger.set_booking_time"><code class="docutils literal notranslate"><span class="pre">Passenger.set_booking_time()</span></code></a></li>
+<li><a class="reference internal" href="#heuristics.GUI.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li><a class="reference internal" href="#heuristics.Jobs.Jobs"><code class="docutils literal notranslate"><span class="pre">Jobs</span></code></a></li>
+<li><a class="reference internal" href="#heuristics.Passenger.Passenger"><code class="docutils literal notranslate"><span class="pre">Passenger</span></code></a><ul>
+<li><a class="reference internal" href="#heuristics.Passenger.Passenger.calcDistance"><code class="docutils literal notranslate"><span class="pre">Passenger.calcDistance()</span></code></a></li>
+<li><a class="reference internal" href="#heuristics.Passenger.Passenger.calcTimeToTravel"><code class="docutils literal notranslate"><span class="pre">Passenger.calcTimeToTravel()</span></code></a></li>
+<li><a class="reference internal" href="#heuristics.Passenger.Passenger.getNearestDrop"><code class="docutils literal notranslate"><span class="pre">Passenger.getNearestDrop()</span></code></a></li>
+<li><a class="reference internal" href="#heuristics.Passenger.Passenger.getNearestStop"><code class="docutils literal notranslate"><span class="pre">Passenger.getNearestStop()</span></code></a></li>
+<li><a class="reference internal" href="#heuristics.Passenger.Passenger.get_booking_time"><code class="docutils literal notranslate"><span class="pre">Passenger.get_booking_time()</span></code></a></li>
+<li><a class="reference internal" href="#heuristics.Passenger.Passenger.set_booking_time"><code class="docutils literal notranslate"><span class="pre">Passenger.set_booking_time()</span></code></a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#heuristitcs.Route.Route"><code class="docutils literal notranslate"><span class="pre">Route</span></code></a><ul>
-<li><a class="reference internal" href="#heuristitcs.Route.Route.getArrival"><code class="docutils literal notranslate"><span class="pre">Route.getArrival()</span></code></a></li>
-<li><a class="reference internal" href="#heuristitcs.Route.Route.getPassengers"><code class="docutils literal notranslate"><span class="pre">Route.getPassengers()</span></code></a></li>
-<li><a class="reference internal" href="#heuristitcs.Route.Route.getStops"><code class="docutils literal notranslate"><span class="pre">Route.getStops()</span></code></a></li>
-<li><a class="reference internal" href="#heuristitcs.Route.Route.getWait"><code class="docutils literal notranslate"><span class="pre">Route.getWait()</span></code></a></li>
+<li><a class="reference internal" href="#heuristics.Route.Route"><code class="docutils literal notranslate"><span class="pre">Route</span></code></a><ul>
+<li><a class="reference internal" href="#heuristics.Route.Route.getArrival"><code class="docutils literal notranslate"><span class="pre">Route.getArrival()</span></code></a></li>
+<li><a class="reference internal" href="#heuristics.Route.Route.getPassengers"><code class="docutils literal notranslate"><span class="pre">Route.getPassengers()</span></code></a></li>
+<li><a class="reference internal" href="#heuristics.Route.Route.getStops"><code class="docutils literal notranslate"><span class="pre">Route.getStops()</span></code></a></li>
+<li><a class="reference internal" href="#heuristics.Route.Route.getWait"><code class="docutils literal notranslate"><span class="pre">Route.getWait()</span></code></a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#heuristitcs.Stops.Stop"><code class="docutils literal notranslate"><span class="pre">Stop</span></code></a><ul>
-<li><a class="reference internal" href="#heuristitcs.Stops.Stop.calcDistance"><code class="docutils literal notranslate"><span class="pre">Stop.calcDistance()</span></code></a></li>
-<li><a class="reference internal" href="#heuristitcs.Stops.Stop.getNearStop"><code class="docutils literal notranslate"><span class="pre">Stop.getNearStop()</span></code></a></li>
-<li><a class="reference internal" href="#heuristitcs.Stops.Stop.getRandStop"><code class="docutils literal notranslate"><span class="pre">Stop.getRandStop()</span></code></a></li>
-<li><a class="reference internal" href="#heuristitcs.Stops.Stop.getStopId"><code class="docutils literal notranslate"><span class="pre">Stop.getStopId()</span></code></a></li>
+<li><a class="reference internal" href="#heuristics.Stops.Stop"><code class="docutils literal notranslate"><span class="pre">Stop</span></code></a><ul>
+<li><a class="reference internal" href="#heuristics.Stops.Stop.calcDistance"><code class="docutils literal notranslate"><span class="pre">Stop.calcDistance()</span></code></a></li>
+<li><a class="reference internal" href="#heuristics.Stops.Stop.getNearStop"><code class="docutils literal notranslate"><span class="pre">Stop.getNearStop()</span></code></a></li>
+<li><a class="reference internal" href="#heuristics.Stops.Stop.getRandStop"><code class="docutils literal notranslate"><span class="pre">Stop.getRandStop()</span></code></a></li>
+<li><a class="reference internal" href="#heuristics.Stops.Stop.getStopId"><code class="docutils literal notranslate"><span class="pre">Stop.getStopId()</span></code></a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#heuristitcs.Controller.Controller"><code class="docutils literal notranslate"><span class="pre">Controller</span></code></a><ul>
-<li><a class="reference internal" href="#heuristitcs.Controller.Controller.generate_booking_times"><code class="docutils literal notranslate"><span class="pre">Controller.generate_booking_times()</span></code></a></li>
-<li><a class="reference internal" href="#heuristitcs.Controller.Controller.generate_buses"><code class="docutils literal notranslate"><span class="pre">Controller.generate_buses()</span></code></a></li>
-<li><a class="reference internal" href="#heuristitcs.Controller.Controller.generate_depo"><code class="docutils literal notranslate"><span class="pre">Controller.generate_depo()</span></code></a></li>
-<li><a class="reference internal" href="#heuristitcs.Controller.Controller.generate_passenger"><code class="docutils literal notranslate"><span class="pre">Controller.generate_passenger()</span></code></a></li>
-<li><a class="reference internal" href="#heuristitcs.Controller.Controller.import_stop_data"><code class="docutils literal notranslate"><span class="pre">Controller.import_stop_data()</span></code></a></li>
-<li><a class="reference internal" href="#heuristitcs.Controller.Controller.import_stop_relations_data"><code class="docutils literal notranslate"><span class="pre">Controller.import_stop_relations_data()</span></code></a></li>
-<li><a class="reference internal" href="#heuristitcs.Controller.Controller.inc_both_seeds"><code class="docutils literal notranslate"><span class="pre">Controller.inc_both_seeds()</span></code></a></li>
-<li><a class="reference internal" href="#heuristitcs.Controller.Controller.inc_heur_seed"><code class="docutils literal notranslate"><span class="pre">Controller.inc_heur_seed()</span></code></a></li>
-<li><a class="reference internal" href="#heuristitcs.Controller.Controller.inc_sim_seed"><code class="docutils literal notranslate"><span class="pre">Controller.inc_sim_seed()</span></code></a></li>
-<li><a class="reference internal" href="#heuristitcs.Controller.Controller.inti_all_gen"><code class="docutils literal notranslate"><span class="pre">Controller.inti_all_gen()</span></code></a></li>
+<li><a class="reference internal" href="#heuristics.Controller.Controller"><code class="docutils literal notranslate"><span class="pre">Controller</span></code></a><ul>
+<li><a class="reference internal" href="#heuristics.Controller.Controller.generate_booking_times"><code class="docutils literal notranslate"><span class="pre">Controller.generate_booking_times()</span></code></a></li>
+<li><a class="reference internal" href="#heuristics.Controller.Controller.generate_buses"><code class="docutils literal notranslate"><span class="pre">Controller.generate_buses()</span></code></a></li>
+<li><a class="reference internal" href="#heuristics.Controller.Controller.generate_depo"><code class="docutils literal notranslate"><span class="pre">Controller.generate_depo()</span></code></a></li>
+<li><a class="reference internal" href="#heuristics.Controller.Controller.generate_passenger"><code class="docutils literal notranslate"><span class="pre">Controller.generate_passenger()</span></code></a></li>
+<li><a class="reference internal" href="#heuristics.Controller.Controller.import_stop_data"><code class="docutils literal notranslate"><span class="pre">Controller.import_stop_data()</span></code></a></li>
+<li><a class="reference internal" href="#heuristics.Controller.Controller.import_stop_relations_data"><code class="docutils literal notranslate"><span class="pre">Controller.import_stop_relations_data()</span></code></a></li>
+<li><a class="reference internal" href="#heuristics.Controller.Controller.inc_both_seeds"><code class="docutils literal notranslate"><span class="pre">Controller.inc_both_seeds()</span></code></a></li>
+<li><a class="reference internal" href="#heuristics.Controller.Controller.inc_heur_seed"><code class="docutils literal notranslate"><span class="pre">Controller.inc_heur_seed()</span></code></a></li>
+<li><a class="reference internal" href="#heuristics.Controller.Controller.inc_sim_seed"><code class="docutils literal notranslate"><span class="pre">Controller.inc_sim_seed()</span></code></a></li>
+<li><a class="reference internal" href="#heuristics.Controller.Controller.inti_all_gen"><code class="docutils literal notranslate"><span class="pre">Controller.inti_all_gen()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -614,7 +620,7 @@ position in self.list_of_stops</p>
         <li class="right" >
           <a href="index.html" title="Welcome to Public_Python_Sim’s documentation!"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Public_Python_Sim 0.1 Alpha documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Public_Python_Sim 0.5 Alpha documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Usage</a></li> 
       </ul>
     </div>
