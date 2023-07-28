@@ -99,3 +99,6 @@ class World:
                 out_sub.append(observer.out)
 
         return out_sub
+
+    def make_event(self):
+        pass
