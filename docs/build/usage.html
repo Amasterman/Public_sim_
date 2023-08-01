@@ -6,35 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Usage &#8212; Public_Python_Sim 0.5 Alpha documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
-    <link rel="stylesheet" type="text/css" href="_static/classic.css?v=89b800e6" />
-    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=362ab14a" />
+    <link rel="stylesheet" type="text/css" href="_static/agogo.css?v=a5145ed4" />
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=3f1ce345"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=4825356b"></script>
-    
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="Welcome to Public_Python_Sim’s documentation!" href="index.html" /> 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
+    <div class="header-wrapper" role="banner">
+      <div class="header">
+        <div class="headertitle"><a
+          href="index.html">Public_Python_Sim 0.5 Alpha documentation</a></div>
+        <div class="rel" role="navigation" aria-label="related navigation">
           <a href="index.html" title="Welcome to Public_Python_Sim’s documentation!"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Public_Python_Sim 0.5 Alpha documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Usage</a></li> 
-      </ul>
-    </div>  
+             accesskey="P">previous</a> |
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a>
+        </div>
+       </div>
+    </div>
 
-    <div class="document">
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="document">
+            
       <div class="documentwrapper">
         <div class="bodywrapper">
           <div class="body" role="main">
@@ -426,6 +425,17 @@ correct heuristic solver as well as managing the world enviornment inputs. The o
 framework that manages the janker parts of the sim.</p>
 <p>Intended use: In general if you are tweaking this you are aiming to change what
 data is being served to various parts of the sim, not changing how that data is generated.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>no_buses</strong> (<em>int</em>) – How many bus agents are used in the simulator</p></li>
+<li><p><strong>no_passengers</strong> (<em>int</em>) – How many passenger agents are used in the simulator</p></li>
+<li><p><strong>max_bus_cap</strong> (<em>int</em>) – The maximum amount of passengers a bus can hold</p></li>
+<li><p><strong>max_lateness</strong> (<em>int</em>) – The maximum time a passenger will allow the bus to be late before canceling</p></li>
+<li><p><strong>sim_runs</strong> (<em>int</em>) – How many runs of the sim will be run</p></li>
+</ul>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="heuristics.Controller.Controller.generate_booking_times">
 <span class="sig-name descname"><span class="pre">generate_booking_times</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">passengers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preeminence_percent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preebook_percent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Controller.Controller.generate_booking_times" title="Permalink to this definition">¶</a></dt>
@@ -512,8 +522,54 @@ position in self.list_of_stops</p>
 timing</p>
 <p>Intended usage: If you are making changes here you are modifying the events and what they contain not how they are
 handled</p>
+<dl class="field-list simple">
+<dt class="field-odd">param start_or_end<span class="colon">:</span></dt>
+<dd class="field-odd"><p>If the event is the start or the end of an action</p>
+</dd>
+<dt class="field-even">type start_or_end<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+<dt class="field-odd">param relevant_agents<span class="colon">:</span></dt>
+<dd class="field-odd"><p>What agents are affected by the event</p>
+</dd>
+<dt class="field-even">type relevant_agents<span class="colon">:</span></dt>
+<dd class="field-even"><p>Agent TODO Same problem here need to better define agent</p>
+</dd>
+<dt class="field-odd">param position_x<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Position of the event in the X axis</p>
+</dd>
+<dt class="field-even">type position_x<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+<dt class="field-odd">param position_y<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Position of the event in the Y axis</p>
+</dd>
+<dt class="field-even">type position_y<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+<dt class="field-odd">param tick_occurrence<span class="colon">:</span></dt>
+<dd class="field-odd"><p>What tick the event has occurred on</p>
+</dd>
+<dt class="field-even">type tick_occurrence<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+<dt class="field-odd">param action<span class="colon">:</span></dt>
+<dd class="field-odd"><p>What tye of action the event is</p>
+</dd>
+<dt class="field-even">type action<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
 <span class="target" id="module-heuristics.Observer"></span><p>Class for observer. Each observer has a set list of event triggers that it can see</p>
 <p>Intended usage: Changing things here changes how the observers function</p>
+<dl class="field-list simple">
+<dt class="field-odd">param watching_events<span class="colon">:</span></dt>
+<dd class="field-odd"><p>What events this specific observer is watching</p>
+</dd>
+<dt class="field-even">type watching_events<span class="colon">:</span></dt>
+<dd class="field-even"><p>list&lt;Events&gt;</p>
+</dd>
+</dl>
 </section>
 </section>
 
@@ -522,57 +578,57 @@ handled</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <div>
-    <h3><a href="index.html">Table of Contents</a></h3>
-    <ul>
-<li><a class="reference internal" href="#">Usage</a><ul>
-<li><a class="reference internal" href="#module-heuristics.Buses">Classes</a><ul>
-<li><a class="reference internal" href="#heuristics.Buses.Buses"><code class="docutils literal notranslate"><span class="pre">Buses</span></code></a><ul>
-<li><a class="reference internal" href="#heuristics.Buses.Buses.get_start_stop_id"><code class="docutils literal notranslate"><span class="pre">Buses.get_start_stop_id()</span></code></a></li>
+        </div>
+        <div class="sidebar">
+          
+          <h3>Table of Contents</h3>
+          <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-heuristics.Buses">Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#heuristics.Buses.Buses"><code class="docutils literal notranslate"><span class="pre">Buses</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#heuristics.Buses.Buses.get_start_stop_id"><code class="docutils literal notranslate"><span class="pre">Buses.get_start_stop_id()</span></code></a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#heuristics.GUI.GUI"><code class="docutils literal notranslate"><span class="pre">GUI</span></code></a><ul>
-<li><a class="reference internal" href="#heuristics.GUI.GUI.submit"><code class="docutils literal notranslate"><span class="pre">GUI.submit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#heuristics.GUI.GUI"><code class="docutils literal notranslate"><span class="pre">GUI</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#heuristics.GUI.GUI.submit"><code class="docutils literal notranslate"><span class="pre">GUI.submit()</span></code></a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#heuristics.GUI.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
-<li><a class="reference internal" href="#heuristics.Jobs.Jobs"><code class="docutils literal notranslate"><span class="pre">Jobs</span></code></a></li>
-<li><a class="reference internal" href="#heuristics.Passenger.Passenger"><code class="docutils literal notranslate"><span class="pre">Passenger</span></code></a><ul>
-<li><a class="reference internal" href="#heuristics.Passenger.Passenger.calcDistance"><code class="docutils literal notranslate"><span class="pre">Passenger.calcDistance()</span></code></a></li>
-<li><a class="reference internal" href="#heuristics.Passenger.Passenger.calcTimeToTravel"><code class="docutils literal notranslate"><span class="pre">Passenger.calcTimeToTravel()</span></code></a></li>
-<li><a class="reference internal" href="#heuristics.Passenger.Passenger.getNearestDrop"><code class="docutils literal notranslate"><span class="pre">Passenger.getNearestDrop()</span></code></a></li>
-<li><a class="reference internal" href="#heuristics.Passenger.Passenger.getNearestStop"><code class="docutils literal notranslate"><span class="pre">Passenger.getNearestStop()</span></code></a></li>
-<li><a class="reference internal" href="#heuristics.Passenger.Passenger.get_booking_time"><code class="docutils literal notranslate"><span class="pre">Passenger.get_booking_time()</span></code></a></li>
-<li><a class="reference internal" href="#heuristics.Passenger.Passenger.set_booking_time"><code class="docutils literal notranslate"><span class="pre">Passenger.set_booking_time()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#heuristics.GUI.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#heuristics.Jobs.Jobs"><code class="docutils literal notranslate"><span class="pre">Jobs</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#heuristics.Passenger.Passenger"><code class="docutils literal notranslate"><span class="pre">Passenger</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#heuristics.Passenger.Passenger.calcDistance"><code class="docutils literal notranslate"><span class="pre">Passenger.calcDistance()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#heuristics.Passenger.Passenger.calcTimeToTravel"><code class="docutils literal notranslate"><span class="pre">Passenger.calcTimeToTravel()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#heuristics.Passenger.Passenger.getNearestDrop"><code class="docutils literal notranslate"><span class="pre">Passenger.getNearestDrop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#heuristics.Passenger.Passenger.getNearestStop"><code class="docutils literal notranslate"><span class="pre">Passenger.getNearestStop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#heuristics.Passenger.Passenger.get_booking_time"><code class="docutils literal notranslate"><span class="pre">Passenger.get_booking_time()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#heuristics.Passenger.Passenger.set_booking_time"><code class="docutils literal notranslate"><span class="pre">Passenger.set_booking_time()</span></code></a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#heuristics.Route.Route"><code class="docutils literal notranslate"><span class="pre">Route</span></code></a><ul>
-<li><a class="reference internal" href="#heuristics.Route.Route.getArrival"><code class="docutils literal notranslate"><span class="pre">Route.getArrival()</span></code></a></li>
-<li><a class="reference internal" href="#heuristics.Route.Route.getPassengers"><code class="docutils literal notranslate"><span class="pre">Route.getPassengers()</span></code></a></li>
-<li><a class="reference internal" href="#heuristics.Route.Route.getStops"><code class="docutils literal notranslate"><span class="pre">Route.getStops()</span></code></a></li>
-<li><a class="reference internal" href="#heuristics.Route.Route.getWait"><code class="docutils literal notranslate"><span class="pre">Route.getWait()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#heuristics.Route.Route"><code class="docutils literal notranslate"><span class="pre">Route</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#heuristics.Route.Route.getArrival"><code class="docutils literal notranslate"><span class="pre">Route.getArrival()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#heuristics.Route.Route.getPassengers"><code class="docutils literal notranslate"><span class="pre">Route.getPassengers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#heuristics.Route.Route.getStops"><code class="docutils literal notranslate"><span class="pre">Route.getStops()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#heuristics.Route.Route.getWait"><code class="docutils literal notranslate"><span class="pre">Route.getWait()</span></code></a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#heuristics.Stops.Stop"><code class="docutils literal notranslate"><span class="pre">Stop</span></code></a><ul>
-<li><a class="reference internal" href="#heuristics.Stops.Stop.calcDistance"><code class="docutils literal notranslate"><span class="pre">Stop.calcDistance()</span></code></a></li>
-<li><a class="reference internal" href="#heuristics.Stops.Stop.getNearStop"><code class="docutils literal notranslate"><span class="pre">Stop.getNearStop()</span></code></a></li>
-<li><a class="reference internal" href="#heuristics.Stops.Stop.getRandStop"><code class="docutils literal notranslate"><span class="pre">Stop.getRandStop()</span></code></a></li>
-<li><a class="reference internal" href="#heuristics.Stops.Stop.getStopId"><code class="docutils literal notranslate"><span class="pre">Stop.getStopId()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#heuristics.Stops.Stop"><code class="docutils literal notranslate"><span class="pre">Stop</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#heuristics.Stops.Stop.calcDistance"><code class="docutils literal notranslate"><span class="pre">Stop.calcDistance()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#heuristics.Stops.Stop.getNearStop"><code class="docutils literal notranslate"><span class="pre">Stop.getNearStop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#heuristics.Stops.Stop.getRandStop"><code class="docutils literal notranslate"><span class="pre">Stop.getRandStop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#heuristics.Stops.Stop.getStopId"><code class="docutils literal notranslate"><span class="pre">Stop.getStopId()</span></code></a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#heuristics.Controller.Controller"><code class="docutils literal notranslate"><span class="pre">Controller</span></code></a><ul>
-<li><a class="reference internal" href="#heuristics.Controller.Controller.generate_booking_times"><code class="docutils literal notranslate"><span class="pre">Controller.generate_booking_times()</span></code></a></li>
-<li><a class="reference internal" href="#heuristics.Controller.Controller.generate_buses"><code class="docutils literal notranslate"><span class="pre">Controller.generate_buses()</span></code></a></li>
-<li><a class="reference internal" href="#heuristics.Controller.Controller.generate_depo"><code class="docutils literal notranslate"><span class="pre">Controller.generate_depo()</span></code></a></li>
-<li><a class="reference internal" href="#heuristics.Controller.Controller.generate_passenger"><code class="docutils literal notranslate"><span class="pre">Controller.generate_passenger()</span></code></a></li>
-<li><a class="reference internal" href="#heuristics.Controller.Controller.import_stop_data"><code class="docutils literal notranslate"><span class="pre">Controller.import_stop_data()</span></code></a></li>
-<li><a class="reference internal" href="#heuristics.Controller.Controller.import_stop_relations_data"><code class="docutils literal notranslate"><span class="pre">Controller.import_stop_relations_data()</span></code></a></li>
-<li><a class="reference internal" href="#heuristics.Controller.Controller.inc_both_seeds"><code class="docutils literal notranslate"><span class="pre">Controller.inc_both_seeds()</span></code></a></li>
-<li><a class="reference internal" href="#heuristics.Controller.Controller.inc_heur_seed"><code class="docutils literal notranslate"><span class="pre">Controller.inc_heur_seed()</span></code></a></li>
-<li><a class="reference internal" href="#heuristics.Controller.Controller.inc_sim_seed"><code class="docutils literal notranslate"><span class="pre">Controller.inc_sim_seed()</span></code></a></li>
-<li><a class="reference internal" href="#heuristics.Controller.Controller.inti_all_gen"><code class="docutils literal notranslate"><span class="pre">Controller.inti_all_gen()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#heuristics.Controller.Controller"><code class="docutils literal notranslate"><span class="pre">Controller</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#heuristics.Controller.Controller.generate_booking_times"><code class="docutils literal notranslate"><span class="pre">Controller.generate_booking_times()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#heuristics.Controller.Controller.generate_buses"><code class="docutils literal notranslate"><span class="pre">Controller.generate_buses()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#heuristics.Controller.Controller.generate_depo"><code class="docutils literal notranslate"><span class="pre">Controller.generate_depo()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#heuristics.Controller.Controller.generate_passenger"><code class="docutils literal notranslate"><span class="pre">Controller.generate_passenger()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#heuristics.Controller.Controller.import_stop_data"><code class="docutils literal notranslate"><span class="pre">Controller.import_stop_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#heuristics.Controller.Controller.import_stop_relations_data"><code class="docutils literal notranslate"><span class="pre">Controller.import_stop_relations_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#heuristics.Controller.Controller.inc_both_seeds"><code class="docutils literal notranslate"><span class="pre">Controller.inc_both_seeds()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#heuristics.Controller.Controller.inc_heur_seed"><code class="docutils literal notranslate"><span class="pre">Controller.inc_heur_seed()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#heuristics.Controller.Controller.inc_sim_seed"><code class="docutils literal notranslate"><span class="pre">Controller.inc_sim_seed()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#heuristics.Controller.Controller.inti_all_gen"><code class="docutils literal notranslate"><span class="pre">Controller.inti_all_gen()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -581,52 +637,47 @@ handled</p>
 </li>
 </ul>
 
-  </div>
-  <div>
-    <h4>Previous topic</h4>
-    <p class="topless"><a href="index.html"
-                          title="previous chapter">Welcome to Public_Python_Sim’s documentation!</a></p>
-  </div>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/usage.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+          <div role="search">
+            <h3 style="margin-top: 1.5em;">Search</h3>
+            <form class="search" action="search.html" method="get">
+                <input type="text" name="q" />
+                <input type="submit" value="Go" />
+            </form>
+          </div>
+
         </div>
+        <div class="clearer"></div>
       </div>
-      <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="index.html" title="Welcome to Public_Python_Sim’s documentation!"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Public_Python_Sim 0.5 Alpha documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Usage</a></li> 
-      </ul>
-    </div>
+
+    <div class="footer-wrapper">
+      <div class="footer">
+        <div class="left">
+          <div role="navigation" aria-label="related navigaton">
+            <a href="index.html" title="Welcome to Public_Python_Sim’s documentation!"
+              >previous</a> |
+            <a href="py-modindex.html" title="Python Module Index"
+              >modules</a> |
+            <a href="genindex.html" title="General Index"
+              >index</a>
+          </div>
+          <div role="note" aria-label="source link">
+              <br/>
+              <a href="_sources/usage.rst.txt"
+                rel="nofollow">Show Source</a>
+          </div>
+        </div>
+
+        <div class="right">
+          
     <div class="footer" role="contentinfo">
     &#169; Copyright 2022, Alexander Masterman.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.1.0.
     </div>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
   </body>
 </html>

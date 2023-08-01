@@ -17,6 +17,20 @@ class Controller:
     Intended use: In general if you are tweaking this you are aiming to change what
     data is being served to various parts of the sim, not changing how that data is generated.
 
+    :param no_buses: How many bus agents are used in the simulator
+    :type no_buses: int
+
+    :param no_passengers: How many passenger agents are used in the simulator
+    :type no_passengers: int
+
+    :param max_bus_cap: The maximum amount of passengers a bus can hold
+    :type max_bus_cap: int
+
+    :param max_lateness: The maximum time a passenger will allow the bus to be late before canceling
+    :type max_lateness: int
+
+    :param sim_runs: How many runs of the sim will be run
+    :type sim_runs: int
     """
 
     def __init__(self, no_buses, no_passengers, max_bus_cap, max_lateness, sim_runs):

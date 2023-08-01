@@ -3,6 +3,9 @@ Class for observer. Each observer has a set list of event triggers that it can s
 
 
 Intended usage: Changing things here changes how the observers function
+
+:param watching_events: What events this specific observer is watching
+:type watching_events: list<Events>
 """
 
 

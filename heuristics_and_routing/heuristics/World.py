@@ -16,6 +16,15 @@ Events will be thrown to different observers depending on the level of data allo
 arbitrary but important. By having varying levels of knowlage divided by subscribers you are able to adjust how much
 the routeing algs have access to. The full events list being thrown is needed for logging.
 
+:param passenger_agents: List of active passenger agents
+:type passenger_agents: list<Passenger>
+
+:param bus_agents: List of active bus agents
+:type bus_agents: list<Bus>
+
+:param time_step: How often the world returns events
+:type time_step: int
+
 """
 
 
@@ -100,5 +109,23 @@ class World:
 
         return out_sub
 
-    def make_event(self):
+    def make_event(self, start_or_end, agent, action):
+        """
+        Pass in relevant info into a event class object and return it
+
+        In this case the relevant info needed only relate the action (what tye of action and if its a start or end) and
+        what agent is affected
+
+        :param start_or_end: start_or_end of event
+        :type start_or_end: bool
+
+        :param agent: affected agent
+        :type agent: Agent TODO Uhh thinking on this may need to set up some inheritance/interface for agents to use
+
+        :param action: What action is occurring
+        :type action: str
+
+        :return: Event class built from parameters
+        :rtype: Event
+        """
         pass

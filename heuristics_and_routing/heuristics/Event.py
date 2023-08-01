@@ -5,6 +5,23 @@ timing
 Intended usage: If you are making changes here you are modifying the events and what they contain not how they are
 handled
 
+:param start_or_end: If the event is the start or the end of an action
+:type start_or_end: bool
+
+:param relevant_agents: What agents are affected by the event
+:type relevant_agents: Agent TODO Same problem here need to better define agent
+
+:param position_x: Position of the event in the X axis
+:type position_x: float
+
+:param position_y: Position of the event in the Y axis
+:type position_y: float
+
+:param tick_occurrence: What tick the event has occurred on
+:type tick_occurrence: int
+
+:param action: What tye of action the event is
+:type action: str
 """
 
 
