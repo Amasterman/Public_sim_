@@ -47,7 +47,8 @@ interface. This will be added soonTM!</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="heuristics.Buses.Buses">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">heuristics.Buses.</span></span><span class="sig-name descname"><span class="pre">Buses</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_stop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bus_capacity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">running_cost</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_stop</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Buses.Buses" title="Permalink to this definition">¶</a></dt>
-<dd><p>Class containing the details of buses. This contains the tools needed to create bus agents within the simulator as
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class containing the details of buses. This contains the tools needed to create bus agents within the simulator as
 well as defining the action sets that they can take.</p>
 <p>Intended use: If you are making changes to this then you are changing what data relating to the bus agent and/or
 changing the action sets of the bus agents.</p>
@@ -78,7 +79,8 @@ changing the action sets of the bus agents.</p>
 <span class="target" id="module-heuristics.GUI"></span><dl class="py class">
 <dt class="sig sig-object py" id="heuristics.GUI.GUI">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">heuristics.GUI.</span></span><span class="sig-name descname"><span class="pre">GUI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.GUI.GUI" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="py method">
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Frame</span></code></p>
+<dl class="py method">
 <dt class="sig sig-object py" id="heuristics.GUI.GUI.submit">
 <span class="sig-name descname"><span class="pre">submit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.GUI.GUI.submit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Submits selected parameters when button is pressed</p>
@@ -95,7 +97,8 @@ changing the action sets of the bus agents.</p>
 <span class="target" id="module-heuristics.Jobs"></span><dl class="py class">
 <dt class="sig sig-object py" id="heuristics.Jobs.Jobs">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">heuristics.Jobs.</span></span><span class="sig-name descname"><span class="pre">Jobs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">weight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arrival_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Jobs.Jobs" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="simple">
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="simple">
 <dt>Jobs act as a dataset containing information on weight, arrival time and type</dt><dd><p>Intended usage: If you are making changes here you are modifying the data that a job (A section of a route) has</p>
 </dd>
 </dl>
@@ -117,7 +120,8 @@ the world enviornemnt.</p>
 <span class="target" id="module-heuristics.Passenger"></span><dl class="py class">
 <dt class="sig sig-object py" id="heuristics.Passenger.Passenger">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">heuristics.Passenger.</span></span><span class="sig-name descname"><span class="pre">Passenger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xcord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ycord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">capacity_cost</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">walk_cost</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pickup_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropoff_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">booked</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lateness</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Passenger.Passenger" title="Permalink to this definition">¶</a></dt>
-<dd><p>Passenger class</p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Passenger class</p>
 <p>This class contains paramiters and action sets of the passenger agent.</p>
 <p>Intended Usage: If you are making changes here you are changing either the data pertaining to the passenger agent or
 their action set.</p>
@@ -242,7 +246,8 @@ their action set.</p>
 <span class="target" id="module-heuristics.Route"></span><dl class="py class">
 <dt class="sig sig-object py" id="heuristics.Route.Route">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">heuristics.Route.</span></span><span class="sig-name descname"><span class="pre">Route</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arrival_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wait_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">passenger_manifest</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Route.Route" title="Permalink to this definition">¶</a></dt>
-<dd><p>Class contains information for a section of the route, contains the information about passengers and timing info</p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class contains information for a section of the route, contains the information about passengers and timing info</p>
 <p>Intended usage: If you are making changes here then you are modifying the data that contains a route</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -311,7 +316,8 @@ their action set.</p>
 <span class="target" id="module-heuristics.Stops"></span><dl class="py class">
 <dt class="sig sig-object py" id="heuristics.Stops.Stop">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">heuristics.Stops.</span></span><span class="sig-name descname"><span class="pre">Stop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">long</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_ref</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">network</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shelter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bench</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tactile_paving</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wheelchair</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">departure_board</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bins</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">covered</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">passenger_information_display</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pole</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kerb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">traffic_sign</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">advertising</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">street</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crossing</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">look_up_index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Stops.Stop" title="Permalink to this definition">¶</a></dt>
-<dd><p>A class that handles the parameters of the stops, generally all these parameters are taken from the parameters that
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class that handles the parameters of the stops, generally all these parameters are taken from the parameters that
 are taken from the XML flags in the <a class="reference external" href="https://www.openstreetmap.org/">Open Street Map</a> data. These flags make this
 class very cumbersome. However, these details will be integral to integrating the accessibility into the system.
 Additionally many of these flags are null in the OSM data, this is an issue with the data source and future
@@ -420,7 +426,8 @@ data collection will cover these flags.</p>
 <span class="target" id="module-heuristics.Controller"></span><dl class="py class">
 <dt class="sig sig-object py" id="heuristics.Controller.Controller">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">heuristics.Controller.</span></span><span class="sig-name descname"><span class="pre">Controller</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">no_buses</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_passengers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_bus_cap</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_lateness</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sim_runs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Controller.Controller" title="Permalink to this definition">¶</a></dt>
-<dd><p>This Class acts as the overall manager for the simulator, taking user input and data files and serving them to the
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This Class acts as the overall manager for the simulator, taking user input and data files and serving them to the
 correct heuristic solver as well as managing the world enviornment inputs. The overall aim is to create a flexible
 framework that manages the janker parts of the sim.</p>
 <p>Intended use: In general if you are tweaking this you are aiming to change what
@@ -560,6 +567,82 @@ handled</p>
 <dd class="field-even"><p>str</p>
 </dd>
 </dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="heuristics.Event.Event">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">heuristics.Event.</span></span><span class="sig-name descname"><span class="pre">Event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_or_end</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relevant_agents</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tick_occurrence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Event.Event" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="heuristics.Event.Event.get_action">
+<span class="sig-name descname"><span class="pre">get_action</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Event.Event.get_action" title="Permalink to this definition">¶</a></dt>
+<dd><p>Getter for what the event actually is</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>return event type</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="heuristics.Event.Event.get_pos">
+<span class="sig-name descname"><span class="pre">get_pos</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Event.Event.get_pos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Getter for position coords for the event</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a tuple of the x and y coords</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float, float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="heuristics.Event.Event.get_relevant_agents">
+<span class="sig-name descname"><span class="pre">get_relevant_agents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Event.Event.get_relevant_agents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Getter for the agents that are affected by the event</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>agents affected by the event</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list&lt;agents&gt;</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="heuristics.Event.Event.get_start_or_end">
+<span class="sig-name descname"><span class="pre">get_start_or_end</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Event.Event.get_start_or_end" title="Permalink to this definition">¶</a></dt>
+<dd><p>Getter for getting weather the event is the start or end of an event</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>start or end of event</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="heuristics.Event.Event.tick_occurrence">
+<span class="sig-name descname"><span class="pre">tick_occurrence</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Event.Event.tick_occurrence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Getter for what tick the event occurred on</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tick event occurred on</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 <span class="target" id="module-heuristics.Observer"></span><p>Class for observer. Each observer has a set list of event triggers that it can see</p>
 <p>Intended usage: Changing things here changes how the observers function</p>
 <dl class="field-list simple">
@@ -570,6 +653,121 @@ handled</p>
 <dd class="field-even"><p>list&lt;Events&gt;</p>
 </dd>
 </dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="heuristics.Observer.Observer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">heuristics.Observer.</span></span><span class="sig-name descname"><span class="pre">Observer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">watching_events</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Observer.Observer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="heuristics.Observer.Observer.give_watched_events">
+<span class="sig-name descname"><span class="pre">give_watched_events</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Observer.Observer.give_watched_events" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the watched events</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Watched events</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list&lt;Events&gt;</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="heuristics.Observer.Observer.is_event_watched">
+<span class="sig-name descname"><span class="pre">is_event_watched</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Observer.Observer.is_event_watched" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if provided event is watched by specific observer</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>If event is watched by observer</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-heuristics.Agent"></span><p>Meta class for agents (For those unfamiliar with python these are the equivalent of interfaces, they cant be
+instantiated and must be inherited by other classes). In this case the</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="heuristics.Agent.Agent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">heuristics.Agent.</span></span><span class="sig-name descname"><span class="pre">Agent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos_y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Agent.Agent" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="heuristics.Agent.Agent.add_possible_actions">
+<span class="sig-name descname"><span class="pre">add_possible_actions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">actions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Agent.Agent.add_possible_actions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Take a set of actions and add them to the list of actions</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="heuristics.Agent.Agent.decide_next_action">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">decide_next_action</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Agent.Agent.decide_next_action" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a method that must be overwritten by the inheriting class</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="heuristics.Agent.Agent.get_current_action">
+<span class="sig-name descname"><span class="pre">get_current_action</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Agent.Agent.get_current_action" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to call and get the current action of the agent</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Return the current action of the agent</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="heuristics.Agent.Agent.get_possible_actions">
+<span class="sig-name descname"><span class="pre">get_possible_actions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Agent.Agent.get_possible_actions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the set of possible actions that the agent can preform</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>return the list of possible actions by the agents</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list&lt;str&gt;</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="heuristics.Agent.Agent.move_agent">
+<span class="sig-name descname"><span class="pre">move_agent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delta_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta_y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Agent.Agent.move_agent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change the x y coords of the agent by the provided x y amounts</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>delta_x</strong> (<em>float</em>) – The amount to change the x coord of the agent by</p></li>
+<li><p><strong>delta_y</strong> (<em>float</em>) – The amount to change the y coord of the agent by</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="heuristics.Agent.Agent.remove_possible_actions">
+<span class="sig-name descname"><span class="pre">remove_possible_actions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">actions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Agent.Agent.remove_possible_actions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="heuristics.Agent.Agent.set_possible_actions">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">set_possible_actions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#heuristics.Agent.Agent.set_possible_actions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-heuristics.Dependency"></span><p>Dependencies, ok this one is important and im not 100% on the implementaion so im going to slap some code down and
+think about the arcitecture</p>
+<p>Dependencies have a big role to play in the research this simulator is designed to do atm. For every dependancy each
+passenger has a weight assigned to how much they care about dependancies</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="heuristics.Dependency.Dependency">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">heuristics.Dependency.</span></span><span class="sig-name descname"><span class="pre">Dependency</span></span><a class="headerlink" href="#heuristics.Dependency.Dependency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
 </section>
 </section>
 
@@ -631,6 +829,30 @@ handled</p>
 <li class="toctree-l4"><a class="reference internal" href="#heuristics.Controller.Controller.inti_all_gen"><code class="docutils literal notranslate"><span class="pre">Controller.inti_all_gen()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#heuristics.Event.Event"><code class="docutils literal notranslate"><span class="pre">Event</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#heuristics.Event.Event.get_action"><code class="docutils literal notranslate"><span class="pre">Event.get_action()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#heuristics.Event.Event.get_pos"><code class="docutils literal notranslate"><span class="pre">Event.get_pos()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#heuristics.Event.Event.get_relevant_agents"><code class="docutils literal notranslate"><span class="pre">Event.get_relevant_agents()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#heuristics.Event.Event.get_start_or_end"><code class="docutils literal notranslate"><span class="pre">Event.get_start_or_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#heuristics.Event.Event.tick_occurrence"><code class="docutils literal notranslate"><span class="pre">Event.tick_occurrence()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#heuristics.Observer.Observer"><code class="docutils literal notranslate"><span class="pre">Observer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#heuristics.Observer.Observer.give_watched_events"><code class="docutils literal notranslate"><span class="pre">Observer.give_watched_events()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#heuristics.Observer.Observer.is_event_watched"><code class="docutils literal notranslate"><span class="pre">Observer.is_event_watched()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#heuristics.Agent.Agent"><code class="docutils literal notranslate"><span class="pre">Agent</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#heuristics.Agent.Agent.add_possible_actions"><code class="docutils literal notranslate"><span class="pre">Agent.add_possible_actions()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#heuristics.Agent.Agent.decide_next_action"><code class="docutils literal notranslate"><span class="pre">Agent.decide_next_action()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#heuristics.Agent.Agent.get_current_action"><code class="docutils literal notranslate"><span class="pre">Agent.get_current_action()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#heuristics.Agent.Agent.get_possible_actions"><code class="docutils literal notranslate"><span class="pre">Agent.get_possible_actions()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#heuristics.Agent.Agent.move_agent"><code class="docutils literal notranslate"><span class="pre">Agent.move_agent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#heuristics.Agent.Agent.remove_possible_actions"><code class="docutils literal notranslate"><span class="pre">Agent.remove_possible_actions()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#heuristics.Agent.Agent.set_possible_actions"><code class="docutils literal notranslate"><span class="pre">Agent.set_possible_actions()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#heuristics.Dependency.Dependency"><code class="docutils literal notranslate"><span class="pre">Dependency</span></code></a></li>
 </ul>
 </li>
 </ul>

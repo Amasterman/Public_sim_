@@ -10,4 +10,6 @@ passenger has a weight assigned to how much they care about dependancies
 
 
 class Dependency:
-    pass
+    def __init__(self):
+        """Constructor Class"""
+        pass
