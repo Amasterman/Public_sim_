@@ -1,6 +1,6 @@
 class Route:
     """
-    Class contains information for a section of the route, contains the information about passengers and timing info
+    Class contains information for a section of the route, contains the information about passengers and timing info.t
 
     Intended usage: If you are making changes here then you are modifying the data that contains a route
 

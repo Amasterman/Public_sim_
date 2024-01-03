@@ -8,7 +8,7 @@ def writeLineToCsv(ref, name, lat, long, local_ref, network, operator, shelter, 
                    , lit, bins, covered, passenger_information_display, pole, flag, kerb, traffic_sign, advertising,
                    layer,
                    street, crossing):
-    with open('XML_to_CSV_OUT.CSV', mode='a') as XML_OUT:
+    with open('../Files/In/XML_to_CSV_OUT.CSV', mode='a') as XML_OUT:
         XML_out_writer = csv.writer(XML_OUT, delimiter=',', lineterminator='\n', quotechar='"',
                                     quoting=csv.QUOTE_MINIMAL)
 
@@ -21,7 +21,7 @@ def writeLineToCsv(ref, name, lat, long, local_ref, network, operator, shelter, 
 
 # initialize the csv file by writing the headers
 def initCSV():
-    c = open('XML_to_CSV_OUT.CSV', "w+")
+    c = open('../Files/In/XML_to_CSV_OUT.CSV', "w+")
     XML_out_writer = csv.writer(c, delimiter=',', lineterminator='\n', quotechar='"', quoting=csv.QUOTE_MINIMAL)
     XML_out_writer.writerow(['ref', 'name', 'lat', 'long', 'local_ref', 'network', 'operator', 'shelter',
                              'bench', 'tactile_paving', 'wheelchair', 'departure_board', 'lit', 'bin', 'covered',
@@ -32,14 +32,14 @@ def initCSV():
 
 # initialize text file
 def initTXT():
-    c = open('XML_to_TXT_OUT.txt', "w+")
+    c = open('../Files/In/XML_to_TXT_OUT.txt', "w+")
     c.write(" ")
     c.close()
 
 
 # Write to text file
 def writeTXT(lat, long):
-    c = open('XML_to_TXT_OUT.txt', "a")
+    c = open('../Files/In/XML_to_TXT_OUT.txt', "a")
     out = long + "," + lat + ";"
     c.write(out)
     c.close()

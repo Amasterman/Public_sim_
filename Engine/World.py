@@ -27,10 +27,14 @@ the routeing algs have access to. The full events list being thrown is needed fo
 
 """
 
+import simpy
+
+from ..Agents.Transtportation_Agents import *
+
 
 class World:
 
-    def __init__(self, passenger_agents, bus_agents, time_step):
+    def __init__(self, passenger_agents, bus_agents, time_step, day_len):
         """Constructor class"""
 
         # Init ticks
@@ -50,6 +54,8 @@ class World:
 
         # Init Event subs
         self.event_subs = []
+
+        self.day_len = day_len
 
         # Take actionsets from the agents into a list indexed the same way as the agent_list
         for passenger in self.passenger_agents:
@@ -73,7 +79,7 @@ class World:
 
         inc tick
         """
-        if self.tick_step % self.time_step:
+        if not (self.tick_step % self.time_step):
 
             for event in triggers:
                 for subscriber in subscribers:
@@ -128,4 +134,23 @@ class World:
         :return: Event class built from parameters
         :rtype: Event
         """
+        pass
+
+    def setup(self, init_passengers, total_passengers ):
+
+        pass
+
+
+    def run(self):
+
+        outputs = []
+
+        env = simpy.Environment()
+
+
+        env.run(until=self.day_len)
+
+        self.send_outputs(outputs)
+
+    def send_outputs(self, outputs):
         pass

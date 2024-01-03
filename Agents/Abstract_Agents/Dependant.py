@@ -4,9 +4,9 @@ a weight associated with the dependencies. Additionally, they have a relationshi
 both linear and non-linear.
 
 """
-from abc import ABCMeta, abstractmethod
+from abc import ABCMeta
 
-from heuristics_and_routing.heuristics.Agent import Agent
+from Agents.Abstract_Agents.Agent import Agent
 
 
 class Dependant(metaclass=ABCMeta, Agent):

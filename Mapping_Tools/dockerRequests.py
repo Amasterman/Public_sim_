@@ -2,7 +2,7 @@ import requests
 import csv
 
 # Open and read the coordinates from the input file
-f = open("XML_to_TXT_OUT.txt")
+f = open("../Files/In/XML_to_TXT_OUT.txt")
 coords = f.read()
 f.close()
 
